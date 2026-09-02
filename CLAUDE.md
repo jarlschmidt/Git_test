@@ -1,7 +1,23 @@
 # Projekt: Dynamo-analyse (DTU)
 
-**Status pr. 2026-09-02:** Første version af rapporten er færdig og pushet. Se
-`dynamo-analyse/README.md` for detaljer om filer og hvordan alt genskabes.
+**Status pr. 2026-09-02:** Rapporten er redesignet efter feedback om at den
+oprindelige version var for rodet (massevis af tom plads, fordi hver
+sektion tvang et sideskift uanset indholdsmængde). Nyt layout: sektioner
+flyder frit over siderne, appendiks-tabellen er én løbende tabel med
+gentaget header i stedet for manuelt splittede sider, forsiden er redesignet
+til en ren, solid navy-baggrund (ikke en "mudret" flerfarvet gradient), og en
+graf-bug hvor værdi-labels (fx "60000 eks.") blev skåret af ved siderandet er
+rettet. Rapporten er faldet fra 16 til 10 sider — samme indhold, ingen
+whitespace-spild. Se `dynamo-analyse/README.md` for detaljer om filer og den
+nye to-pass build (sidetal i indholdsfortegnelsen måles nu efter et
+prøvetryk, se `measure_toc.py`).
+
+**dtu.dk-netværksadgang:** Bekræftet åben i denne session (`curl -sI
+https://www.dtu.dk` → 200, rigtigt DTU-indhold). Den oprindelige
+netværksblokering nævnt nedenfor er altså ophævet — men indholdsanalysen
+(datakataloget i `data/issues_*.json`) er IKKE genkørt med den nye adgang
+endnu; se "Kendt begrænsning" nedenfor for hvad det næste skridt er, hvis
+brugeren beder om det.
 
 ## Opgaven
 

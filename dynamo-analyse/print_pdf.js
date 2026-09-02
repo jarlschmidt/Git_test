@@ -4,7 +4,7 @@ const path = require('path');
 (async () => {
   const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
   const page = await browser.newPage();
-  const file = 'file://' + path.resolve(__dirname, 'final_report.html');
+  const file = 'file://' + path.resolve(__dirname, 'report.html');
   await page.goto(file, { waitUntil: 'networkidle' });
   const footerTemplate = `
     <div style="width:100%; font-family:Arial,Helvetica,sans-serif; font-size:7.5pt; color:#898781;

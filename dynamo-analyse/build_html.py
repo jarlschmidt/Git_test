@@ -5,10 +5,20 @@ from datetime import date
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
-with open(os.path.join(BASE, "dataset.json"), encoding="utf-8") as f:
+with open(os.path.join(BASE, "data", "dataset.json"), encoding="utf-8") as f:
     D = json.load(f)
-with open(os.path.join(BASE, "dtu_institutes.json"), encoding="utf-8") as f:
+with open(os.path.join(BASE, "data", "dtu_institutes.json"), encoding="utf-8") as f:
     INSTITUTES = json.load(f)
+
+# Page numbers in the TOC are measured after a first render pass (see
+# measure_toc.py) and cached here, since sections now flow freely across
+# pages instead of one forced page break per section.
+TOC_PAGES_PATH = os.path.join(BASE, "data", "toc_pages.json")
+if os.path.exists(TOC_PAGES_PATH):
+    with open(TOC_PAGES_PATH, encoding="utf-8") as f:
+        TOC_PAGES = json.load(f)
+else:
+    TOC_PAGES = {}
 
 issues = D["issues"]
 eras = D["eras"]
@@ -45,13 +55,6 @@ def bar_rows(pairs, max_val=None, color="var(--dtu-blue)", highlight_first=False
 def stat_tile(big, label):
     return f"<div class='tile'><b>{esc(big)}</b><span class='lbl'>{esc(label)}</span></div>"
 
-def pagefoot(section_name=None, pageno=None):
-    # Page numbers/footer branding are now rendered by Playwright's native
-    # footer template (accurate across page overflow) — see print_pdf.js.
-    return ""
-
-GREGORIAN_MONTHS_DA = {}
-
 def year_track_html():
     year_counts = D["year_counts"]
     years = list(range(2005, 2027))
@@ -87,21 +90,23 @@ cover = f"""
 """
 
 # ================= TOC =================
+# Fallback estimates are only used before the first measurement pass has run
+# (see measure_pages.js / README) — after that, TOC_PAGES holds real numbers.
 toc_items = [
-    ("Executive summary", 3),
-    ("Metode og datagrundlag", 4),
-    ("Dynamo gennem tiden — historien", 5),
-    ("Temaer på tværs af 21 år", 6),
-    ("Temaudvikling: tre æraer", 7),
-    ("Institutter i Dynamo", 8),
-    ("Oplag og målgruppe over tid", 10),
-    ("Appendiks: alle katalogiserede numre", 11),
-    ("Kilder og forbehold", 16),
+    ("exec", "Executive summary", 3),
+    ("metode", "Metode og datagrundlag", 3),
+    ("historie", "Dynamo gennem tiden — historien", 3),
+    ("temaer", "Temaer på tværs af 21 år", 4),
+    ("temaudvikling", "Temaudvikling: tre æraer", 4),
+    ("institutter", "Institutter i Dynamo", 5),
+    ("oplag", "Oplag og målgruppe over tid", 5),
+    ("appendiks", "Appendiks: alle katalogiserede numre", 6),
+    ("kilder", "Kilder og forbehold", 9),
 ]
-toc = "<div class='section'><div class='kicker'>Indhold</div><h2>Indholdsfortegnelse</h2>"
-toc += "".join(f"<div class='toc-row'><span>{esc(t)}</span><span>{p}</span></div>" for t,p in toc_items)
+toc = "<div class='section' id='sec-toc'><div class='kicker'>Indhold</div><h2>Indholdsfortegnelse</h2>"
+toc += "".join(f"<div class='toc-row'><span>{esc(t)}</span><span>{TOC_PAGES.get(k, p)}</span></div>" for k,t,p in toc_items)
 toc += "<p class='small' style='margin-top:8mm;'>Rapporten er søgbar (fuld tekst) — brug Ctrl/Cmd+F i din PDF-læser for at slå numre, temaer eller institutter op.</p>"
-toc += pagefoot("Indhold", 2) + "</div>"
+toc += "</div>"
 
 # ================= EXEC SUMMARY =================
 top3 = cat_totals if isinstance(cat_totals, list) else sorted(cat_totals.items(), key=lambda x: -x[1])
@@ -111,7 +116,7 @@ top_cat_name, top_cat_n = top3[0]
 second_name, second_n = top3[1]
 
 exec_summary = f"""
-<div class="section">
+<div class="section" id="sec-exec">
 <div class="kicker">Executive summary</div>
 <h2>21 år, 86 numre — fra klimadebat til kunstig intelligens</h2>
 <div class="tiles">
@@ -133,7 +138,7 @@ exec_summary = f"""
     <p class="small">Andel af {DOCUMENTED} numre med dokumenteret tema. Se s.6 for fuld oversigt.</p>
   </div>
 </div>
-""" + pagefoot("Executive summary", 3) + "</div>"
+</div>"""
 
 # ================= METHOD =================
 conf_pairs = [
@@ -143,7 +148,7 @@ conf_pairs = [
     ("Ikke fundet", conf_counts.get("not_found",0)),
 ]
 method = f"""
-<div class="section">
+<div class="section" id="sec-metode">
 <div class="kicker">Metode</div>
 <h2>Metode og datagrundlag</h2>
 <p>Analysen er bygget ved at katalogisere samtlige {TOTAL} numre af Dynamo (nr. 1, april 2005 – nr. 86, august 2026) og for hvert nummer forsøge at fastslå udgivelsesår, forsidetema, en kort indholdsbeskrivelse samt eventuelle navngivne DTU-institutter. To kilder er brugt:</p>
@@ -154,11 +159,11 @@ method = f"""
 {bar_rows(conf_pairs, color="var(--dtu-blue)")}
 <h3>Tema-taksonomi</h3>
 <p class="small">Hvert dokumenteret nummer er kategoriseret efter nøgleord i tema og beskrivelse i én eller flere af 10 kategorier (Klima &amp; Energi, Vand/Miljø/Ressourcer, Sundhed &amp; Bioteknologi, Fødevarer &amp; Landbrug, Digitalt/AI/Data, Rum &amp; Klode, Materialer/Nano/Kvante, Transport/Byggeri/Byer, Forsvar &amp; Sikkerhed, Samfund &amp; Iværksætteri). Kategoriseringen er tekstbaseret og automatiseret — den fanger den dominerende vinkel, ikke nødvendigvis alle artikler i det enkelte nummer.</p>
-""" + pagefoot("Metode", 4) + "</div>"
+</div>"""
 
 # ================= HISTORY =================
 history = f"""
-<div class="section">
+<div class="section" id="sec-historie">
 <div class="kicker">Historik</div>
 <h2>Dynamo gennem tiden</h2>
 <p>Dynamo blev lanceret <b>torsdag den 28. april 2005</b>, samtidig med DTU's årsberetning for 2004, ved universitetets årsfest. Magasinet var nyt: et "profilmagasin" rettet mod en bredere kreds af virksomheder, institutioner og borgere end DTU's daværende kommunikation, og blev samtidig den faste kontaktflade til DTU's Alumneforening. Daværende rektor Lars Pallesen skrev i lederen af nr. 1, at målgruppen var "en bredere kreds af virksomheder, institutioner og borgere, end den vi i dag har kontakt med".</p>
@@ -172,18 +177,18 @@ history = f"""
 <tr><td>2011</td><td>Magasinet beskrives i rektors årsfest-tale som DTU's vigtigste eksterne kommunikationskanal, med et oplag på over 60.000 eksemplarer.</td></tr>
 <tr><td>2020'erne</td><td>Skarpere, mere teknologispecifikke temaer pr. nummer (kvante, AI, droneforsvar) — og et markant lavere, mere målrettet oplag på ca. 16-19.000 modtagere.</td></tr>
 </table>
-""" + pagefoot("Historik", 5) + "</div>"
+</div>"""
 
 # ================= THEMES ACROSS 21 YEARS =================
 all_cats_sorted = sorted(cat_totals.items(), key=lambda x: -x[1]) if isinstance(cat_totals, dict) else cat_totals
 themes_page = f"""
-<div class="section">
+<div class="section" id="sec-temaer">
 <div class="kicker">Tema-analyse</div>
 <h2>Temaer på tværs af 21 år</h2>
 <p>Fordelingen nedenfor bygger på de {DOCUMENTED} numre, hvor et forsidetema kunne dokumenteres (ud af {TOTAL} numre i alt). Et nummer kan optræde i mere end én kategori, hvis temaet spænder over flere felter (fx "energiøer" tæller både klima/energi og infrastruktur).</p>
 {bar_rows(all_cats_sorted, color="var(--dtu-blue)", highlight_first=True)}
 <div class="insight"><b>Klima &amp; energi er det mest genkommende tema i hele Dynamos historie</b> — fra den første klimafokuserede udgave i 2009 over "Energiøer" (2022) til bæredygtige byggematerialer (2025) og skibsfart (2025). Vand-, miljø- og ressourceknaphed er tæt følgende som nummer to, hvilket afspejler DTU's tunge forskningsprofil inden for miljøteknologi og ressourceøkonomi.</div>
-""" + pagefoot("Tema-analyse", 6) + "</div>"
+</div>"""
 
 # ================= ERA COMPARISON =================
 era_titles = {
@@ -206,14 +211,14 @@ for e in eras:
     </div>""")
 
 era_page = f"""
-<div class="section">
+<div class="section" id="sec-temaudvikling">
 <div class="kicker">Tema-analyse</div>
 <h2>Temaudvikling: tre æraer</h2>
 <p>De 21 år er delt i tre nogenlunde lige lange perioder for at vise, hvordan Dynamos tematiske fokus har flyttet sig — og hvor godt hver periode er dokumenteret i de tilgængelige kilder.</p>
 <div class="cols">
 {"".join(era_cols)}
 </div>
-""" + pagefoot("Tema-analyse", 7) + "</div>"
+</div>"""
 
 # ================= INSTITUTES =================
 inst_pairs = inst_counter if isinstance(inst_counter, list) else sorted(inst_counter.items(), key=lambda x: -x[1])
@@ -224,7 +229,7 @@ institute_ref_rows = "".join(
 )
 
 institutes_page = f"""
-<div class="section">
+<div class="section" id="sec-institutter">
 <div class="kicker">Institutter</div>
 <h2>Institutter i Dynamo</h2>
 <p>Et centralt fund i denne analyse er, at Dynamo redaktionelt er bygget op om <b>temaer og samfundsudfordringer</b> — ikke om hvilket DTU-institut der står bag forskningen. På tværs af {DOCUMENTED} dokumenterede numre kunne kun {sum(n for _,n in inst_pairs)} eksplicitte institut-nævninger findes i den tilgængelige forsidetekst/beskrivelse:</p>
@@ -233,11 +238,11 @@ institutes_page = f"""
 <h3>DTU's institutter og centre (reference, 2026)</h3>
 <p class="small">Til reference: DTU's nuværende institutstruktur, som ethvert fremtidigt dybere tekstudtræk fra Dynamo bør mappes op imod. Bemærk at flere institutter er omdøbt eller fusioneret i perioden 2005–2026 (fx DTU Compute fra 2013, DTU Sustain og DTU Construct fra ca. 2022-23) — se metodenoten.</p>
 <table><tr><th>Institut/center</th><th>Fokusområde</th></tr>{institute_ref_rows}</table>
-""" + pagefoot("Institutter", 8) + "</div>"
+</div>"""
 
 # ================= CIRCULATION =================
 circ_page = f"""
-<div class="section">
+<div class="section" id="sec-oplag">
 <div class="kicker">Oplag &amp; distribution</div>
 <h2>Oplag og målgruppe over tid</h2>
 <div class="tiles">
@@ -249,7 +254,7 @@ circ_page = f"""
 {bar_rows([("2011", 60000), ("2025/26", 17000)], color="var(--dtu-blue)", val_suffix=" eks.")}
 <p>Oplaget er faldet markant siden 2011 — men målgruppen er samtidig blevet skarpere defineret. I dag distribueres Dynamo annoncefrit og gratis til en navngivet kreds af beslutningstagere: bestyrelses- og direktionsmedlemmer i Danmarks største virksomheder, folketings- og EU-parlamentsmedlemmer, samt fonds- og rådsbestyrelser — suppleret af udlæg i landets læge- og tandlægevente­værelser. Faldet afspejler en generel branchetrend for trykte profilmagasiner: fra bredt oplag til stærkt målrettet distribution, understøttet af en digital udgave (issuu/iPad) siden omkring 2011.</p>
 <div class="insight"><b>Konsekvens for denne analyse:</b> Den skarpere målretning falder tidsmæssigt sammen med den periode (2020-2026), hvor Dynamos temaer bliver mest teknologispecifikke (kvante, AI, forsvar) — konsistent med en strategi om at tale direkte til beslutningstagere om aktuelle teknologipolitiske dagsordener frem for et bredt oplysningsformål.</div>
-""" + pagefoot("Oplag", 9) + "</div>"
+</div>"""
 
 # ================= APPENDIX: FULL TABLE =================
 def conf_label(c):
@@ -266,40 +271,38 @@ for it in issues:
         f"<td>{conf_label(it.get('confidence','not_found'))}</td></tr>"
     )
 
-# split appendix rows across pages, ~28 rows per page
-CHUNK = 30
-chunks = [rows_html[i:i+CHUNK] for i in range(0, len(rows_html), CHUNK)]
-appendix_pages = []
-for idx, chunk in enumerate(chunks):
-    header = "<h2>Appendiks: alle katalogiserede numre</h2>" if idx == 0 else "<h3>Appendiks (fortsat)</h3>"
-    appendix_pages.append(f"""
-<div class="section">
+# One continuous table — it flows across as many pages as it needs, with the
+# header row (<thead>) repeating automatically on every page via
+# `display:table-header-group` (see template.html).
+appendix_html = f"""
+<div class="section" id="sec-appendiks">
 <div class="kicker">Appendiks</div>
-{header}
-<table><tr><th>Nr.</th><th>År</th><th>Tema</th><th>Sikkerhed</th></tr>
-{''.join(chunk)}
+<h2>Appendiks: alle katalogiserede numre</h2>
+<table>
+<thead><tr><th>Nr.</th><th>År</th><th>Tema</th><th>Sikkerhed</th></tr></thead>
+<tbody>
+{''.join(rows_html)}
+</tbody>
 </table>
-""" + pagefoot("Appendiks", 10+idx) + "</div>")
-
-appendix_html = "".join(appendix_pages)
+</div>"""
 
 # ================= SOURCES / LAST PAGE =================
 sources_page = f"""
-<div class="section">
+<div class="section" id="sec-kilder">
 <div class="kicker">Kilder &amp; forbehold</div>
 <h2>Kilder og forbehold</h2>
 <p>Denne rapport er udarbejdet som en automatiseret indholdsanalyse baseret på offentligt tilgængelige forsider, temabeskrivelser og udgivelsesdatoer for Dynamo-numre på <b>issuu.com/dtudk</b> samt artikler i <b>DTU's nyhedsarkiv (dtu.dk)</b>. Den er ikke baseret på fuldtekst-læsning af hvert magasins indre artikler, og bør derfor læses som en kortlægning af <i>forsidetemaer og redaktionel retning</i> — ikke en komplet indholdsanalyse af hver artikel i hvert nummer.</p>
 <p>Numre markeret "Ikke fundet" i appendiks eksisterer efter al sandsynlighed (Dynamos kvartalskadence er bekræftet uændret gennem hele perioden), men deres tema kunne ikke dokumenteres inden for de kilder, der var tilgængelige i analysemiljøet.</p>
 <p class="small">Udarbejdet {esc(today)}. Data og metode kan genskabes/udvides ved fornyet adgang til DTU's fulde nyhedsarkiv og digitale magasinarkiv.</p>
-""" + pagefoot("Kilder", 10+len(chunks)) + "</div>"
+</div>"""
 
 CONTENT = cover + toc + exec_summary + method + history + themes_page + era_page + institutes_page + circ_page + appendix_html + sources_page
 
-with open(os.path.join(BASE, "report.html"), encoding="utf-8") as f:
+with open(os.path.join(BASE, "template.html"), encoding="utf-8") as f:
     template = f.read()
 
 final = template.replace("{{CONTENT}}", CONTENT)
-out_path = os.path.join(BASE, "final_report.html")
+out_path = os.path.join(BASE, "report.html")
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(final)
 

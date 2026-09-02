@@ -4,9 +4,10 @@ import json, re, html, os
 from collections import defaultdict, Counter
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+DATA = os.path.join(BASE, "data")
 
 def load(fn):
-    p = os.path.join(BASE, fn)
+    p = os.path.join(DATA, fn)
     if not os.path.exists(p):
         return []
     with open(p, encoding="utf-8") as f:
@@ -139,7 +140,7 @@ print(json.dumps({
 }, ensure_ascii=False, indent=2))
 
 # Save normalized dataset for the HTML builder
-with open(os.path.join(BASE, "dataset.json"), "w", encoding="utf-8") as f:
+with open(os.path.join(DATA, "dataset.json"), "w", encoding="utf-8") as f:
     json.dump({
         "issues": issues,
         "era_cat": {e: dict(era_cat[e]) for e in ERAS},

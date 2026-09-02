@@ -36,36 +36,41 @@
     font-size:10.3pt;
     line-height:1.5;
   }
-  h1,h2,h3,h4{font-weight:700; margin:0 0 4mm 0; letter-spacing:-0.01em;}
+  h1,h2,h3,h4{font-weight:700; margin:0 0 4mm 0; letter-spacing:-0.01em; break-after:avoid-page; page-break-after:avoid;}
   h1{font-size:22pt; color:var(--dtu-red);}
   h2{font-size:15pt; color:var(--dtu-red); border-bottom:1.4pt solid var(--dtu-red); padding-bottom:2mm; margin-bottom:5mm;}
   h3{font-size:11.5pt; color:var(--navy-2);}
   p{margin:0 0 3mm 0;}
   .kicker{
     text-transform:uppercase; letter-spacing:0.12em; font-size:8pt; font-weight:700;
-    color:var(--orange); margin-bottom:2mm;
+    color:var(--orange); margin-bottom:2mm; break-after:avoid-page; page-break-after:avoid;
   }
-  .section{ page-break-after: always; padding-top:2mm; position:relative;}
-  .section:last-child{page-break-after:auto;}
+  .section{ padding-top:0; position:relative; margin-top:9mm;}
+  .section:first-of-type{margin-top:0;}
+
+  /* keep small, self-contained blocks from splitting across a page break */
+  .tiles, .insight, .quote, .tile, .cols, .barchart{ break-inside:avoid-page; page-break-inside:avoid;}
+  tr{ break-inside:avoid-page; page-break-inside:avoid;}
+  thead{ display:table-header-group;}
 
   /* COVER */
   .cover{
-    background: linear-gradient(150deg, var(--dtu-navy) 0%, var(--dtu-red) 62%, #6e0000 100%);
+    background: linear-gradient(175deg, var(--dtu-navy) 0%, #001040 100%);
     color:#fff; height:281mm; margin:-20mm -18mm 0 -18mm; padding:20mm 18mm;
-    display:flex; flex-direction:column; justify-content:space-between;
+    display:flex; flex-direction:column; justify-content:center; gap:14mm;
     page-break-after: always;
   }
   .cover .kicker{color:var(--dtu-orange);}
-  .cover h1{color:#fff; font-size:34pt; line-height:1.1; max-width:140mm;}
-  .cover .sub{font-size:12.5pt; color:#f2dede; max-width:120mm; margin-top:4mm;}
-  .cover .stats{display:flex; gap:10mm; margin-top:10mm;}
+  .cover h1{color:#fff; font-size:36pt; line-height:1.1; max-width:140mm;}
+  .cover .sub{font-size:12.5pt; color:rgba(255,255,255,0.75); max-width:120mm; margin-top:4mm;}
+  .cover .stats{display:flex; gap:10mm; margin-top:2mm;}
   .cover .stat{border-top:2pt solid var(--dtu-orange); padding-top:2.5mm;}
   .cover .stat b{display:block; font-size:24pt; color:#fff;}
-  .cover .stat span{font-size:8.5pt; color:#f0cfcf; text-transform:uppercase; letter-spacing:0.08em;}
-  .cover .footline{font-size:8.5pt; color:#e9c6c6; display:flex; justify-content:space-between; border-top:0.6pt solid rgba(255,255,255,0.3); padding-top:4mm;}
-  .cover .yeartrack{display:flex; align-items:flex-end; gap:2mm; height:26mm; margin:14mm 0 10mm 0;}
+  .cover .stat span{font-size:8.5pt; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em;}
+  .cover .footline{font-size:8.5pt; color:rgba(255,255,255,0.55); display:flex; justify-content:space-between; border-top:0.6pt solid rgba(255,255,255,0.2); padding-top:4mm; position:absolute; left:18mm; right:18mm; bottom:16mm;}
+  .cover .yeartrack{display:flex; align-items:flex-end; gap:2mm; height:26mm; margin-top:2mm;}
   .cover .ytick{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
-  .cover .ytick i{display:block; width:100%; background:rgba(255,255,255,0.30); border-radius:1px;}
+  .cover .ytick i{display:block; width:100%; background:rgba(255,255,255,0.22); border-radius:1px;}
   .cover .ytick.hi i{background:var(--dtu-orange);}
   .cover .ytick span{font-size:6.6pt; color:rgba(255,255,255,0.55); margin-top:2mm; writing-mode:vertical-rl; transform:rotate(180deg);}
   .cover .ytick.hi span{color:#fff; font-weight:700;}
@@ -86,7 +91,7 @@
   .barrow .lbl{width:34mm; font-size:8.3pt; color:var(--ink-2); text-align:right; flex-shrink:0;}
   .barrow .track{flex:1; background:var(--grid); height:5.4mm; position:relative; border-radius:1.5px;}
   .barrow .fill{position:absolute; left:0; top:0; bottom:0; border-radius:1.5px; background:var(--blue);}
-  .barrow .val{width:13mm; font-size:8.3pt; color:var(--ink); font-weight:700; flex-shrink:0; white-space:nowrap;}
+  .barrow .val{min-width:13mm; width:auto; text-align:right; font-size:8.3pt; color:var(--ink); font-weight:700; flex-shrink:0; white-space:nowrap;}
 
   /* TIMELINE */
   .timeline{margin:5mm 0;}
