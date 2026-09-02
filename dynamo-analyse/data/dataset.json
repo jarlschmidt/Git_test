@@ -1,0 +1,1319 @@
+{
+  "issues": [
+    {
+      "issue_number": 1,
+      "year": 2005,
+      "month": 4,
+      "theme": "Lancering af DTU's nye profilmagasin / Launch of DTU's new profile magazine",
+      "description": "Første nummer af Dynamo udkom i forbindelse med DTU's årsfest i slutningen af april 2005, sammen med Årsberetningen for 2004. Magasinet blev lanceret som DTU's nye profilmagasin og faste kontakt til dimittender i Alumneforeningen; rektor Lars Pallesen skrev i lederen at målgruppen var 'en bredere kreds af virksomheder, institutioner og borgere' end DTU hidtil havde haft kontakt med. Ifølge en anden kilde blev Dynamo oprettet som erstatning for det 14-dages interne blad 'Sletten', der lukkede i sommeren 2004 efter 33 år. Der er ikke fundet et enkelt forsknings-'tema' for dette allerførste nummer - fokus var introduktionen af magasinet selv.",
+      "institutes": [],
+      "source_urls": [
+        "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=a71d049b-f6e4-4a88-b4f2-16b91bd21cd1",
+        "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/01/dynamo_1.ashx",
+        "https://ing.dk/artikel/omstridt-dtu-rektor-siger-farvel-efter-ti-aar-0"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Andet/uklassificeret"
+      ]
+    },
+    {
+      "issue_number": 2,
+      "year": 2005,
+      "month": 8,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret bud baseret på et bekræftet kvartalsvist udgivelsesmønster (nr. 1 = apr/maj 2005; nr. 19 = nov 2009; nr. 30 = sep 2012; nr. 42 = sep 2015; nr. 58 = sep 2019; nr. 73 = 2023; nr. 86 = aug 2026).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 3,
+      "year": 2005,
+      "month": 11,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt (se nr. 1, 19, 30, 42, 58, 73, 86).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 4,
+      "year": 2006,
+      "month": 2,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 5,
+      "year": 2006,
+      "month": 5,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 6,
+      "year": 2006,
+      "month": 8,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 7,
+      "year": 2006,
+      "month": 11,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 8,
+      "year": 2007,
+      "month": 2,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 9,
+      "year": 2007,
+      "month": 5,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 10,
+      "year": 2007,
+      "month": 8,
+      "theme": "",
+      "description": "Ikke fundet. Et Google-indekseret link til en fil ved navn 'dynamo10.ashx' i DTU's mediebibliotek (sti-mønster .../DTUdk/Nyheder/DYNAMO/10/dynamo10.ashx) blev fundet via søgning, hvilket bekræfter at nummeret findes i DTU's arkiv, men indholdet/temaet kunne ikke bestemmes (dtu.dk er blokeret for direkte hentning i dette miljø).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "low",
+      "categories": []
+    },
+    {
+      "issue_number": 11,
+      "year": 2007,
+      "month": 11,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 12,
+      "year": 2008,
+      "month": 2,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 13,
+      "year": 2008,
+      "month": 5,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 14,
+      "year": 2008,
+      "month": 8,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 15,
+      "year": 2008,
+      "month": 11,
+      "theme": "",
+      "description": "Ikke fundet specifikt tema. Filen 'dynamo_15_hele.ashx' (sti .../DTUdk/Nyheder/DYNAMO/15/dynamo_15_hele.ashx) blev fundet indekseret af en søgemaskine, hvilket bekræfter at nummeret eksisterer i DTU's digitale arkiv, men selve indholdet/temaet kunne ikke udtrækkes, da dtu.dk er blokeret for direkte hentning i dette miljø.",
+      "institutes": [],
+      "source_urls": [
+        "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/15/dynamo_15_hele.ashx"
+      ],
+      "confidence": "low",
+      "categories": []
+    },
+    {
+      "issue_number": 16,
+      "year": 2009,
+      "month": 2,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 17,
+      "year": 2009,
+      "month": 5,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 18,
+      "year": 2009,
+      "month": 8,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 19,
+      "year": 2009,
+      "month": 11,
+      "theme": "Klima / Climate Change",
+      "description": "DTU's magasin DYNAMO satte i november 2009 fokus på klimaet og på teknologier, der kan afhjælpe klimaforandringerne - herunder intelligente energisystemer, bæredygtige energikilder, klimaovervågning og effektivisering af energiforbruget. Nummeret indeholdt en dvd med højdepunkter fra DTU's Climate Change Conference (afholdt forud for COP15-klimatopmødet i København) og udkom både på dansk og engelsk. NB: kilden ('Nyt nummer af DYNAMO', dtu.dk, 26. nov. 2009) angiver ikke eksplicit et nummer - tildelingen til nr. 19 er et interpoleret bud baseret på det bekræftede kvartalsvise udgivelsesmønster (nr. 1 = apr/maj 2005; nr. 30 = sep 2012; nr. 42 = sep 2015; nr. 58 = sep 2019), som rammer november 2009 næsten præcist for nr. 19.",
+      "institutes": [],
+      "source_urls": [
+        "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=73cd3b67-ab10-497b-9105-fba1678d087b"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Klima & Energi"
+      ]
+    },
+    {
+      "issue_number": 20,
+      "year": 2010,
+      "month": 2,
+      "theme": "",
+      "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 21,
+      "year": 2010,
+      "month": 8,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt (ca. 4 numre/år) mellem bekræftede numre 24 (april 2011) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 22,
+      "year": 2010,
+      "month": 11,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 23,
+      "year": 2011,
+      "month": 1,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 24,
+      "year": 2011,
+      "month": 4,
+      "theme": "IT-sikkerhed / internet-sårbarheder (usikkert om dette var hele numrets dækningstema)",
+      "description": "Dette nummer eksisterede og udkom omkring april 2011 (dateret via DTU-nyhedsartiklen \"40 millioner huller i døgnet\", der henviser til en historie i Dynamo nr. 24 om internet-sårbarheder/sikkerhedshuller). Det vides ikke med sikkerhed, om dette var forsidetemaet for hele nummeret, eller blot en af flere artikler.",
+      "institutes": [],
+      "source_urls": [
+        "http://www.dtu.dk/Nyheder/2011/04/40-millioner-huller-i-doegnet",
+        "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=59099263-e735-41dd-a248-68316e32857b"
+      ],
+      "confidence": "low",
+      "categories": [
+        "Forsvar & Sikkerhed"
+      ]
+    },
+    {
+      "issue_number": 25,
+      "year": 2011,
+      "month": 6,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 26,
+      "year": 2011,
+      "month": 9,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 27,
+      "year": 2011,
+      "month": 11,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 28,
+      "year": 2012,
+      "month": 2,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 29,
+      "year": 2012,
+      "month": 4,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 30,
+      "year": 2012,
+      "month": 7,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 31,
+      "year": 2012,
+      "month": 10,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 32,
+      "year": 2012,
+      "month": 12,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 33,
+      "year": 2013,
+      "month": 3,
+      "theme": "Vand/drikkevand (usikkert om dette var hele numrets dækningstema)",
+      "description": "Nummeret eksisterede og udkom omkring marts 2013 (billeddato 2013/03 på DTU's nyhedsside \"Drikkevand kan nu screenes for parasitter\", som henviser til historien i Dynamo nr. 33, side 34-37, om en ny metode til at screene drikkevand for parasitter). Uklart om dette var forsidetemaet for hele nummeret.",
+      "institutes": [],
+      "source_urls": [
+        "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=f509e268-d37d-4eb0-9cac-5242ccfaec6d"
+      ],
+      "confidence": "low",
+      "categories": [
+        "Vand, Miljø & Ressourcer"
+      ]
+    },
+    {
+      "issue_number": 34,
+      "year": 2013,
+      "month": 6,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 35,
+      "year": 2013,
+      "month": 9,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 36,
+      "year": 2014,
+      "month": 1,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 37,
+      "year": 2014,
+      "month": 4,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 38,
+      "year": 2014,
+      "month": 7,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 39,
+      "year": 2014,
+      "month": 10,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 40,
+      "year": 2015,
+      "month": 1,
+      "theme": "",
+      "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+      "institutes": [],
+      "source_urls": [],
+      "confidence": "not_found",
+      "categories": []
+    },
+    {
+      "issue_number": 41,
+      "year": 2015,
+      "month": 5,
+      "theme": "Belysnings- og materialeinnovation (Cool LED / Green Laser) - ikke bekræftet som samlet forsidetema",
+      "description": "Udkom maj 2015. Kendte artikler i nummeret omfatter \"Cool LED\" (nyt lys i PH-lampen) og \"Green Laser\" (om betonsten/laserbehandlet beton). Det overordnede forsidetema for nummeret er ikke bekræftet.",
+      "institutes": [],
+      "source_urls": [
+        "http://emagstudio.win.dtu.dk/E-books/DYNAMO/DYNAMO_41/"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Materialer, Nano & Kvante",
+        "Samfund & Iværksætteri"
+      ]
+    },
+    {
+      "issue_number": 42,
+      "year": 2015,
+      "month": 9,
+      "theme": "Vand (Water)",
+      "description": "Udkom 1. september 2015. Nummeret fokuserer på vand som en af de store udfordringer for hastigt voksende storbyer globalt, og præsenterer DTU-forskning og -løsninger inden for vandforsyning og -teknologi.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_42"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Vand, Miljø & Ressourcer"
+      ]
+    },
+    {
+      "issue_number": 43,
+      "year": 2015,
+      "month": 12,
+      "theme": "CO2-fri transport / Elbiler",
+      "description": "Udkom 1. december 2015. Nummeret handler om elbiler som vej til bæredygtig transport og ser på centrale udfordringer som opladningstid, rækkevidde og afgiftspolitik for elbiler.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_43"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Transport, Byggeri & Byer"
+      ]
+    },
+    {
+      "issue_number": 44,
+      "year": 2016,
+      "month": 3,
+      "theme": "Smart Cities",
+      "description": "Udkom 1. marts 2016. Temaet er \"Byerne er udfordrede: Trafikken skal glide, bygningerne skal opvarmes, vandet skal renses\" - nummeret præsenterer eksempler på Smart City-løsninger inden for trafik, bygningsopvarmning og vandrensning.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_44"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Vand, Miljø & Ressourcer",
+        "Transport, Byggeri & Byer"
+      ]
+    },
+    {
+      "issue_number": 45,
+      "year": 2016,
+      "month": 5,
+      "theme": "Sundhedsteknologi / Health Technology",
+      "description": "Tema om sundhedsteknologi: læger og ingeniører arbejder tæt sammen om at udvikle fremtidens sundhedsteknologi, bl.a. bedre kræftbehandling og fremtidens skannere.",
+      "institutes": [
+        "DTU Sundhedsteknologi"
+      ],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_45",
+        "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=7d72c4b1-1337-4493-af66-493fad88a66b",
+        "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=aaf5e793-26cb-4779-a40e-b9126bbfe77f"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Sundhed & Bioteknologi"
+      ]
+    },
+    {
+      "issue_number": 46,
+      "year": 2016,
+      "month": 9,
+      "theme": "Max IV (synkrotron / røntgenteknologi)",
+      "description": "Tema om Max IV: den nye synkrotronanlæg i Lund og hvordan kraftig røntgenstråling fra synkrotroner bruges til forskning, bl.a. i materialer som mælkekartoner og stål (trætmetal).",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_46",
+        "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=07f5639c-241d-4d06-a295-686cdbdfa177",
+        "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=f1f41dc7-877b-4ba3-ac17-7a30eea7cddc"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Materialer, Nano & Kvante"
+      ]
+    },
+    {
+      "issue_number": 47,
+      "year": 2016,
+      "month": 12,
+      "theme": "Vindteknologi / Wind Technology",
+      "description": "Tema om vind: forskning i vindteknologi skal fortsætte, hvis Danmark skal bevare sin førerposition inden for vindenergi.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_47"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi"
+      ]
+    },
+    {
+      "issue_number": 48,
+      "year": 2017,
+      "month": 3,
+      "theme": "Energilagring / Energy Storage",
+      "description": "Tema om energilagring: hvis Danmark skal være fossil-uafhængig i 2050, skal der fortsat investeres i forskning i at lagre energi.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_48"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi"
+      ]
+    },
+    {
+      "issue_number": 49,
+      "year": 2017,
+      "month": 5,
+      "theme": "Industri 4.0",
+      "description": "Tema om Industri 4.0: digitalisering, avancerede robotter, big data, 3D-print og Internet of Things skaber udfordringer, men også muligheder for industrien.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_49"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Digitalt, AI & Data",
+        "Materialer, Nano & Kvante"
+      ]
+    },
+    {
+      "issue_number": 50,
+      "year": 2017,
+      "month": 9,
+      "theme": "Kvanteteknologi / Quantum Technology",
+      "description": "Tema om kvanteteknologi.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_50"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Materialer, Nano & Kvante"
+      ]
+    },
+    {
+      "issue_number": 51,
+      "year": 2017,
+      "month": 12,
+      "theme": "Klimaovervågning / Climate Monitoring",
+      "description": "Tema: \"Vi holder øje med klimaet\" - fokus på klimaovervågning og miljøbevidsthed.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_51"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Vand, Miljø & Ressourcer"
+      ]
+    },
+    {
+      "issue_number": 52,
+      "year": 2018,
+      "month": 3,
+      "theme": "Life Science",
+      "description": "Tema om Life Science.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_52"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Sundhed & Bioteknologi"
+      ]
+    },
+    {
+      "issue_number": 53,
+      "year": 2018,
+      "month": 6,
+      "theme": "Imaging",
+      "description": "Tema om imaging (billeddannelsesteknologi).",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_53"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Sundhed & Bioteknologi"
+      ]
+    },
+    {
+      "issue_number": 54,
+      "year": 2018,
+      "month": 9,
+      "theme": "Cybersikkerhed / Cybersecurity",
+      "description": "Tema om cybersikkerhed.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_54"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Forsvar & Sikkerhed"
+      ]
+    },
+    {
+      "issue_number": 55,
+      "year": 2018,
+      "month": 12,
+      "theme": "Solenergi / Solar Energy",
+      "description": "Tema om solenergi.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_55"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi"
+      ]
+    },
+    {
+      "issue_number": 56,
+      "year": 2019,
+      "month": 3,
+      "theme": "Stop sult - jagten på proteiner / Fighting Hunger - the Hunt for Proteins",
+      "description": "Tema om at stoppe sult gennem jagten på nye proteinkilder.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_56"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Fødevarer & Landbrug"
+      ]
+    },
+    {
+      "issue_number": 57,
+      "year": 2019,
+      "month": 6,
+      "theme": "Trafik / Traffic",
+      "description": "Tema: \"Trafikken står stille, sådan undgår vi bilkøerne\" - om trafikpropper og hvordan man undgår dem.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_57"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Transport, Byggeri & Byer"
+      ]
+    },
+    {
+      "issue_number": 58,
+      "year": 2019,
+      "month": 9,
+      "theme": "Ny viden om plastik / New Knowledge about Plastic",
+      "description": "DTU's forskere arbejder på løsninger til bæredygtig produktion, genanvendelse og bortskaffelse af plastik.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo58"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Vand, Miljø & Ressourcer"
+      ]
+    },
+    {
+      "issue_number": 59,
+      "year": 2019,
+      "month": 11,
+      "theme": "CO2-udslip / Curbing CO2 Emissions",
+      "description": "Tema: \"Sådan tøjler vi CO2-udslippet\" - om forskning i at reducere drivhusgasudledning.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo59"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi"
+      ]
+    },
+    {
+      "issue_number": 60,
+      "year": 2020,
+      "month": 2,
+      "theme": "Fusionsenergi / Fusion Energy",
+      "description": "Tema om fusionsenergi.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo-60"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi"
+      ]
+    },
+    {
+      "issue_number": 61,
+      "year": 2020,
+      "month": 5,
+      "theme": "Fossilfrie brændstoffer / Fossil-free Fuels",
+      "description": "Tema: hvordan kan vi fremstille flydende brændstoffer til fly, store skibe og lastbiler i en fossilfri fremtid.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo-61"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi"
+      ]
+    },
+    {
+      "issue_number": 62,
+      "year": 2020,
+      "month": 9,
+      "theme": "Resistente bakterier / Antibiotic-resistant Bacteria",
+      "description": "Tema om resistente bakterier.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo62"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Sundhed & Bioteknologi"
+      ]
+    },
+    {
+      "issue_number": 63,
+      "year": 2020,
+      "month": 12,
+      "theme": "Kunstig intelligens / Artificial Intelligence",
+      "description": "Tema om kunstig intelligens - hvor bruges den, og har den en bagside? Nummeret dækker desuden bæredygtigt trawlfiskeri, immunforsvarets evne til at bekæmpe kræft, og hvordan pandemien har ændret ledelse.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo63"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Sundhed & Bioteknologi",
+        "Fødevarer & Landbrug",
+        "Digitalt, AI & Data",
+        "Forsvar & Sikkerhed"
+      ]
+    },
+    {
+      "issue_number": 64,
+      "year": 2021,
+      "month": 2,
+      "theme": "Arktis / The Arctic",
+      "description": "Dette nummer af Dynamo har tema om Arktis.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo64"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Rum & Klode"
+      ]
+    },
+    {
+      "issue_number": 65,
+      "year": 2021,
+      "month": 5,
+      "theme": "3D-betonprint / 3D Concrete Printing",
+      "description": "Tema: \"3D betonprint - fra hypet teknologi til pålidelig og bæredygtig løsning\".",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo65"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Materialer, Nano & Kvante"
+      ]
+    },
+    {
+      "issue_number": 66,
+      "year": 2021,
+      "month": 9,
+      "theme": "Klimavenligt landbrug / Climate-friendly Farming",
+      "description": "Dette nummer af Dynamo har klimavenligt landbrug som tema.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo66"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Fødevarer & Landbrug"
+      ]
+    },
+    {
+      "issue_number": 67,
+      "year": 2021,
+      "month": 12,
+      "theme": "Immunterapi som kræftbehandling / Immunotherapy as a cancer treatment",
+      "description": "Cover story on immunotherapy as a rapidly developing cancer treatment. The issue also covers backwards mathematics, seaweed as a food source, and hesitations/challenges around CO2 capture technology.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo67"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Sundhed & Bioteknologi",
+        "Fødevarer & Landbrug",
+        "Digitalt, AI & Data"
+      ]
+    },
+    {
+      "issue_number": 68,
+      "year": 2022,
+      "month": 3,
+      "theme": "Sådan sparer vi på jordens ressourcer / How we save Earth's resources",
+      "description": "Focuses on resource conservation and sustainability, examining ways to reduce consumption of the planet's natural resources; the rector's editorial in this issue notes that at current lifestyles, humanity would need three Earths' worth of resources by 2050.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo68",
+        "https://www.dtu.dk/nyheder/alle-nyheder/dynamo-leder-68"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Vand, Miljø & Ressourcer"
+      ]
+    },
+    {
+      "issue_number": 69,
+      "year": 2022,
+      "month": 6,
+      "theme": "Energiøer / Energy Islands",
+      "description": "Focuses on Denmark's planned offshore energy islands, exploring advances in electrical infrastructure, offshore wind turbines, and Power-to-X solutions as key drivers of the islands' future success.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo69",
+        "https://www.dtu.dk/nyheder/alle-nyheder/energioe-eller-museumsoe"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi"
+      ]
+    },
+    {
+      "issue_number": 70,
+      "year": 2022,
+      "month": 9,
+      "theme": "Mangelsamfundet / The Scarcity Society",
+      "description": "Explores how the pandemic, the war in Ukraine, and climate change have created interconnected global shortages of everything from microchips to food and clean drinking water.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo70",
+        "https://www.dtu.dk/nyheder/alle-nyheder/giv-os-lov-til-at-vaere-effektive"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Vand, Miljø & Ressourcer",
+        "Fødevarer & Landbrug",
+        "Samfund & Iværksætteri"
+      ]
+    },
+    {
+      "issue_number": 71,
+      "year": 2022,
+      "month": 12,
+      "theme": "Cybersikkerhed / Cybersecurity",
+      "description": "Issue theme is cybersecurity, covering topics relevant to the Danish technical/research community.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo71"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Forsvar & Sikkerhed"
+      ]
+    },
+    {
+      "issue_number": 72,
+      "year": 2023,
+      "month": 3,
+      "theme": "Bioteknologi / Biotechnology",
+      "description": "Theme issue on biotechnology at DTU. (Note: issue also contains the rector's editorial on not reducing engineering-education intake, a separate leder topic from the cover theme.)",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo72",
+        "https://www.dtu.dk/nyheder/alle-nyheder/rektor-vi-skal-ikke-uddanne-mindre"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Sundhed & Bioteknologi"
+      ]
+    },
+    {
+      "issue_number": 73,
+      "year": 2023,
+      "month": 6,
+      "theme": "Kvanteteknologi / Quantum technology",
+      "description": "Explores how DTU researchers work with quantum technology, featuring newly established center Quantum DTU; asks whether quantum computers will become household devices, alongside lighter stories such as a mozzarella-scanning researcher and a hearing researcher with personal hearing loss.",
+      "institutes": [
+        "Quantum DTU"
+      ],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_nr._73_2023_weboptimeret",
+        "https://www.dtu.dk/nyheder/alle-nyheder/rektor_vores-viden-skal-ud"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Digitalt, AI & Data",
+        "Materialer, Nano & Kvante"
+      ]
+    },
+    {
+      "issue_number": 74,
+      "year": 2023,
+      "month": 9,
+      "theme": "Bioteknologi og sundhed / Biotechnology and health",
+      "description": "Showcases how DTU's biotechnology research environment develops new solutions to treat serious diseases such as Parkinson's disease and cancer.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_74"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Vand, Miljø & Ressourcer",
+        "Sundhed & Bioteknologi"
+      ]
+    },
+    {
+      "issue_number": 75,
+      "year": 2023,
+      "month": 12,
+      "theme": "Havets biodiversitet / Marine biodiversity crisis",
+      "description": "December issue focused on threats to underwater biodiversity and how technology can help address them (\"Hvad truer mangfoldigheden – og hvordan kan teknologi gøre en forskel?\").",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_75"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Vand, Miljø & Ressourcer"
+      ]
+    },
+    {
+      "issue_number": 76,
+      "year": 2024,
+      "month": 3,
+      "theme": "Kunstig intelligens / Artificial Intelligence",
+      "description": "Focuses on AI, with articles examining how DTU develops, tests, and applies the technology across its research fields.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo-76"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Digitalt, AI & Data"
+      ]
+    },
+    {
+      "issue_number": 77,
+      "year": 2024,
+      "month": 6,
+      "theme": "Grøn transport / Green transport",
+      "description": "Explores sustainable transport solutions and technologies aimed at reducing CO2 emissions from the transportation sector, featuring insights from DTU transport researchers.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_77"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Transport, Byggeri & Byer"
+      ]
+    },
+    {
+      "issue_number": 78,
+      "year": 2024,
+      "month": 9,
+      "theme": "Klimavenlig fødevareproduktion / Climate-friendly food production",
+      "description": "DTU researchers work to find alternatives to the most climate-intensive foods and develop technologies/methods to cut greenhouse gas emissions across the food production chain. The issue also covers indoor climate research for buildings, entrepreneurship at DTU, data science on human movement/behaviour, and artificial-muscle development.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo-78"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Fødevarer & Landbrug",
+        "Digitalt, AI & Data",
+        "Samfund & Iværksætteri"
+      ]
+    },
+    {
+      "issue_number": 79,
+      "year": 2024,
+      "month": 12,
+      "theme": "Teknologi i rummet / Space technology",
+      "description": "Cover theme on space technology, tied to DTU's space research (DTU Space is Denmark's largest space research institute). Specific article-level detail could not be fully verified beyond theme identification.",
+      "institutes": [
+        "DTU Space"
+      ],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_2024_04_issue"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Rum & Klode"
+      ]
+    },
+    {
+      "issue_number": 80,
+      "year": 2025,
+      "month": 3,
+      "theme": "Bæredygtige byggematerialer / Sustainable building materials and construction",
+      "description": "The construction industry consumes substantial planetary resources and contributes significantly to CO2 emissions; this issue highlights DTU research into alternative materials that promote a more sustainable building industry.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_nr_80_-_2025"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Vand, Miljø & Ressourcer",
+        "Materialer, Nano & Kvante",
+        "Transport, Byggeri & Byer"
+      ]
+    },
+    {
+      "issue_number": 81,
+      "year": 2025,
+      "month": 6,
+      "theme": "Produktivitet gennem ingeniørviden / Engineering-driven productivity",
+      "description": "Showcases cases where DTU engineers with deep expertise in areas such as artificial intelligence, reactor design, and computer simulation have helped increase productivity in various companies.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_nr._81_2025"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Digitalt, AI & Data"
+      ]
+    },
+    {
+      "issue_number": 82,
+      "year": 2025,
+      "month": 9,
+      "theme": "Droner og forsvarsteknologi / Drones and defense applications",
+      "description": "Explores how DTU's long-standing civilian research in AI, autonomous systems, drones, cybersecurity, space technology, and surveillance can be applied to defense — including territorial monitoring and identifying vessels with suspicious intent in Danish waters. Widely referenced with the cover theme \"Droner i vild udvikling\" (drones in rapid development).",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_nr._82_2025"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Vand, Miljø & Ressourcer",
+        "Rum & Klode",
+        "Forsvar & Sikkerhed"
+      ]
+    },
+    {
+      "issue_number": 83,
+      "year": 2025,
+      "month": 12,
+      "theme": "Kvantechips / Quantum chip development",
+      "description": "Focuses on quantum technology advancement at DTU, including the expansion of DTU's cleanroom facilities (expected operational 2027) to support Denmark's global competitiveness in quantum technology, miniaturizing experimental setups onto single chips, and research into using electrons in crystals as qubits.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_nr._83_2025",
+        "https://dk.linkedin.com/posts/dtu-energy_dynamo-nr-83-2025-activity-7406243031068229632-tzlO"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Materialer, Nano & Kvante"
+      ]
+    },
+    {
+      "issue_number": 84,
+      "year": 2026,
+      "month": 3,
+      "theme": "Kunstig intelligens og bæredygtighed / Artificial Intelligence and Sustainability",
+      "description": "Examines both the challenges and opportunities of AI: its environmental/climate costs (energy and water use), its use in spreading misinformation, and how DTU researchers are leveraging AI to advance sustainable solutions.",
+      "institutes": [],
+      "source_urls": [
+        "https://issuu.com/dtudk/docs/dynamo_84_2026"
+      ],
+      "confidence": "high",
+      "categories": [
+        "Klima & Energi",
+        "Vand, Miljø & Ressourcer",
+        "Digitalt, AI & Data"
+      ]
+    },
+    {
+      "issue_number": 85,
+      "year": 2026,
+      "month": 4,
+      "theme": "Bæredygtig skibsfart / Sustainable shipping",
+      "description": "Theme on decarbonizing global shipping (which carries roughly 80% of world cargo trade) — including the search for green fuel alternatives to bunker oil, green shipping corridors, and DTU's Maritime DTU research center's work toward IMO's 2050 climate-neutral shipping target. Direct issuu access to the issue text was unavailable; theme corroborated via DTU news coverage tagged \"Bæredygtig skibsfart\" from the same period.",
+      "institutes": [
+        "DTU Construct",
+        "Maritime DTU",
+        "DTU Management (Institut for Teknologi, Ledelse og Økonomi)"
+      ],
+      "source_urls": [
+        "https://www.dtu.dk/nyheder/alle-nyheder/klimaneutral-skibsfart-i-2050-vi-har-megatravlt",
+        "https://www.dtu.dk/nyheder/alle-nyheder/groenne-korridorer-aabner-ruter-til-fossilfri-skibsfart"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Klima & Energi",
+        "Transport, Byggeri & Byer"
+      ]
+    },
+    {
+      "issue_number": 86,
+      "year": 2026,
+      "month": 8,
+      "theme": "Vand / Water scarcity",
+      "description": "Theme on water as a scarce resource — Denmark is among the European countries with the greatest water scarcity, raising the stakes for protecting and managing drinking-water resources; DTU Sustain researchers' work on drinking-water protection (PFAS, groundwater contamination) is closely tied to this period's coverage. Inferred from the rector's editorial published just ahead of the issue's release; direct issuu access to the issue text was unavailable, so the exact cover-story theme is not independently confirmed from the magazine itself.",
+      "institutes": [
+        "DTU Sustain (Institut for Miljø- og Ressourceteknologi)"
+      ],
+      "source_urls": [
+        "https://www.dtu.dk/nyheder/alle-nyheder/selv-i-danmark-er-vand-en-knap-ressource",
+        "https://www.dtu.dk/nyheder/alle-nyheder/dtus-foerende-vandeksperter-nuancerer-valgkampens-vaade-tema"
+      ],
+      "confidence": "medium",
+      "categories": [
+        "Vand, Miljø & Ressourcer"
+      ]
+    }
+  ],
+  "era_cat": {
+    "2005–2012": {
+      "Andet/uklassificeret": 1,
+      "Klima & Energi": 1,
+      "Forsvar & Sikkerhed": 1
+    },
+    "2013–2019": {
+      "Vand, Miljø & Ressourcer": 5,
+      "Materialer, Nano & Kvante": 4,
+      "Samfund & Iværksætteri": 1,
+      "Klima & Energi": 6,
+      "Transport, Byggeri & Byer": 3,
+      "Sundhed & Bioteknologi": 3,
+      "Digitalt, AI & Data": 1,
+      "Forsvar & Sikkerhed": 1,
+      "Fødevarer & Landbrug": 1
+    },
+    "2020–2026": {
+      "Klima & Energi": 12,
+      "Sundhed & Bioteknologi": 5,
+      "Fødevarer & Landbrug": 5,
+      "Digitalt, AI & Data": 7,
+      "Forsvar & Sikkerhed": 3,
+      "Rum & Klode": 3,
+      "Materialer, Nano & Kvante": 4,
+      "Vand, Miljø & Ressourcer": 8,
+      "Samfund & Iværksætteri": 2,
+      "Transport, Byggeri & Byer": 3
+    }
+  },
+  "era_counts_total": {
+    "2005–2012": 32,
+    "2013–2019": 27,
+    "2020–2026": 27
+  },
+  "era_counts_documented": {
+    "2005–2012": 3,
+    "2013–2019": 20,
+    "2020–2026": 27
+  },
+  "cat_totals": {
+    "Andet/uklassificeret": 1,
+    "Klima & Energi": 19,
+    "Forsvar & Sikkerhed": 5,
+    "Vand, Miljø & Ressourcer": 13,
+    "Materialer, Nano & Kvante": 8,
+    "Samfund & Iværksætteri": 3,
+    "Transport, Byggeri & Byer": 6,
+    "Sundhed & Bioteknologi": 8,
+    "Digitalt, AI & Data": 8,
+    "Fødevarer & Landbrug": 6,
+    "Rum & Klode": 3
+  },
+  "year_counts": {
+    "2005": 3,
+    "2006": 4,
+    "2007": 4,
+    "2008": 4,
+    "2009": 4,
+    "2010": 3,
+    "2011": 5,
+    "2012": 5,
+    "2013": 3,
+    "2014": 4,
+    "2015": 4,
+    "2016": 4,
+    "2017": 4,
+    "2018": 4,
+    "2019": 4,
+    "2020": 4,
+    "2021": 4,
+    "2022": 4,
+    "2023": 4,
+    "2024": 4,
+    "2025": 4,
+    "2026": 3
+  },
+  "inst_counter": {
+    "DTU Sundhedsteknologi": 1,
+    "Quantum DTU": 1,
+    "DTU Space": 1,
+    "DTU Construct": 1,
+    "Maritime DTU": 1,
+    "DTU Management (Institut for Teknologi, Ledelse og Økonomi)": 1,
+    "DTU Sustain (Institut for Miljø- og Ressourceteknologi)": 1
+  },
+  "conf_counts": {
+    "medium": 10,
+    "not_found": 34,
+    "low": 4,
+    "high": 38
+  },
+  "eras": [
+    "2005–2012",
+    "2013–2019",
+    "2020–2026"
+  ],
+  "taxonomy_order": [
+    "Klima & Energi",
+    "Vand, Miljø & Ressourcer",
+    "Sundhed & Bioteknologi",
+    "Fødevarer & Landbrug",
+    "Digitalt, AI & Data",
+    "Rum & Klode",
+    "Materialer, Nano & Kvante",
+    "Transport, Byggeri & Byer",
+    "Forsvar & Sikkerhed",
+    "Samfund & Iværksætteri",
+    "Andet/uklassificeret"
+  ]
+}

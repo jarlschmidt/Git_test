@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>Dynamo gennem 20 år</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm 16mm 18mm; }
+  :root{
+    /* DTU official brand colours (designguide.dtu.dk) */
+    --dtu-red:#990000;        /* corporate red — RGB 153,0,0 / CMYK 0,91,72,23 */
+    --dtu-navy:#000a66;       /* navy blue — CMYK 100,90,0,60 (Pantone 655C/282U) */
+    --dtu-blue:#005cff;       /* blue — CMYK 100,64,0,0 (Pantone 2728C) */
+    --dtu-orange:#ff5924;     /* orange — CMYK 0,65,86,0 (Pantone 1505C/U) */
+    --dtu-red-tint:#e6cccc;   /* ~20% tint on white */
+    --dtu-blue-tint:#cce0ff;
+    --dtu-orange-tint:#ffe0d4;
+    --navy:var(--dtu-navy);
+    --navy-2:#3d1414;
+    --blue:var(--dtu-blue);
+    --blue-dark:var(--dtu-navy);
+    --orange:var(--dtu-orange);
+    --red:var(--dtu-red);
+    --ink:#0b0b0b;
+    --ink-2:#52514e;
+    --muted:#898781;
+    --grid:#e1e0d9;
+    --surface:#fcfcfb;
+    --page:#ffffff;
+    --rule:#c3c2b7;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--page);}
+  body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color:var(--ink);
+    font-size:10.3pt;
+    line-height:1.5;
+  }
+  h1,h2,h3,h4{font-weight:700; margin:0 0 4mm 0; letter-spacing:-0.01em;}
+  h1{font-size:22pt; color:var(--dtu-red);}
+  h2{font-size:15pt; color:var(--dtu-red); border-bottom:1.4pt solid var(--dtu-red); padding-bottom:2mm; margin-bottom:5mm;}
+  h3{font-size:11.5pt; color:var(--navy-2);}
+  p{margin:0 0 3mm 0;}
+  .kicker{
+    text-transform:uppercase; letter-spacing:0.12em; font-size:8pt; font-weight:700;
+    color:var(--orange); margin-bottom:2mm;
+  }
+  .section{ page-break-after: always; padding-top:2mm; position:relative;}
+  .section:last-child{page-break-after:auto;}
+
+  /* COVER */
+  .cover{
+    background: linear-gradient(150deg, var(--dtu-navy) 0%, var(--dtu-red) 62%, #6e0000 100%);
+    color:#fff; height:281mm; margin:-20mm -18mm 0 -18mm; padding:20mm 18mm;
+    display:flex; flex-direction:column; justify-content:space-between;
+    page-break-after: always;
+  }
+  .cover .kicker{color:var(--dtu-orange);}
+  .cover h1{color:#fff; font-size:34pt; line-height:1.1; max-width:140mm;}
+  .cover .sub{font-size:12.5pt; color:#f2dede; max-width:120mm; margin-top:4mm;}
+  .cover .stats{display:flex; gap:10mm; margin-top:10mm;}
+  .cover .stat{border-top:2pt solid var(--dtu-orange); padding-top:2.5mm;}
+  .cover .stat b{display:block; font-size:24pt; color:#fff;}
+  .cover .stat span{font-size:8.5pt; color:#f0cfcf; text-transform:uppercase; letter-spacing:0.08em;}
+  .cover .footline{font-size:8.5pt; color:#e9c6c6; display:flex; justify-content:space-between; border-top:0.6pt solid rgba(255,255,255,0.3); padding-top:4mm;}
+  .cover .yeartrack{display:flex; align-items:flex-end; gap:2mm; height:26mm; margin:14mm 0 10mm 0;}
+  .cover .ytick{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
+  .cover .ytick i{display:block; width:100%; background:rgba(255,255,255,0.30); border-radius:1px;}
+  .cover .ytick.hi i{background:var(--dtu-orange);}
+  .cover .ytick span{font-size:6.6pt; color:rgba(255,255,255,0.55); margin-top:2mm; writing-mode:vertical-rl; transform:rotate(180deg);}
+  .cover .ytick.hi span{color:#fff; font-weight:700;}
+
+  /* STAT TILES */
+  .tiles{display:flex; gap:5mm; margin:5mm 0 7mm 0;}
+  .tile{flex:1; border-top:2.2pt solid var(--dtu-red); padding-top:2.5mm;}
+  .tile b{display:block; font-size:19pt; color:var(--dtu-navy); line-height:1;}
+  .tile .lbl{font-size:8pt; color:var(--ink-2); margin-top:1.5mm; display:block;}
+
+  /* TWO COL */
+  .cols{display:flex; gap:8mm;}
+  .col{flex:1;}
+
+  /* BAR CHART (css) */
+  .barchart{margin:4mm 0;}
+  .barrow{display:flex; align-items:center; gap:3mm; margin-bottom:2.4mm;}
+  .barrow .lbl{width:34mm; font-size:8.3pt; color:var(--ink-2); text-align:right; flex-shrink:0;}
+  .barrow .track{flex:1; background:var(--grid); height:5.4mm; position:relative; border-radius:1.5px;}
+  .barrow .fill{position:absolute; left:0; top:0; bottom:0; border-radius:1.5px; background:var(--blue);}
+  .barrow .val{width:13mm; font-size:8.3pt; color:var(--ink); font-weight:700; flex-shrink:0; white-space:nowrap;}
+
+  /* TIMELINE */
+  .timeline{margin:5mm 0;}
+  .tl-row{display:flex; align-items:flex-end; gap:1.4px; height:34mm; border-bottom:1pt solid var(--rule); padding-bottom:1mm;}
+  .tl-bar{flex:1; background:var(--blue); border-radius:1.5px 1.5px 0 0; position:relative;}
+  .tl-labels{display:flex; gap:1.4px; margin-top:1.5mm;}
+  .tl-labels span{flex:1; font-size:6.3pt; color:var(--muted); text-align:center; writing-mode:vertical-rl; transform:rotate(180deg); height:10mm;}
+
+  /* LEGEND */
+  .legend{display:flex; flex-wrap:wrap; gap:4mm; margin:2mm 0 4mm 0; font-size:8pt; color:var(--ink-2);}
+  .legend .sw{display:inline-block; width:2.6mm; height:2.6mm; border-radius:1px; margin-right:1.4mm; vertical-align:middle;}
+
+  /* TABLE */
+  table{width:100%; border-collapse:collapse; font-size:8.3pt;}
+  th{text-align:left; font-size:7.4pt; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); border-bottom:1pt solid var(--rule); padding:1.6mm 2mm;}
+  td{padding:1.6mm 2mm; border-bottom:0.5pt solid var(--grid); vertical-align:top;}
+  tr:nth-child(even) td{background:#f9f9f7;}
+  .tag{display:inline-block; font-size:6.8pt; background:#eef3fa; color:var(--blue-dark); border-radius:2px; padding:0.4mm 1.6mm; margin:0.4mm 0.6mm 0 0;}
+
+  .quote{border-left:2.2pt solid var(--orange); padding-left:4mm; font-size:10.5pt; color:var(--navy-2); font-style:italic; margin:4mm 0;}
+  .insight{background:#f4f7fb; border-left:2.2pt solid var(--blue); padding:3mm 4mm; margin:3mm 0; font-size:9pt;}
+  .insight b{color:var(--navy);}
+  .small{font-size:7.8pt; color:var(--muted);}
+  .toc a{color:var(--ink); text-decoration:none;}
+  .toc-row{display:flex; justify-content:space-between; border-bottom:0.5pt dotted var(--rule); padding:2mm 0; font-size:9.5pt;}
+</style>
+</head>
+<body>
+
+<!-- CONTENT INJECTED BY BUILD SCRIPT -->
+
+<div class="cover">
+  <div>
+    <div class="kicker">Medieanalyse · DTU</div>
+    <h1>Dynamo gennem&nbsp;20&nbsp;år</h1>
+    <div class="sub">Historier, temaer og institutter i DTU's profilmagasin — nr. 1 (2005) til nr. 86 (2026). Baseret på 86 udgivne numre, heraf 50 tema-dokumenterede via issuu.com og DTU's nyhedsarkiv.</div>
+    <div class="stats">
+      <div class="stat"><b>86</b><span class="lbl">Numre udgivet</span></div><div class="stat"><b>21</b><span class="lbl">År (2005–2026)</span></div><div class="stat"><b>58%</b><span class="lbl">Temaer dokumenteret</span></div><div class="stat"><b>~4</b><span class="lbl">Numre pr. år</span></div>
+    </div>
+    <div class='yeartrack'><div class='ytick hi'><i style='height:60%;'></i><span>2005</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:60%;'></i><span>&nbsp;</span></div><div class='ytick hi'><i style='height:100%;'></i><span>2011</span></div><div class='ytick'><i style='height:100%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:60%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick hi'><i style='height:60%;'></i><span>2026</span></div></div>
+    <p class="small" style="color:rgba(255,255,255,0.55);">Numre pr. udgivelsesår, 2005–2026 (interpoleret hvor eksakt måned er ukendt)</p>
+  </div>
+  <div class="footline"><span>Kilder: issuu.com/dtudk · DTU nyhedsarkiv (dtu.dk)</span><span>02. September 2026</span></div>
+</div>
+<div class='section'><div class='kicker'>Indhold</div><h2>Indholdsfortegnelse</h2><div class='toc-row'><span>Executive summary</span><span>3</span></div><div class='toc-row'><span>Metode og datagrundlag</span><span>4</span></div><div class='toc-row'><span>Dynamo gennem tiden — historien</span><span>5</span></div><div class='toc-row'><span>Temaer på tværs af 21 år</span><span>6</span></div><div class='toc-row'><span>Temaudvikling: tre æraer</span><span>7</span></div><div class='toc-row'><span>Institutter i Dynamo</span><span>8</span></div><div class='toc-row'><span>Oplag og målgruppe over tid</span><span>10</span></div><div class='toc-row'><span>Appendiks: alle katalogiserede numre</span><span>11</span></div><div class='toc-row'><span>Kilder og forbehold</span><span>16</span></div><p class='small' style='margin-top:8mm;'>Rapporten er søgbar (fuld tekst) — brug Ctrl/Cmd+F i din PDF-læser for at slå numre, temaer eller institutter op.</p></div>
+<div class="section">
+<div class="kicker">Executive summary</div>
+<h2>21 år, 86 numre — fra klimadebat til kunstig intelligens</h2>
+<div class="tiles">
+  <div class='tile'><b>86</b><span class='lbl'>Numre siden 2005</span></div>
+  <div class='tile'><b>19</b><span class='lbl'>Numre om klima &amp; energi</span></div>
+  <div class='tile'><b>60.000 → 17.000</b><span class='lbl'>Oplag 2011 → 2025/26</span></div>
+  <div class='tile'><b>58%</b><span class='lbl'>Numre med dokumenteret tema</span></div>
+</div>
+<div class="cols">
+  <div class="col">
+    <h3>Tre hovedpointer</h3>
+    <div class="insight"><b>1. Klima og ressourcer er Dynamos rygrad.</b> 19 af 50 dokumenterede numre (38%) kredser om klima, energi eller ressourceknaphed — temaet går igen fra den første klimavinkel i 2009 til energiøer (2022) og bæredygtige byggematerialer (2025).</div>
+    <div class="insight"><b>2. Teknologibølgerne følger samfundsdebatten.</b> Cybersikkerhed (2023) afløses af bioteknologi og kvante (2023–24), som igen afløses af kunstig intelligens som fast tema i 2024–2026 — Dynamo fungerer som en art tidskapsel for hvilken teknologi der optog Danmark hvert år.</div>
+    <div class="insight"><b>3. Magasinet navngiver sjældent institutter direkte.</b> Kun en håndfuld af de 50 dokumenterede numre nævner et DTU-institut ved navn i den tilgængelige tekst — Dynamo er redaktionelt bygget op om samfundstemaer ("klima", "AI", "sundhed"), ikke om organisatorisk afsender. Se metodeafsnittet for hvad det betyder for institut-analysen.</div>
+  </div>
+  <div class="col">
+    <h3>Top temaer, alle år</h3>
+    <div class='barchart'><div class='barrow'><div class='lbl'>Klima &amp; Energi</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-orange);'></div></div><div class='val'>19</div></div><div class='barrow'><div class='lbl'>Vand, Miljø &amp; Ressourcer</div><div class='track'><div class='fill' style='width:68%; background:var(--dtu-blue);'></div></div><div class='val'>13</div></div><div class='barrow'><div class='lbl'>Materialer, Nano &amp; Kvante</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Sundhed &amp; Bioteknologi</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Digitalt, AI &amp; Data</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Transport, Byggeri &amp; Byer</div><div class='track'><div class='fill' style='width:32%; background:var(--dtu-blue);'></div></div><div class='val'>6</div></div></div>
+    <p class="small">Andel af 50 numre med dokumenteret tema. Se s.6 for fuld oversigt.</p>
+  </div>
+</div>
+</div>
+<div class="section">
+<div class="kicker">Metode</div>
+<h2>Metode og datagrundlag</h2>
+<p>Analysen er bygget ved at katalogisere samtlige 86 numre af Dynamo (nr. 1, april 2005 – nr. 86, august 2026) og for hvert nummer forsøge at fastslå udgivelsesår, forsidetema, en kort indholdsbeskrivelse samt eventuelle navngivne DTU-institutter. To kilder er brugt:</p>
+<p><b>1. issuu.com/dtudk</b> — DTU's officielle udgiver-konto på Issuu, hvor numre fra ca. 2015 og frem er tilgængelige som gennembladrbare digitale udgaver med forsidetekst og beskrivelse.<br>
+<b>2. DTU's nyhedsarkiv (dtu.dk)</b> — søgt via et indekseret arkiv af DTU-nyheder, herunder de korte "Nyt nummer af DYNAMO"-artikler, som DTU historisk har udgivet ved hver ny udgave.</p>
+<div class="insight"><b>Vigtig begrænsning:</b> Direkte adgang til www.dtu.dk, alumni.dtu.dk og inside.dtu.dk var blokeret af netværkspolitikken i den analysemiljø, rapporten er udarbejdet i — kun issuu.com og det indekserede nyhedsarkiv var tilgængelige. Det betyder, at datagrundlaget er markant tættere for numre udgivet efter ca. 2015 (hvor Issuu-arkivet er komplet) end for numre fra 2005–2014, hvor kun 52 af 86 numre samlet er dokumenteret. Se dækningsgraden nedenfor.</div>
+<h3>Datadækning pr. sikkerhedsniveau</h3>
+<div class='barchart'><div class='barrow'><div class='lbl'>Høj sikkerhed</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>38</div></div><div class='barrow'><div class='lbl'>Middel sikkerhed</div><div class='track'><div class='fill' style='width:26%; background:var(--dtu-blue);'></div></div><div class='val'>10</div></div><div class='barrow'><div class='lbl'>Lav sikkerhed</div><div class='track'><div class='fill' style='width:11%; background:var(--dtu-blue);'></div></div><div class='val'>4</div></div><div class='barrow'><div class='lbl'>Ikke fundet</div><div class='track'><div class='fill' style='width:89%; background:var(--dtu-blue);'></div></div><div class='val'>34</div></div></div>
+<h3>Tema-taksonomi</h3>
+<p class="small">Hvert dokumenteret nummer er kategoriseret efter nøgleord i tema og beskrivelse i én eller flere af 10 kategorier (Klima &amp; Energi, Vand/Miljø/Ressourcer, Sundhed &amp; Bioteknologi, Fødevarer &amp; Landbrug, Digitalt/AI/Data, Rum &amp; Klode, Materialer/Nano/Kvante, Transport/Byggeri/Byer, Forsvar &amp; Sikkerhed, Samfund &amp; Iværksætteri). Kategoriseringen er tekstbaseret og automatiseret — den fanger den dominerende vinkel, ikke nødvendigvis alle artikler i det enkelte nummer.</p>
+</div>
+<div class="section">
+<div class="kicker">Historik</div>
+<h2>Dynamo gennem tiden</h2>
+<p>Dynamo blev lanceret <b>torsdag den 28. april 2005</b>, samtidig med DTU's årsberetning for 2004, ved universitetets årsfest. Magasinet var nyt: et "profilmagasin" rettet mod en bredere kreds af virksomheder, institutioner og borgere end DTU's daværende kommunikation, og blev samtidig den faste kontaktflade til DTU's Alumneforening. Daværende rektor Lars Pallesen skrev i lederen af nr. 1, at målgruppen var "en bredere kreds af virksomheder, institutioner og borgere, end den vi i dag har kontakt med".</p>
+<p>Magasinet har siden udkommet med en bemærkelsesværdigt stabil kadence på ca. <b>fire numre om året</b> — en kvartalstakt, der ifølge en rektortale i 2011 fortsat blev omtalt som "vort kvartalsmagasin DYNAMO". Interpoleret på tværs af de 86 numre holder kadencen praktisk talt uden huller fra 2005 til 2026.</p>
+<div class="quote">"Målgruppen er en bredere kreds af virksomheder, institutioner og borgere, end den vi i dag har kontakt med." — Rektor Lars Pallesen, leder i Dynamo nr. 1, april 2005</div>
+<h3>Tre nedslag</h3>
+<table>
+<tr><th>År</th><th>Nedslag</th></tr>
+<tr><td>2005</td><td>Nr. 1 udkommer som nyt "profil- og alumnemagasin" for DTU, målrettet erhvervsliv, myndigheder og borgere.</td></tr>
+<tr><td>2009</td><td>Klimatema forud for COP15 — nummeret indeholder en DVD med højdepunkter fra DTU's Climate Change Conference og anbefalinger til danske politikere.</td></tr>
+<tr><td>2011</td><td>Magasinet beskrives i rektors årsfest-tale som DTU's vigtigste eksterne kommunikationskanal, med et oplag på over 60.000 eksemplarer.</td></tr>
+<tr><td>2020'erne</td><td>Skarpere, mere teknologispecifikke temaer pr. nummer (kvante, AI, droneforsvar) — og et markant lavere, mere målrettet oplag på ca. 16-19.000 modtagere.</td></tr>
+</table>
+</div>
+<div class="section">
+<div class="kicker">Tema-analyse</div>
+<h2>Temaer på tværs af 21 år</h2>
+<p>Fordelingen nedenfor bygger på de 50 numre, hvor et forsidetema kunne dokumenteres (ud af 86 numre i alt). Et nummer kan optræde i mere end én kategori, hvis temaet spænder over flere felter (fx "energiøer" tæller både klima/energi og infrastruktur).</p>
+<div class='barchart'><div class='barrow'><div class='lbl'>Klima &amp; Energi</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-orange);'></div></div><div class='val'>19</div></div><div class='barrow'><div class='lbl'>Vand, Miljø &amp; Ressourcer</div><div class='track'><div class='fill' style='width:68%; background:var(--dtu-blue);'></div></div><div class='val'>13</div></div><div class='barrow'><div class='lbl'>Materialer, Nano &amp; Kvante</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Sundhed &amp; Bioteknologi</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Digitalt, AI &amp; Data</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Transport, Byggeri &amp; Byer</div><div class='track'><div class='fill' style='width:32%; background:var(--dtu-blue);'></div></div><div class='val'>6</div></div><div class='barrow'><div class='lbl'>Fødevarer &amp; Landbrug</div><div class='track'><div class='fill' style='width:32%; background:var(--dtu-blue);'></div></div><div class='val'>6</div></div><div class='barrow'><div class='lbl'>Forsvar &amp; Sikkerhed</div><div class='track'><div class='fill' style='width:26%; background:var(--dtu-blue);'></div></div><div class='val'>5</div></div><div class='barrow'><div class='lbl'>Samfund &amp; Iværksætteri</div><div class='track'><div class='fill' style='width:16%; background:var(--dtu-blue);'></div></div><div class='val'>3</div></div><div class='barrow'><div class='lbl'>Rum &amp; Klode</div><div class='track'><div class='fill' style='width:16%; background:var(--dtu-blue);'></div></div><div class='val'>3</div></div><div class='barrow'><div class='lbl'>Andet/uklassificeret</div><div class='track'><div class='fill' style='width:5%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div></div>
+<div class="insight"><b>Klima &amp; energi er det mest genkommende tema i hele Dynamos historie</b> — fra den første klimafokuserede udgave i 2009 over "Energiøer" (2022) til bæredygtige byggematerialer (2025) og skibsfart (2025). Vand-, miljø- og ressourceknaphed er tæt følgende som nummer to, hvilket afspejler DTU's tunge forskningsprofil inden for miljøteknologi og ressourceøkonomi.</div>
+</div>
+<div class="section">
+<div class="kicker">Tema-analyse</div>
+<h2>Temaudvikling: tre æraer</h2>
+<p>De 21 år er delt i tre nogenlunde lige lange perioder for at vise, hvordan Dynamos tematiske fokus har flyttet sig — og hvor godt hver periode er dokumenteret i de tilgængelige kilder.</p>
+<div class="cols">
+<div class="col">
+      <h3>2005–2012 · De første år</h3>
+      <div class='barchart'><div class='barrow'><div class='lbl'>Andet/uklassificeret</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div><div class='barrow'><div class='lbl'>Klima &amp; Energi</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div><div class='barrow'><div class='lbl'>Forsvar &amp; Sikkerhed</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div></div>
+      <p class="small">Sparsomt digitaliseret periode (kun 3 af 32 numre dokumenteret) — men det vi kan se, peger allerede på klima som gennemgående tema, drevet af COP15-forberedelserne i 2009.</p>
+    </div><div class="col">
+      <h3>2013–2019 · Konsolidering</h3>
+      <div class='barchart'><div class='barrow'><div class='lbl'>Klima &amp; Energi</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>6</div></div><div class='barrow'><div class='lbl'>Vand, Miljø &amp; Ressourcer</div><div class='track'><div class='fill' style='width:83%; background:var(--dtu-blue);'></div></div><div class='val'>5</div></div><div class='barrow'><div class='lbl'>Materialer, Nano &amp; Kvante</div><div class='track'><div class='fill' style='width:67%; background:var(--dtu-blue);'></div></div><div class='val'>4</div></div><div class='barrow'><div class='lbl'>Transport, Byggeri &amp; Byer</div><div class='track'><div class='fill' style='width:50%; background:var(--dtu-blue);'></div></div><div class='val'>3</div></div><div class='barrow'><div class='lbl'>Sundhed &amp; Bioteknologi</div><div class='track'><div class='fill' style='width:50%; background:var(--dtu-blue);'></div></div><div class='val'>3</div></div></div>
+      <p class="small">Bredt tematisk spænd: vand, plastik, Arktis og kunstig intelligens optræder alle for første gang i denne periode.</p>
+    </div><div class="col">
+      <h3>2020–2026 · Teknologibølger</h3>
+      <div class='barchart'><div class='barrow'><div class='lbl'>Klima &amp; Energi</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>12</div></div><div class='barrow'><div class='lbl'>Vand, Miljø &amp; Ressourcer</div><div class='track'><div class='fill' style='width:67%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Digitalt, AI &amp; Data</div><div class='track'><div class='fill' style='width:58%; background:var(--dtu-blue);'></div></div><div class='val'>7</div></div><div class='barrow'><div class='lbl'>Sundhed &amp; Bioteknologi</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>5</div></div><div class='barrow'><div class='lbl'>Fødevarer &amp; Landbrug</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>5</div></div></div>
+      <p class="small">Fuldt dokumenteret periode. Klar acceleration i teknologispecifikke temaer — cybersikkerhed, kvante, bioteknologi og AI afløser hinanden år for år.</p>
+    </div>
+</div>
+</div>
+<div class="section">
+<div class="kicker">Institutter</div>
+<h2>Institutter i Dynamo</h2>
+<p>Et centralt fund i denne analyse er, at Dynamo redaktionelt er bygget op om <b>temaer og samfundsudfordringer</b> — ikke om hvilket DTU-institut der står bag forskningen. På tværs af 50 dokumenterede numre kunne kun 7 eksplicitte institut-nævninger findes i den tilgængelige forsidetekst/beskrivelse:</p>
+<table><tr><th>Institut/center</th><th>Nævnt i antal numre</th></tr><tr><td>DTU Sundhedsteknologi</td><td>1</td></tr><tr><td>Quantum DTU</td><td>1</td></tr><tr><td>DTU Space</td><td>1</td></tr><tr><td>DTU Construct</td><td>1</td></tr><tr><td>Maritime DTU</td><td>1</td></tr><tr><td>DTU Management (Institut for Teknologi, Ledelse og Økonomi)</td><td>1</td></tr><tr><td>DTU Sustain (Institut for Miljø- og Ressourceteknologi)</td><td>1</td></tr></table>
+<div class="insight"><b>Fortolkning:</b> Dette er sandsynligvis en bevidst redaktionel linje snarere end et hul i datagrundlaget — Dynamo henvender sig til et bredt eksternt publikum (erhvervsliv, myndigheder, politikere), hvor et samfundstema ("klima", "kunstig intelligens", "vandmangel") kommunikerer bedre end et instituts navn. En fuld institut-attribuering ville kræve adgang til den fulde artikeltekst i hvert nummers PDF, ikke kun issuu-forsiden/beskrivelsen.</div>
+<h3>DTU's institutter og centre (reference, 2026)</h3>
+<p class="small">Til reference: DTU's nuværende institutstruktur, som ethvert fremtidigt dybere tekstudtræk fra Dynamo bør mappes op imod. Bemærk at flere institutter er omdøbt eller fusioneret i perioden 2005–2026 (fx DTU Compute fra 2013, DTU Sustain og DTU Construct fra ca. 2022-23) — se metodenoten.</p>
+<table><tr><th>Institut/center</th><th>Fokusområde</th></tr><tr><td>BRIGHT</td><td>Videnskabeligt innovationscenter for bioproduktion: bæredygtige materialer, mikrobielle fødevarer, mikroorganismer til netto-nul-landbrug</td></tr><tr><td>DTU Aqua</td><td>Akvatiske ressourcer: bæredygtig udnyttelse og forvaltning, akvatisk biologi/populationsøkologi, vandmiljø</td></tr><tr><td>DTU Bioengineering</td><td>Bioteknologi, fødevareteknologi og sundhed</td></tr><tr><td>DTU Compute</td><td>Matematik, statistik, computer science, computerteknologi; big data, AI, IoT, smart manufacturing, life sciences</td></tr><tr><td>DTU Construct</td><td>Byggeri og mekanisk teknologi</td></tr><tr><td>DTU Electro</td><td>Elektroteknologi og fotonik; sundhedsdiagnostik, bæredygtige energisystemer, autonome systemer, internet</td></tr><tr><td>DTU Energi</td><td>Energikonvertering og -lagring; bæredygtige energiteknologier</td></tr><tr><td>DTU Engineering Technology</td><td>Teknologiimplementering: digitale teknologier, elektroteknologier, materialeteknologier for byggeri, industri, life science</td></tr><tr><td>DTU Entrepreneurship</td><td>Iværksætteri i teknologi</td></tr><tr><td>DTU Physics</td><td>Moderne fysik, grundvidenskab og anvendelse; supercomputer-faciliteter</td></tr><tr><td>DTU Fødevareinstituttet</td><td>Bæredygtige og værdiskabende løsninger inden for fødevarer og sundhed</td></tr><tr><td>DTU Kemi</td><td>Fysisk/biofysisk kemi, organisk/uorganisk kemi</td></tr><tr><td>DTU Kemiteknik</td><td>Produktdesign, procesdesign og produktion: kemisk, bioteknologisk, farmaceutisk, fødevare- og energiteknologisk industri</td></tr><tr><td>DTU Learn for Life</td><td>Platform for deltids- og efteruddannelse</td></tr><tr><td>DTU Management</td><td>Ledelse, teknologi og økonomi; velfærd, produktivitet, bæredygtighed</td></tr><tr><td>DTU Nanolab</td><td>Nationalt center for nanofabrikation og -karakterisering; mikro-/nanoteknologi</td></tr><tr><td>DTU Offshore</td><td>Offshore-teknologier, CO2-lagring, energiomstilling i Nordsøen</td></tr><tr><td>DTU Skylab</td><td>Innovation og iværksætteri, levende laboratorium</td></tr><tr><td>DTU Space</td><td>Rumforskning og rumteknologi; solsystem, jordens magnetfelt, is-overvågning fra rummet</td></tr><tr><td>DTU Sundhedsteknologi</td><td>Sundhedsteknologi til patienter før/under/efter behandling</td></tr><tr><td>DTU Sustain</td><td>Miljø- og ressourceteknologi</td></tr><tr><td>DTU Wind</td><td>Vind og energisystemer, onshore/offshore vindenergi</td></tr></table>
+</div>
+<div class="section">
+<div class="kicker">Oplag &amp; distribution</div>
+<h2>Oplag og målgruppe over tid</h2>
+<div class="tiles">
+  <div class='tile'><b>2005</b><span class='lbl'>Lancering, profilmagasin</span></div>
+  <div class='tile'><b>60.000+</b><span class='lbl'>Oplag, 2011 (kvartalsmagasin)</span></div>
+  <div class='tile'><b>16-19.000</b><span class='lbl'>Oplag, 2025/26</span></div>
+  <div class='tile'><b>-72%</b><span class='lbl'>Fald i oplag, 2011→2026</span></div>
+</div>
+<div class='barchart'><div class='barrow'><div class='lbl'>2011</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>60000 eks.</div></div><div class='barrow'><div class='lbl'>2025/26</div><div class='track'><div class='fill' style='width:28%; background:var(--dtu-blue);'></div></div><div class='val'>17000 eks.</div></div></div>
+<p>Oplaget er faldet markant siden 2011 — men målgruppen er samtidig blevet skarpere defineret. I dag distribueres Dynamo annoncefrit og gratis til en navngivet kreds af beslutningstagere: bestyrelses- og direktionsmedlemmer i Danmarks største virksomheder, folketings- og EU-parlamentsmedlemmer, samt fonds- og rådsbestyrelser — suppleret af udlæg i landets læge- og tandlægevente­værelser. Faldet afspejler en generel branchetrend for trykte profilmagasiner: fra bredt oplag til stærkt målrettet distribution, understøttet af en digital udgave (issuu/iPad) siden omkring 2011.</p>
+<div class="insight"><b>Konsekvens for denne analyse:</b> Den skarpere målretning falder tidsmæssigt sammen med den periode (2020-2026), hvor Dynamos temaer bliver mest teknologispecifikke (kvante, AI, forsvar) — konsistent med en strategi om at tale direkte til beslutningstagere om aktuelle teknologipolitiske dagsordener frem for et bredt oplysningsformål.</div>
+</div>
+<div class="section">
+<div class="kicker">Appendiks</div>
+<h2>Appendiks: alle katalogiserede numre</h2>
+<table><tr><th>Nr.</th><th>År</th><th>Tema</th><th>Sikkerhed</th></tr>
+<tr><td>1</td><td>2005</td><td>Lancering af DTU's nye profilmagasin / Launch of DTU's new profile magazine</td><td>Middel</td></tr><tr><td>2</td><td>2005</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>3</td><td>2005</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>4</td><td>2006</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>5</td><td>2006</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>6</td><td>2006</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>7</td><td>2006</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>8</td><td>2007</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>9</td><td>2007</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>10</td><td>2007</td><td><span class='small'>Ikke dokumenteret</span></td><td>Lav</td></tr><tr><td>11</td><td>2007</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>12</td><td>2008</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>13</td><td>2008</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>14</td><td>2008</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>15</td><td>2008</td><td><span class='small'>Ikke dokumenteret</span></td><td>Lav</td></tr><tr><td>16</td><td>2009</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>17</td><td>2009</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>18</td><td>2009</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>19</td><td>2009</td><td>Klima / Climate Change<br><span class='tag'>Klima &amp; Energi</span></td><td>Middel</td></tr><tr><td>20</td><td>2010</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>21</td><td>2010</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>22</td><td>2010</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>23</td><td>2011</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>24</td><td>2011</td><td>IT-sikkerhed / internet-sårbarheder (usikkert om dette var hele numrets dækningstema)<br><span class='tag'>Forsvar &amp; Sikkerhed</span></td><td>Lav</td></tr><tr><td>25</td><td>2011</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>26</td><td>2011</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>27</td><td>2011</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>28</td><td>2012</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>29</td><td>2012</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>30</td><td>2012</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr>
+</table>
+</div>
+<div class="section">
+<div class="kicker">Appendiks</div>
+<h3>Appendiks (fortsat)</h3>
+<table><tr><th>Nr.</th><th>År</th><th>Tema</th><th>Sikkerhed</th></tr>
+<tr><td>31</td><td>2012</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>32</td><td>2012</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>33</td><td>2013</td><td>Vand/drikkevand (usikkert om dette var hele numrets dækningstema)<br><span class='tag'>Vand, Miljø &amp; Ressourcer</span></td><td>Lav</td></tr><tr><td>34</td><td>2013</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>35</td><td>2013</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>36</td><td>2014</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>37</td><td>2014</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>38</td><td>2014</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>39</td><td>2014</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>40</td><td>2015</td><td><span class='small'>Ikke dokumenteret</span></td><td>Ikke fundet</td></tr><tr><td>41</td><td>2015</td><td>Belysnings- og materialeinnovation (Cool LED / Green Laser) - ikke bekræftet som samlet forsidetema<br><span class='tag'>Materialer, Nano &amp; Kvante</span><span class='tag'>Samfund &amp; Iværksætteri</span></td><td>Middel</td></tr><tr><td>42</td><td>2015</td><td>Vand (Water)<br><span class='tag'>Vand, Miljø &amp; Ressourcer</span></td><td>Høj</td></tr><tr><td>43</td><td>2015</td><td>CO2-fri transport / Elbiler<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Transport, Byggeri &amp; Byer</span></td><td>Høj</td></tr><tr><td>44</td><td>2016</td><td>Smart Cities<br><span class='tag'>Vand, Miljø &amp; Ressourcer</span><span class='tag'>Transport, Byggeri &amp; Byer</span></td><td>Høj</td></tr><tr><td>45</td><td>2016</td><td>Sundhedsteknologi / Health Technology<br><span class='tag'>Sundhed &amp; Bioteknologi</span></td><td>Høj</td></tr><tr><td>46</td><td>2016</td><td>Max IV (synkrotron / røntgenteknologi)<br><span class='tag'>Materialer, Nano &amp; Kvante</span></td><td>Høj</td></tr><tr><td>47</td><td>2016</td><td>Vindteknologi / Wind Technology<br><span class='tag'>Klima &amp; Energi</span></td><td>Høj</td></tr><tr><td>48</td><td>2017</td><td>Energilagring / Energy Storage<br><span class='tag'>Klima &amp; Energi</span></td><td>Høj</td></tr><tr><td>49</td><td>2017</td><td>Industri 4.0<br><span class='tag'>Digitalt, AI &amp; Data</span><span class='tag'>Materialer, Nano &amp; Kvante</span></td><td>Høj</td></tr><tr><td>50</td><td>2017</td><td>Kvanteteknologi / Quantum Technology<br><span class='tag'>Materialer, Nano &amp; Kvante</span></td><td>Middel</td></tr><tr><td>51</td><td>2017</td><td>Klimaovervågning / Climate Monitoring<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Vand, Miljø &amp; Ressourcer</span></td><td>Høj</td></tr><tr><td>52</td><td>2018</td><td>Life Science<br><span class='tag'>Sundhed &amp; Bioteknologi</span></td><td>Middel</td></tr><tr><td>53</td><td>2018</td><td>Imaging<br><span class='tag'>Sundhed &amp; Bioteknologi</span></td><td>Middel</td></tr><tr><td>54</td><td>2018</td><td>Cybersikkerhed / Cybersecurity<br><span class='tag'>Forsvar &amp; Sikkerhed</span></td><td>Middel</td></tr><tr><td>55</td><td>2018</td><td>Solenergi / Solar Energy<br><span class='tag'>Klima &amp; Energi</span></td><td>Høj</td></tr><tr><td>56</td><td>2019</td><td>Stop sult - jagten på proteiner / Fighting Hunger - the Hunt for Proteins<br><span class='tag'>Fødevarer &amp; Landbrug</span></td><td>Høj</td></tr><tr><td>57</td><td>2019</td><td>Trafik / Traffic<br><span class='tag'>Transport, Byggeri &amp; Byer</span></td><td>Høj</td></tr><tr><td>58</td><td>2019</td><td>Ny viden om plastik / New Knowledge about Plastic<br><span class='tag'>Vand, Miljø &amp; Ressourcer</span></td><td>Høj</td></tr><tr><td>59</td><td>2019</td><td>CO2-udslip / Curbing CO2 Emissions<br><span class='tag'>Klima &amp; Energi</span></td><td>Høj</td></tr><tr><td>60</td><td>2020</td><td>Fusionsenergi / Fusion Energy<br><span class='tag'>Klima &amp; Energi</span></td><td>Høj</td></tr>
+</table>
+</div>
+<div class="section">
+<div class="kicker">Appendiks</div>
+<h3>Appendiks (fortsat)</h3>
+<table><tr><th>Nr.</th><th>År</th><th>Tema</th><th>Sikkerhed</th></tr>
+<tr><td>61</td><td>2020</td><td>Fossilfrie brændstoffer / Fossil-free Fuels<br><span class='tag'>Klima &amp; Energi</span></td><td>Høj</td></tr><tr><td>62</td><td>2020</td><td>Resistente bakterier / Antibiotic-resistant Bacteria<br><span class='tag'>Sundhed &amp; Bioteknologi</span></td><td>Høj</td></tr><tr><td>63</td><td>2020</td><td>Kunstig intelligens / Artificial Intelligence<br><span class='tag'>Sundhed &amp; Bioteknologi</span><span class='tag'>Fødevarer &amp; Landbrug</span><span class='tag'>Digitalt, AI &amp; Data</span><span class='tag'>Forsvar &amp; Sikkerhed</span></td><td>Høj</td></tr><tr><td>64</td><td>2021</td><td>Arktis / The Arctic<br><span class='tag'>Rum &amp; Klode</span></td><td>Høj</td></tr><tr><td>65</td><td>2021</td><td>3D-betonprint / 3D Concrete Printing<br><span class='tag'>Materialer, Nano &amp; Kvante</span></td><td>Høj</td></tr><tr><td>66</td><td>2021</td><td>Klimavenligt landbrug / Climate-friendly Farming<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Fødevarer &amp; Landbrug</span></td><td>Høj</td></tr><tr><td>67</td><td>2021</td><td>Immunterapi som kræftbehandling / Immunotherapy as a cancer treatment<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Sundhed &amp; Bioteknologi</span><span class='tag'>Fødevarer &amp; Landbrug</span><span class='tag'>Digitalt, AI &amp; Data</span></td><td>Høj</td></tr><tr><td>68</td><td>2022</td><td>Sådan sparer vi på jordens ressourcer / How we save Earth's resources<br><span class='tag'>Vand, Miljø &amp; Ressourcer</span></td><td>Høj</td></tr><tr><td>69</td><td>2022</td><td>Energiøer / Energy Islands<br><span class='tag'>Klima &amp; Energi</span></td><td>Høj</td></tr><tr><td>70</td><td>2022</td><td>Mangelsamfundet / The Scarcity Society<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Vand, Miljø &amp; Ressourcer</span><span class='tag'>Fødevarer &amp; Landbrug</span><span class='tag'>Samfund &amp; Iværksætteri</span></td><td>Høj</td></tr><tr><td>71</td><td>2022</td><td>Cybersikkerhed / Cybersecurity<br><span class='tag'>Forsvar &amp; Sikkerhed</span></td><td>Høj</td></tr><tr><td>72</td><td>2023</td><td>Bioteknologi / Biotechnology<br><span class='tag'>Sundhed &amp; Bioteknologi</span></td><td>Høj</td></tr><tr><td>73</td><td>2023</td><td>Kvanteteknologi / Quantum technology<br><span class='tag'>Digitalt, AI &amp; Data</span><span class='tag'>Materialer, Nano &amp; Kvante</span></td><td>Høj</td></tr><tr><td>74</td><td>2023</td><td>Bioteknologi og sundhed / Biotechnology and health<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Vand, Miljø &amp; Ressourcer</span><span class='tag'>Sundhed &amp; Bioteknologi</span></td><td>Høj</td></tr><tr><td>75</td><td>2023</td><td>Havets biodiversitet / Marine biodiversity crisis<br><span class='tag'>Vand, Miljø &amp; Ressourcer</span></td><td>Høj</td></tr><tr><td>76</td><td>2024</td><td>Kunstig intelligens / Artificial Intelligence<br><span class='tag'>Digitalt, AI &amp; Data</span></td><td>Høj</td></tr><tr><td>77</td><td>2024</td><td>Grøn transport / Green transport<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Transport, Byggeri &amp; Byer</span></td><td>Høj</td></tr><tr><td>78</td><td>2024</td><td>Klimavenlig fødevareproduktion / Climate-friendly food production<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Fødevarer &amp; Landbrug</span><span class='tag'>Digitalt, AI &amp; Data</span><span class='tag'>Samfund &amp; Iværksætteri</span></td><td>Høj</td></tr><tr><td>79</td><td>2024</td><td>Teknologi i rummet / Space technology<br><span class='tag'>Rum &amp; Klode</span></td><td>Middel</td></tr><tr><td>80</td><td>2025</td><td>Bæredygtige byggematerialer / Sustainable building materials and construction<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Vand, Miljø &amp; Ressourcer</span><span class='tag'>Materialer, Nano &amp; Kvante</span><span class='tag'>Transport, Byggeri &amp; Byer</span></td><td>Høj</td></tr><tr><td>81</td><td>2025</td><td>Produktivitet gennem ingeniørviden / Engineering-driven productivity<br><span class='tag'>Digitalt, AI &amp; Data</span></td><td>Høj</td></tr><tr><td>82</td><td>2025</td><td>Droner og forsvarsteknologi / Drones and defense applications<br><span class='tag'>Vand, Miljø &amp; Ressourcer</span><span class='tag'>Rum &amp; Klode</span><span class='tag'>Forsvar &amp; Sikkerhed</span></td><td>Høj</td></tr><tr><td>83</td><td>2025</td><td>Kvantechips / Quantum chip development<br><span class='tag'>Materialer, Nano &amp; Kvante</span></td><td>Høj</td></tr><tr><td>84</td><td>2026</td><td>Kunstig intelligens og bæredygtighed / Artificial Intelligence and Sustainability<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Vand, Miljø &amp; Ressourcer</span><span class='tag'>Digitalt, AI &amp; Data</span></td><td>Høj</td></tr><tr><td>85</td><td>2026</td><td>Bæredygtig skibsfart / Sustainable shipping<br><span class='tag'>Klima &amp; Energi</span><span class='tag'>Transport, Byggeri &amp; Byer</span></td><td>Middel</td></tr><tr><td>86</td><td>2026</td><td>Vand / Water scarcity<br><span class='tag'>Vand, Miljø &amp; Ressourcer</span></td><td>Middel</td></tr>
+</table>
+</div>
+<div class="section">
+<div class="kicker">Kilder &amp; forbehold</div>
+<h2>Kilder og forbehold</h2>
+<p>Denne rapport er udarbejdet som en automatiseret indholdsanalyse baseret på offentligt tilgængelige forsider, temabeskrivelser og udgivelsesdatoer for Dynamo-numre på <b>issuu.com/dtudk</b> samt artikler i <b>DTU's nyhedsarkiv (dtu.dk)</b>. Den er ikke baseret på fuldtekst-læsning af hvert magasins indre artikler, og bør derfor læses som en kortlægning af <i>forsidetemaer og redaktionel retning</i> — ikke en komplet indholdsanalyse af hver artikel i hvert nummer.</p>
+<p>Numre markeret "Ikke fundet" i appendiks eksisterer efter al sandsynlighed (Dynamos kvartalskadence er bekræftet uændret gennem hele perioden), men deres tema kunne ikke dokumenteres inden for de kilder, der var tilgængelige i analysemiljøet.</p>
+<p class="small">Udarbejdet 02. September 2026. Data og metode kan genskabes/udvides ved fornyet adgang til DTU's fulde nyhedsarkiv og digitale magasinarkiv.</p>
+</div>
+
+</body>
+</html>

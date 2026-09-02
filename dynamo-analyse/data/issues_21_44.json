@@ -1,0 +1,255 @@
+[
+  {
+    "issue_number": 21,
+    "year": 2010,
+    "month": 8,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt (ca. 4 numre/år) mellem bekræftede numre 24 (april 2011) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 22,
+    "year": 2010,
+    "month": 11,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 23,
+    "year": 2011,
+    "month": 1,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 24,
+    "year": 2011,
+    "month": 4,
+    "theme": "IT-sikkerhed / internet-sårbarheder (usikkert om dette var hele numrets dækningstema)",
+    "description": "Dette nummer eksisterede og udkom omkring april 2011 (dateret via DTU-nyhedsartiklen \"40 millioner huller i døgnet\", der henviser til en historie i Dynamo nr. 24 om internet-sårbarheder/sikkerhedshuller). Det vides ikke med sikkerhed, om dette var forsidetemaet for hele nummeret, eller blot en af flere artikler.",
+    "institutes": [],
+    "source_urls": [
+      "http://www.dtu.dk/Nyheder/2011/04/40-millioner-huller-i-doegnet",
+      "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=59099263-e735-41dd-a248-68316e32857b"
+    ],
+    "confidence": "low"
+  },
+  {
+    "issue_number": 25,
+    "year": 2011,
+    "month": 6,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 26,
+    "year": 2011,
+    "month": 9,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 27,
+    "year": 2011,
+    "month": 11,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 28,
+    "year": 2012,
+    "month": 2,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 29,
+    "year": 2012,
+    "month": 4,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 30,
+    "year": 2012,
+    "month": 7,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 31,
+    "year": 2012,
+    "month": 10,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 32,
+    "year": 2012,
+    "month": 12,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 33,
+    "year": 2013,
+    "month": 3,
+    "theme": "Vand/drikkevand (usikkert om dette var hele numrets dækningstema)",
+    "description": "Nummeret eksisterede og udkom omkring marts 2013 (billeddato 2013/03 på DTU's nyhedsside \"Drikkevand kan nu screenes for parasitter\", som henviser til historien i Dynamo nr. 33, side 34-37, om en ny metode til at screene drikkevand for parasitter). Uklart om dette var forsidetemaet for hele nummeret.",
+    "institutes": [],
+    "source_urls": [
+      "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=f509e268-d37d-4eb0-9cac-5242ccfaec6d"
+    ],
+    "confidence": "low"
+  },
+  {
+    "issue_number": 34,
+    "year": 2013,
+    "month": 6,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 35,
+    "year": 2013,
+    "month": 9,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 36,
+    "year": 2014,
+    "month": 1,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 37,
+    "year": 2014,
+    "month": 4,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 38,
+    "year": 2014,
+    "month": 7,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 39,
+    "year": 2014,
+    "month": 10,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 40,
+    "year": 2015,
+    "month": 1,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 41,
+    "year": 2015,
+    "month": 5,
+    "theme": "Belysnings- og materialeinnovation (Cool LED / Green Laser) - ikke bekræftet som samlet forsidetema",
+    "description": "Udkom maj 2015. Kendte artikler i nummeret omfatter \"Cool LED\" (nyt lys i PH-lampen) og \"Green Laser\" (om betonsten/laserbehandlet beton). Det overordnede forsidetema for nummeret er ikke bekræftet.",
+    "institutes": [],
+    "source_urls": [
+      "http://emagstudio.win.dtu.dk/E-books/DYNAMO/DYNAMO_41/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "issue_number": 42,
+    "year": 2015,
+    "month": 9,
+    "theme": "Vand (Water)",
+    "description": "Udkom 1. september 2015. Nummeret fokuserer på vand som en af de store udfordringer for hastigt voksende storbyer globalt, og præsenterer DTU-forskning og -løsninger inden for vandforsyning og -teknologi.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_42"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 43,
+    "year": 2015,
+    "month": 12,
+    "theme": "CO2-fri transport / Elbiler",
+    "description": "Udkom 1. december 2015. Nummeret handler om elbiler som vej til bæredygtig transport og ser på centrale udfordringer som opladningstid, rækkevidde og afgiftspolitik for elbiler.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_43"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 44,
+    "year": 2016,
+    "month": 3,
+    "theme": "Smart Cities",
+    "description": "Udkom 1. marts 2016. Temaet er \"Byerne er udfordrede: Trafikken skal glide, bygningerne skal opvarmes, vandet skal renses\" - nummeret præsenterer eksempler på Smart City-løsninger inden for trafik, bygningsopvarmning og vandrensning.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_44"
+    ],
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,260 @@
+[
+  {
+    "issue_number": 67,
+    "year": 2021,
+    "month": 12,
+    "theme": "Immunterapi som kræftbehandling / Immunotherapy as a cancer treatment",
+    "description": "Cover story on immunotherapy as a rapidly developing cancer treatment. The issue also covers backwards mathematics, seaweed as a food source, and hesitations/challenges around CO2 capture technology.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo67"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 68,
+    "year": 2022,
+    "month": 3,
+    "theme": "Sådan sparer vi på jordens ressourcer / How we save Earth's resources",
+    "description": "Focuses on resource conservation and sustainability, examining ways to reduce consumption of the planet's natural resources; the rector's editorial in this issue notes that at current lifestyles, humanity would need three Earths' worth of resources by 2050.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo68",
+      "https://www.dtu.dk/nyheder/alle-nyheder/dynamo-leder-68"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 69,
+    "year": 2022,
+    "month": 6,
+    "theme": "Energiøer / Energy Islands",
+    "description": "Focuses on Denmark's planned offshore energy islands, exploring advances in electrical infrastructure, offshore wind turbines, and Power-to-X solutions as key drivers of the islands' future success.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo69",
+      "https://www.dtu.dk/nyheder/alle-nyheder/energioe-eller-museumsoe"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 70,
+    "year": 2022,
+    "month": 9,
+    "theme": "Mangelsamfundet / The Scarcity Society",
+    "description": "Explores how the pandemic, the war in Ukraine, and climate change have created interconnected global shortages of everything from microchips to food and clean drinking water.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo70",
+      "https://www.dtu.dk/nyheder/alle-nyheder/giv-os-lov-til-at-vaere-effektive"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 71,
+    "year": 2022,
+    "month": 12,
+    "theme": "Cybersikkerhed / Cybersecurity",
+    "description": "Issue theme is cybersecurity, covering topics relevant to the Danish technical/research community.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo71"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 72,
+    "year": 2023,
+    "month": 3,
+    "theme": "Bioteknologi / Biotechnology",
+    "description": "Theme issue on biotechnology at DTU. (Note: issue also contains the rector's editorial on not reducing engineering-education intake, a separate leder topic from the cover theme.)",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo72",
+      "https://www.dtu.dk/nyheder/alle-nyheder/rektor-vi-skal-ikke-uddanne-mindre"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 73,
+    "year": 2023,
+    "month": 6,
+    "theme": "Kvanteteknologi / Quantum technology",
+    "description": "Explores how DTU researchers work with quantum technology, featuring newly established center Quantum DTU; asks whether quantum computers will become household devices, alongside lighter stories such as a mozzarella-scanning researcher and a hearing researcher with personal hearing loss.",
+    "institutes": [
+      "Quantum DTU"
+    ],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_nr._73_2023_weboptimeret",
+      "https://www.dtu.dk/nyheder/alle-nyheder/rektor_vores-viden-skal-ud"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 74,
+    "year": 2023,
+    "month": 9,
+    "theme": "Bioteknologi og sundhed / Biotechnology and health",
+    "description": "Showcases how DTU's biotechnology research environment develops new solutions to treat serious diseases such as Parkinson's disease and cancer.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_74"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 75,
+    "year": 2023,
+    "month": 12,
+    "theme": "Havets biodiversitet / Marine biodiversity crisis",
+    "description": "December issue focused on threats to underwater biodiversity and how technology can help address them (\"Hvad truer mangfoldigheden – og hvordan kan teknologi gøre en forskel?\").",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_75"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 76,
+    "year": 2024,
+    "month": 3,
+    "theme": "Kunstig intelligens / Artificial Intelligence",
+    "description": "Focuses on AI, with articles examining how DTU develops, tests, and applies the technology across its research fields.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo-76"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 77,
+    "year": 2024,
+    "month": 6,
+    "theme": "Grøn transport / Green transport",
+    "description": "Explores sustainable transport solutions and technologies aimed at reducing CO2 emissions from the transportation sector, featuring insights from DTU transport researchers.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_77"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 78,
+    "year": 2024,
+    "month": 9,
+    "theme": "Klimavenlig fødevareproduktion / Climate-friendly food production",
+    "description": "DTU researchers work to find alternatives to the most climate-intensive foods and develop technologies/methods to cut greenhouse gas emissions across the food production chain. The issue also covers indoor climate research for buildings, entrepreneurship at DTU, data science on human movement/behaviour, and artificial-muscle development.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo-78"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 79,
+    "year": 2024,
+    "month": 12,
+    "theme": "Teknologi i rummet / Space technology",
+    "description": "Cover theme on space technology, tied to DTU's space research (DTU Space is Denmark's largest space research institute). Specific article-level detail could not be fully verified beyond theme identification.",
+    "institutes": [
+      "DTU Space"
+    ],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_2024_04_issue"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "issue_number": 80,
+    "year": 2025,
+    "month": 3,
+    "theme": "Bæredygtige byggematerialer / Sustainable building materials and construction",
+    "description": "The construction industry consumes substantial planetary resources and contributes significantly to CO2 emissions; this issue highlights DTU research into alternative materials that promote a more sustainable building industry.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_nr_80_-_2025"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 81,
+    "year": 2025,
+    "month": 6,
+    "theme": "Produktivitet gennem ingeniørviden / Engineering-driven productivity",
+    "description": "Showcases cases where DTU engineers with deep expertise in areas such as artificial intelligence, reactor design, and computer simulation have helped increase productivity in various companies.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_nr._81_2025"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 82,
+    "year": 2025,
+    "month": 9,
+    "theme": "Droner og forsvarsteknologi / Drones and defense applications",
+    "description": "Explores how DTU's long-standing civilian research in AI, autonomous systems, drones, cybersecurity, space technology, and surveillance can be applied to defense — including territorial monitoring and identifying vessels with suspicious intent in Danish waters. Widely referenced with the cover theme \"Droner i vild udvikling\" (drones in rapid development).",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_nr._82_2025"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 83,
+    "year": 2025,
+    "month": 12,
+    "theme": "Kvantechips / Quantum chip development",
+    "description": "Focuses on quantum technology advancement at DTU, including the expansion of DTU's cleanroom facilities (expected operational 2027) to support Denmark's global competitiveness in quantum technology, miniaturizing experimental setups onto single chips, and research into using electrons in crystals as qubits.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_nr._83_2025",
+      "https://dk.linkedin.com/posts/dtu-energy_dynamo-nr-83-2025-activity-7406243031068229632-tzlO"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 84,
+    "year": 2026,
+    "month": 3,
+    "theme": "Kunstig intelligens og bæredygtighed / Artificial Intelligence and Sustainability",
+    "description": "Examines both the challenges and opportunities of AI: its environmental/climate costs (energy and water use), its use in spreading misinformation, and how DTU researchers are leveraging AI to advance sustainable solutions.",
+    "institutes": [],
+    "source_urls": [
+      "https://issuu.com/dtudk/docs/dynamo_84_2026"
+    ],
+    "confidence": "high"
+  },
+  {
+    "issue_number": 85,
+    "year": 2026,
+    "month": 4,
+    "theme": "Bæredygtig skibsfart / Sustainable shipping",
+    "description": "Theme on decarbonizing global shipping (which carries roughly 80% of world cargo trade) — including the search for green fuel alternatives to bunker oil, green shipping corridors, and DTU's Maritime DTU research center's work toward IMO's 2050 climate-neutral shipping target. Direct issuu access to the issue text was unavailable; theme corroborated via DTU news coverage tagged \"Bæredygtig skibsfart\" from the same period.",
+    "institutes": [
+      "DTU Construct",
+      "Maritime DTU",
+      "DTU Management (Institut for Teknologi, Ledelse og Økonomi)"
+    ],
+    "source_urls": [
+      "https://www.dtu.dk/nyheder/alle-nyheder/klimaneutral-skibsfart-i-2050-vi-har-megatravlt",
+      "https://www.dtu.dk/nyheder/alle-nyheder/groenne-korridorer-aabner-ruter-til-fossilfri-skibsfart"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "issue_number": 86,
+    "year": 2026,
+    "month": 8,
+    "theme": "Vand / Water scarcity",
+    "description": "Theme on water as a scarce resource — Denmark is among the European countries with the greatest water scarcity, raising the stakes for protecting and managing drinking-water resources; DTU Sustain researchers' work on drinking-water protection (PFAS, groundwater contamination) is closely tied to this period's coverage. Inferred from the rector's editorial published just ahead of the issue's release; direct issuu access to the issue text was unavailable, so the exact cover-story theme is not independently confirmed from the magazine itself.",
+    "institutes": [
+      "DTU Sustain (Institut for Miljø- og Ressourceteknologi)"
+    ],
+    "source_urls": [
+      "https://www.dtu.dk/nyheder/alle-nyheder/selv-i-danmark-er-vand-en-knap-ressource",
+      "https://www.dtu.dk/nyheder/alle-nyheder/dtus-foerende-vandeksperter-nuancerer-valgkampens-vaade-tema"
+    ],
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,210 @@
+[
+  {
+    "issue_number": 1,
+    "year": 2005,
+    "month": 4,
+    "theme": "Lancering af DTU's nye profilmagasin / Launch of DTU's new profile magazine",
+    "description": "Første nummer af Dynamo udkom i forbindelse med DTU's årsfest i slutningen af april 2005, sammen med Årsberetningen for 2004. Magasinet blev lanceret som DTU's nye profilmagasin og faste kontakt til dimittender i Alumneforeningen; rektor Lars Pallesen skrev i lederen at målgruppen var 'en bredere kreds af virksomheder, institutioner og borgere' end DTU hidtil havde haft kontakt med. Ifølge en anden kilde blev Dynamo oprettet som erstatning for det 14-dages interne blad 'Sletten', der lukkede i sommeren 2004 efter 33 år. Der er ikke fundet et enkelt forsknings-'tema' for dette allerførste nummer - fokus var introduktionen af magasinet selv.",
+    "institutes": [],
+    "source_urls": [
+      "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=a71d049b-f6e4-4a88-b4f2-16b91bd21cd1",
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/01/dynamo_1.ashx",
+      "https://ing.dk/artikel/omstridt-dtu-rektor-siger-farvel-efter-ti-aar-0"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "issue_number": 2,
+    "year": 2005,
+    "month": 8,
+    "theme": "",
+    "description": "Ikke fundet. Årstal er et interpoleret bud baseret på et bekræftet kvartalsvist udgivelsesmønster (nr. 1 = apr/maj 2005; nr. 19 = nov 2009; nr. 30 = sep 2012; nr. 42 = sep 2015; nr. 58 = sep 2019; nr. 73 = 2023; nr. 86 = aug 2026).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 3,
+    "year": 2005,
+    "month": 11,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt (se nr. 1, 19, 30, 42, 58, 73, 86).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 4,
+    "year": 2006,
+    "month": 2,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 5,
+    "year": 2006,
+    "month": 5,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 6,
+    "year": 2006,
+    "month": 8,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 7,
+    "year": 2006,
+    "month": 11,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 8,
+    "year": 2007,
+    "month": 2,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 9,
+    "year": 2007,
+    "month": 5,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 10,
+    "year": 2007,
+    "month": 8,
+    "theme": "",
+    "description": "Ikke fundet. Et Google-indekseret link til en fil ved navn 'dynamo10.ashx' i DTU's mediebibliotek (sti-mønster .../DTUdk/Nyheder/DYNAMO/10/dynamo10.ashx) blev fundet via søgning, hvilket bekræfter at nummeret findes i DTU's arkiv, men indholdet/temaet kunne ikke bestemmes (dtu.dk er blokeret for direkte hentning i dette miljø).",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "low"
+  },
+  {
+    "issue_number": 11,
+    "year": 2007,
+    "month": 11,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 12,
+    "year": 2008,
+    "month": 2,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 13,
+    "year": 2008,
+    "month": 5,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 14,
+    "year": 2008,
+    "month": 8,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 15,
+    "year": 2008,
+    "month": 11,
+    "theme": "",
+    "description": "Ikke fundet specifikt tema. Filen 'dynamo_15_hele.ashx' (sti .../DTUdk/Nyheder/DYNAMO/15/dynamo_15_hele.ashx) blev fundet indekseret af en søgemaskine, hvilket bekræfter at nummeret eksisterer i DTU's digitale arkiv, men selve indholdet/temaet kunne ikke udtrækkes, da dtu.dk er blokeret for direkte hentning i dette miljø.",
+    "institutes": [],
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/15/dynamo_15_hele.ashx"
+    ],
+    "confidence": "low"
+  },
+  {
+    "issue_number": 16,
+    "year": 2009,
+    "month": 2,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 17,
+    "year": 2009,
+    "month": 5,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 18,
+    "year": 2009,
+    "month": 8,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  },
+  {
+    "issue_number": 19,
+    "year": 2009,
+    "month": 11,
+    "theme": "Klima / Climate Change",
+    "description": "DTU's magasin DYNAMO satte i november 2009 fokus på klimaet og på teknologier, der kan afhjælpe klimaforandringerne - herunder intelligente energisystemer, bæredygtige energikilder, klimaovervågning og effektivisering af energiforbruget. Nummeret indeholdt en dvd med højdepunkter fra DTU's Climate Change Conference (afholdt forud for COP15-klimatopmødet i København) og udkom både på dansk og engelsk. NB: kilden ('Nyt nummer af DYNAMO', dtu.dk, 26. nov. 2009) angiver ikke eksplicit et nummer - tildelingen til nr. 19 er et interpoleret bud baseret på det bekræftede kvartalsvise udgivelsesmønster (nr. 1 = apr/maj 2005; nr. 30 = sep 2012; nr. 42 = sep 2015; nr. 58 = sep 2019), som rammer november 2009 næsten præcist for nr. 19.",
+    "institutes": [],
+    "source_urls": [
+      "https://www.dtu.dk/nyheder/alle-nyheder/nyhed?id=73cd3b67-ab10-497b-9105-fba1678d087b"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "issue_number": 20,
+    "year": 2010,
+    "month": 2,
+    "theme": "",
+    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "institutes": [],
+    "source_urls": [],
+    "confidence": "not_found"
+  }
+]

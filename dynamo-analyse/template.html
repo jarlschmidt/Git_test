@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>Dynamo gennem 20 år</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm 16mm 18mm; }
+  :root{
+    /* DTU official brand colours (designguide.dtu.dk) */
+    --dtu-red:#990000;        /* corporate red — RGB 153,0,0 / CMYK 0,91,72,23 */
+    --dtu-navy:#000a66;       /* navy blue — CMYK 100,90,0,60 (Pantone 655C/282U) */
+    --dtu-blue:#005cff;       /* blue — CMYK 100,64,0,0 (Pantone 2728C) */
+    --dtu-orange:#ff5924;     /* orange — CMYK 0,65,86,0 (Pantone 1505C/U) */
+    --dtu-red-tint:#e6cccc;   /* ~20% tint on white */
+    --dtu-blue-tint:#cce0ff;
+    --dtu-orange-tint:#ffe0d4;
+    --navy:var(--dtu-navy);
+    --navy-2:#3d1414;
+    --blue:var(--dtu-blue);
+    --blue-dark:var(--dtu-navy);
+    --orange:var(--dtu-orange);
+    --red:var(--dtu-red);
+    --ink:#0b0b0b;
+    --ink-2:#52514e;
+    --muted:#898781;
+    --grid:#e1e0d9;
+    --surface:#fcfcfb;
+    --page:#ffffff;
+    --rule:#c3c2b7;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--page);}
+  body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color:var(--ink);
+    font-size:10.3pt;
+    line-height:1.5;
+  }
+  h1,h2,h3,h4{font-weight:700; margin:0 0 4mm 0; letter-spacing:-0.01em;}
+  h1{font-size:22pt; color:var(--dtu-red);}
+  h2{font-size:15pt; color:var(--dtu-red); border-bottom:1.4pt solid var(--dtu-red); padding-bottom:2mm; margin-bottom:5mm;}
+  h3{font-size:11.5pt; color:var(--navy-2);}
+  p{margin:0 0 3mm 0;}
+  .kicker{
+    text-transform:uppercase; letter-spacing:0.12em; font-size:8pt; font-weight:700;
+    color:var(--orange); margin-bottom:2mm;
+  }
+  .section{ page-break-after: always; padding-top:2mm; position:relative;}
+  .section:last-child{page-break-after:auto;}
+
+  /* COVER */
+  .cover{
+    background: linear-gradient(150deg, var(--dtu-navy) 0%, var(--dtu-red) 62%, #6e0000 100%);
+    color:#fff; height:281mm; margin:-20mm -18mm 0 -18mm; padding:20mm 18mm;
+    display:flex; flex-direction:column; justify-content:space-between;
+    page-break-after: always;
+  }
+  .cover .kicker{color:var(--dtu-orange);}
+  .cover h1{color:#fff; font-size:34pt; line-height:1.1; max-width:140mm;}
+  .cover .sub{font-size:12.5pt; color:#f2dede; max-width:120mm; margin-top:4mm;}
+  .cover .stats{display:flex; gap:10mm; margin-top:10mm;}
+  .cover .stat{border-top:2pt solid var(--dtu-orange); padding-top:2.5mm;}
+  .cover .stat b{display:block; font-size:24pt; color:#fff;}
+  .cover .stat span{font-size:8.5pt; color:#f0cfcf; text-transform:uppercase; letter-spacing:0.08em;}
+  .cover .footline{font-size:8.5pt; color:#e9c6c6; display:flex; justify-content:space-between; border-top:0.6pt solid rgba(255,255,255,0.3); padding-top:4mm;}
+  .cover .yeartrack{display:flex; align-items:flex-end; gap:2mm; height:26mm; margin:14mm 0 10mm 0;}
+  .cover .ytick{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
+  .cover .ytick i{display:block; width:100%; background:rgba(255,255,255,0.30); border-radius:1px;}
+  .cover .ytick.hi i{background:var(--dtu-orange);}
+  .cover .ytick span{font-size:6.6pt; color:rgba(255,255,255,0.55); margin-top:2mm; writing-mode:vertical-rl; transform:rotate(180deg);}
+  .cover .ytick.hi span{color:#fff; font-weight:700;}
+
+  /* STAT TILES */
+  .tiles{display:flex; gap:5mm; margin:5mm 0 7mm 0;}
+  .tile{flex:1; border-top:2.2pt solid var(--dtu-red); padding-top:2.5mm;}
+  .tile b{display:block; font-size:19pt; color:var(--dtu-navy); line-height:1;}
+  .tile .lbl{font-size:8pt; color:var(--ink-2); margin-top:1.5mm; display:block;}
+
+  /* TWO COL */
+  .cols{display:flex; gap:8mm;}
+  .col{flex:1;}
+
+  /* BAR CHART (css) */
+  .barchart{margin:4mm 0;}
+  .barrow{display:flex; align-items:center; gap:3mm; margin-bottom:2.4mm;}
+  .barrow .lbl{width:34mm; font-size:8.3pt; color:var(--ink-2); text-align:right; flex-shrink:0;}
+  .barrow .track{flex:1; background:var(--grid); height:5.4mm; position:relative; border-radius:1.5px;}
+  .barrow .fill{position:absolute; left:0; top:0; bottom:0; border-radius:1.5px; background:var(--blue);}
+  .barrow .val{width:13mm; font-size:8.3pt; color:var(--ink); font-weight:700; flex-shrink:0; white-space:nowrap;}
+
+  /* TIMELINE */
+  .timeline{margin:5mm 0;}
+  .tl-row{display:flex; align-items:flex-end; gap:1.4px; height:34mm; border-bottom:1pt solid var(--rule); padding-bottom:1mm;}
+  .tl-bar{flex:1; background:var(--blue); border-radius:1.5px 1.5px 0 0; position:relative;}
+  .tl-labels{display:flex; gap:1.4px; margin-top:1.5mm;}
+  .tl-labels span{flex:1; font-size:6.3pt; color:var(--muted); text-align:center; writing-mode:vertical-rl; transform:rotate(180deg); height:10mm;}
+
+  /* LEGEND */
+  .legend{display:flex; flex-wrap:wrap; gap:4mm; margin:2mm 0 4mm 0; font-size:8pt; color:var(--ink-2);}
+  .legend .sw{display:inline-block; width:2.6mm; height:2.6mm; border-radius:1px; margin-right:1.4mm; vertical-align:middle;}
+
+  /* TABLE */
+  table{width:100%; border-collapse:collapse; font-size:8.3pt;}
+  th{text-align:left; font-size:7.4pt; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); border-bottom:1pt solid var(--rule); padding:1.6mm 2mm;}
+  td{padding:1.6mm 2mm; border-bottom:0.5pt solid var(--grid); vertical-align:top;}
+  tr:nth-child(even) td{background:#f9f9f7;}
+  .tag{display:inline-block; font-size:6.8pt; background:#eef3fa; color:var(--blue-dark); border-radius:2px; padding:0.4mm 1.6mm; margin:0.4mm 0.6mm 0 0;}
+
+  .quote{border-left:2.2pt solid var(--orange); padding-left:4mm; font-size:10.5pt; color:var(--navy-2); font-style:italic; margin:4mm 0;}
+  .insight{background:#f4f7fb; border-left:2.2pt solid var(--blue); padding:3mm 4mm; margin:3mm 0; font-size:9pt;}
+  .insight b{color:var(--navy);}
+  .small{font-size:7.8pt; color:var(--muted);}
+  .toc a{color:var(--ink); text-decoration:none;}
+  .toc-row{display:flex; justify-content:space-between; border-bottom:0.5pt dotted var(--rule); padding:2mm 0; font-size:9.5pt;}
+</style>
+</head>
+<body>
+
+<!-- CONTENT INJECTED BY BUILD SCRIPT -->
+{{CONTENT}}
+
+</body>
+</html>
