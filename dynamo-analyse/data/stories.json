@@ -3055,7 +3055,7 @@
     "month": 6,
     "year": 2018,
     "title": "Røntgenblik på krøllede stenfibre",
-    "institute": "3D Imaging Center",
+    "institute": "DTU 3D Imaging Center",
     "topic": "Røntgentomografi",
     "description": "DTU's 3D Imaging Center hjælper Rockwool med at bruge røntgentomografi og metoder inspireret af hjerneforskning til at kortlægge, hvordan stenfibrenes komplekse orientering påvirker stenuldens isoleringsegenskaber."
   },
@@ -3064,7 +3064,7 @@
     "month": 6,
     "year": 2018,
     "title": "Vilde visualiseringer til virksomheder",
-    "institute": "3D Imaging Center",
+    "institute": "DTU 3D Imaging Center",
     "topic": "Billeddannelse",
     "description": "DTU's 3D Imaging Center samler ekspertise fra DTU Fysik, DTU Compute, DTU Energi og DTU Mekanik til at skabe 3D-billeder af materialers indre struktur for virksomheder ved hjælp af røntgen- og neutronkilder som MAX IV og ESS i Lund."
   },
@@ -7015,7 +7015,7 @@
     "month": 3,
     "year": 2023,
     "title": "Startup lader havnebus sejle selv",
-    "institute": "DTU Electro",
+    "institute": "DTU Elektro",
     "topic": "Autonome skibe / Maritim AI",
     "description": "DTU Electro har udviklet det AI-baserede styresystem bag Danmarks første autonome havnebus, GreenHopper, der er blevet testet på Limfjorden."
   },
@@ -7546,7 +7546,7 @@
     "month": 12,
     "year": 2023,
     "title": "Undervandsdrone skal kaste lys over liv under overfladen",
-    "institute": "DTU Electro",
+    "institute": "DTU Elektro",
     "topic": "Biodiversitet (undervandsdrone/sensorer)",
     "description": "DTU Electro-professor Christian Pedersen udvikler i projektet Ocean Eye hyperspektrale kameraer og lidar-lasersystemer, der skal gøre det muligt langt mere præcist at dokumentere biodiversiteten på havbunden og i vandsøjlen."
   },
@@ -8176,7 +8176,7 @@
     "month": 9,
     "year": 2024,
     "title": "Fotonisk mikrochip skal mindske mælkespild",
-    "institute": "DTU Electro",
+    "institute": "DTU Elektro",
     "topic": "Fødevareteknologi / Mælkespild",
     "description": "Professor Søren Stobbe og kolleger har udviklet en billig mikrochip med et optisk spektrometer, der kan afsløre mælkerester i produktionsrør og reducere den store mængde mælk, mejerier i dag skyller ud for at rengøre."
   },

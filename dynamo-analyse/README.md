@@ -5,14 +5,16 @@ institutter og oplagsudvikling over 21 år.
 
 ## Filer
 
-- **`Dynamo_gennem_20_aar.pdf`** — den færdige, søgbare rapport (13 sider, McKinsey-inspireret layout, DTU's officielle farver, rig på diagrammer — søjler, cirkeldiagrammer, et stablet år-for-år-tema-diagram, en oplags-linjegraf og en tidslinje der kobler Dynamos temaer til verdensbegivenheder).
+- **`Dynamo_gennem_20_aar.pdf`** — den færdige, søgbare rapport (48 sider, McKinsey-inspireret layout, DTU's officielle farver). To dokumentationsniveauer: issue-niveau (forsidetema) for alle 86 numre, og historie-niveau (hver enkelt artikel, med institut og emne) for 1.013 historier i de 41 numre 2015–2026, hvor magasinets fulde tekst kunne udtrækkes.
 - `report.html` — den fuldt genererede HTML, som PDF'en er printet fra (kan åbnes direkte i en browser).
 - `template.html` — layout/CSS-skabelonen (uden indhold).
-- `build_report.py` — samler de fire rå datakataloger i `data/`, interpolerer manglende år, tema-kategoriserer og skriver `data/dataset.json`.
-- `build_html.py` — injicerer `data/dataset.json` i `template.html` og skriver `report.html`.
+- `build_report.py` — samler de fire rå issue-datakataloger i `data/`, interpolerer manglende år, tema-kategoriserer og skriver `data/dataset.json`.
+- `extract_issuu_text.py` — trækker den fulde, læsbare brødtekst ud af et issuu.com-nummer (bruger issuu's interne tekstlag-API til sin egen søgefunktion, ikke en offentlig dokumenteret API — se filens docstring). Kørt manuelt pr. nummer for 2015–2026; output blev læst og struktureret til `data/stories.json`.
+- `build_html.py` — injicerer `data/dataset.json` + `data/stories.json` i `template.html` og skriver `report.html`.
 - `print_pdf.js` — bruger Playwright/Chromium til at printe `report.html` til søgbar PDF med korrekt sidetal-fod.
 - `measure_toc.py` — læser en trykt PDF og finder den fysiske side, hvert kapitel rent faktisk starter på (sektionerne har ikke længere tvungne sideskift, så siderne kendes først efter layout); skriver `data/toc_pages.json`, som `build_html.py` bruger til at vise korrekte sidetal i indholdsfortegnelsen.
-- `data/issues_01_20.json`, `issues_21_44.json`, `issues_45_66.json`, `issues_67_86.json` — katalog over hvert Dynamo-nummer (år, tema, beskrivelse, institutter, kilder, sikkerhedsniveau), indsamlet fra issuu.com/dtudk og DTU's nyhedsarkiv.
+- `data/issues_01_20.json`, `issues_21_44.json`, `issues_45_66.json`, `issues_67_86.json` — issue-niveau katalog over hvert Dynamo-nummer (år, tema, beskrivelse, institutter, kilder, sikkerhedsniveau), indsamlet fra issuu.com/dtudk og DTU's mediebibliotek (originale PDF'er).
+- `data/stories.json` — historie-niveau katalog: 1.013 enkeltstående historier (nummer, år, titel, institut, emne) fra numrene 2015–2026, udtrukket via `extract_issuu_text.py` og struktureret manuelt pr. nummer.
 - `data/dtu_institutes.json` — DTU's nuværende institutter/centre (reference for institut-mapping).
 - `data/dtu_strategy.json` — DTU's fem strategiske indsatsområder (Strategi 2026–2031, se kildelink i filen) og hvilke af rapportens 10 tema-kategorier der understøtter hvert område.
 - `data/world_events.json` — ti velkendte verdensbegivenheder 2005–2026 (med kildelink pr. begivenhed), hver koblet til én af rapportens tema-kategorier, brugt i "Falder Dynamo sammen med verden?"-tidslinjen.
@@ -46,8 +48,15 @@ under farveblindhed) — ændres kategori-farverne, bør paletten valideres igen
 
 ## Kendte begrænsninger
 
-- www.dtu.dk, alumni.dtu.dk og inside.dtu.dk var blokeret for direkte hentning i det miljø,
-  analysen blev lavet i — kun issuu.com og et indekseret nyhedsarkiv var tilgængelige.
-  Derfor er 2005–2014 markant tyndere dokumenteret end 2015–2026 (se metodeafsnittet i rapporten).
-- Institut-tagging er baseret på eksplicitte nævninger i den tilgængelige forsidetekst —
-  Dynamo navngiver sjældent institutter direkte, så denne dimension er tyndere end tema-dimensionen.
+- 5 numre (41, 83, 84, 85, 86) kunne ikke historie-udtrækkes — enten fordi de ligger på en
+  anden visningsplatform end issuu (41), eller fordi issuu's tekstlag-API afviste netop de
+  numre (83, 84, 85, 86) — de har derfor kun issue-niveau-dokumentation (forsidetema), ikke
+  historie-niveau.
+- For 2005–2014 er 16 af 39 numre fortsat udokumenterede efter udvidet søgning i DTU's
+  mediebibliotek (www.dtu.dk var oprindeligt netværksblokeret; adgangen er siden åbnet og
+  36 numre er genresearchet med primærkilde-PDF'er). To lovende kilder for de resterende
+  huller — yumpu.com og Wayback Machine — er blokeret af netværksproxyen i analysemiljøet.
+- Institut-tagging på issue-niveau (alle 86 numre) er stadig sparsom, da forsidetemaer
+  sjældent navngiver institutter direkte — men historie-niveau (2015–2026) viser et markant
+  rigere billede: 69% af 1.013 historier navngiver et konkret DTU-institut. Se institutafsnittet
+  i rapporten.

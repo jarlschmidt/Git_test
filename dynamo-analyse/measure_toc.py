@@ -28,7 +28,8 @@ HEADINGS = {
     "strategi": "Temaerne og DTU's strategi 2026",
     "institutter": "Institutter i Dynamo",
     "oplag": "Oplag og målgruppe over tid",
-    "appendiks": "Appendiks: alle katalogiserede numre",
+    "appendiks": "Appendiks A: alle katalogiserede numre",
+    "appendiks-b": "Appendiks B: alle",
     "kilder": "Kilder og forbehold",
 }
 

@@ -3,6 +3,7 @@
 import json, html, os
 from datetime import date
 from urllib.parse import urlparse
+from collections import Counter
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -14,6 +15,12 @@ with open(os.path.join(BASE, "data", "dtu_strategy.json"), encoding="utf-8") as 
     STRATEGY = json.load(f)
 with open(os.path.join(BASE, "data", "world_events.json"), encoding="utf-8") as f:
     WORLD_EVENTS = json.load(f)
+STORIES_PATH = os.path.join(BASE, "data", "stories.json")
+if os.path.exists(STORIES_PATH):
+    with open(STORIES_PATH, encoding="utf-8") as f:
+        STORIES = json.load(f)
+else:
+    STORIES = []
 
 # Page numbers in the TOC are measured after a first render pass (see
 # measure_toc.py) and cached here, since sections now flow freely across
@@ -29,7 +36,6 @@ issues = D["issues"]
 eras = D["eras"]
 era_cat = D["era_cat"]
 cat_totals = D["cat_totals"]
-inst_counter = D["inst_counter"]
 conf_counts = D["conf_counts"]
 
 def esc(s):
@@ -38,6 +44,15 @@ def esc(s):
 TOTAL = len(issues)
 DOCUMENTED = sum(1 for i in issues if i.get("confidence") in ("high","medium","low") and i.get("theme"))
 PCT_DOC = round(100*DOCUMENTED/TOTAL)
+
+STORY_COUNT = len(STORIES)
+STORY_ISSUE_NUMS = sorted(set(s["issue_number"] for s in STORIES))
+STORY_ISSUE_COUNT = len(STORY_ISSUE_NUMS)
+STORY_INST_COUNTER = Counter(s["institute"] for s in STORIES if s.get("institute"))
+STORY_WITH_INST = sum(1 for s in STORIES if s.get("institute"))
+STORY_INST_PCT = round(100*STORY_WITH_INST/STORY_COUNT) if STORY_COUNT else 0
+STORY_UNCOVERED = [41, 83, 84, 85, 86]
+STORY_COUNT_DA = f"{STORY_COUNT:,}".replace(",", ".")
 
 # ---------- helpers to render CSS bar rows ----------
 def bar_rows(pairs, max_val=None, color="var(--dtu-blue)", highlight_first=False, val_suffix=""):
@@ -252,10 +267,10 @@ cover = f"""
   <div>
     <div class="kicker">Medieanalyse · DTU</div>
     <h1>Dynamo gennem&nbsp;20&nbsp;år</h1>
-    <div class="sub">Historier, temaer og institutter i DTU's profilmagasin — nr. 1 (2005) til nr. 86 (2026). Baseret på {TOTAL} udgivne numre, heraf {DOCUMENTED} tema-dokumenterede via issuu.com og DTU's nyhedsarkiv.</div>
+    <div class="sub">Historier, temaer og institutter i DTU's profilmagasin — nr. 1 (2005) til nr. 86 (2026). Baseret på {TOTAL} udgivne numre og {STORY_COUNT} enkeltstående historier læst i fuld tekst fra {STORY_ISSUE_COUNT} numre (2015–2026).</div>
     <div class="stats">
       {"".join(f'<div class="stat"><b>{esc(b)}</b><span class="lbl">{esc(l)}</span></div>' for b,l in [
-          (TOTAL, "Numre udgivet"), ("21", "År (2005–2026)"), (f"{PCT_DOC}%", "Temaer dokumenteret"), ("~4", "Numre pr. år")
+          (TOTAL, "Numre udgivet"), (STORY_COUNT_DA, "Historier i fuld tekst"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")
       ])}
     </div>
     {year_track_html()}
@@ -279,7 +294,8 @@ toc_items = [
     ("strategi", "Temaerne og DTU's strategi 2026–2031", 6),
     ("institutter", "Institutter i Dynamo", 6),
     ("oplag", "Oplag og målgruppe over tid", 7),
-    ("appendiks", "Appendiks: alle katalogiserede numre", 8),
+    ("appendiks", "Appendiks A: alle katalogiserede numre", 8),
+    ("appendiks-b", "Appendiks B: alle historier 2015–2026", 9),
     ("kilder", "Kilder og forbehold", 11),
 ]
 toc = "<div class='section' id='sec-toc'><div class='kicker'>Indhold</div><h2>Indholdsfortegnelse</h2>"
@@ -297,11 +313,11 @@ second_name, second_n = top3[1]
 exec_summary = f"""
 <div class="section" id="sec-exec">
 <div class="kicker">Executive summary</div>
-<h2>21 år, 86 numre — fra klimadebat til kunstig intelligens</h2>
+<h2>21 år, 86 numre, {STORY_COUNT_DA} historier — fra klimadebat til kunstig intelligens</h2>
 <div class="tiles">
   {stat_tile(TOTAL, "Numre siden 2005")}
-  {stat_tile(f"{top_cat_n}", f"Numre om {top_cat_name.lower()}")}
-  {stat_tile("60.000 → 17.000", "Oplag 2011 → 2025/26")}
+  {stat_tile(STORY_COUNT_DA, "Historier læst i fuld tekst")}
+  {stat_tile(f"{len(STORY_INST_COUNTER)}", "Institutter/centre navngivet")}
   {stat_tile(f"{PCT_DOC}%", "Numre med dokumenteret tema")}
 </div>
 <div class="cols">
@@ -309,7 +325,7 @@ exec_summary = f"""
     <h3>Tre hovedpointer</h3>
     <div class="insight"><b>1. Klima og ressourcer er Dynamos rygrad.</b> {top_cat_n} af {DOCUMENTED} dokumenterede numre ({round(100*top_cat_n/DOCUMENTED)}%) kredser om klima, energi eller ressourceknaphed — temaet går igen fra den første klimavinkel i 2009 til energiøer (2022) og bæredygtige byggematerialer (2025).</div>
     <div class="insight"><b>2. Teknologibølgerne følger samfundsdebatten.</b> Cybersikkerhed (2023) afløses af bioteknologi og kvante (2023–24), som igen afløses af kunstig intelligens som fast tema i 2024–2026 — Dynamo fungerer som en art tidskapsel for hvilken teknologi der optog Danmark hvert år.</div>
-    <div class="insight"><b>3. Magasinet navngiver sjældent institutter direkte.</b> Kun en håndfuld af de {DOCUMENTED} dokumenterede numre nævner et DTU-institut ved navn i den tilgængelige tekst — Dynamo er redaktionelt bygget op om samfundstemaer ("klima", "AI", "sundhed"), ikke om organisatorisk afsender. Se metodeafsnittet for hvad det betyder for institut-analysen.</div>
+    <div class="insight"><b>3. Historie-niveau afslører et helt andet institutbillede.</b> Set på forsidetema alene nævnes DTU-institutter næsten aldrig — men læses hver enkelt historie i fuld tekst (2015–2026), navngiver {STORY_INST_PCT}% af {STORY_COUNT_DA} historier et konkret institut, på tværs af {len(STORY_INST_COUNTER)} forskellige DTU-enheder. Se institutafsnittet.</div>
   </div>
   <div class="col">
     <h3>Top temaer, alle år</h3>
@@ -330,10 +346,10 @@ method = f"""
 <div class="section" id="sec-metode">
 <div class="kicker">Metode</div>
 <h2>Metode og datagrundlag</h2>
-<p>Analysen er bygget ved at katalogisere samtlige {TOTAL} numre af Dynamo (nr. 1, april 2005 – nr. 86, august 2026) og for hvert nummer forsøge at fastslå udgivelsesår, forsidetema, en kort indholdsbeskrivelse samt eventuelle navngivne DTU-institutter. To kilder er brugt:</p>
-<p><b>1. issuu.com/dtudk</b> — DTU's officielle udgiver-konto på Issuu, hvor numre fra ca. 2015 og frem er tilgængelige som gennembladrbare digitale udgaver med forsidetekst og beskrivelse.<br>
-<b>2. DTU's nyhedsarkiv (dtu.dk)</b> — søgt via et indekseret arkiv af DTU-nyheder, herunder de korte "Nyt nummer af DYNAMO"-artikler, som DTU historisk har udgivet ved hver ny udgave.</p>
-<div class="insight"><b>Vigtig begrænsning:</b> Direkte adgang til www.dtu.dk, alumni.dtu.dk og inside.dtu.dk var blokeret af netværkspolitikken i den analysemiljø, rapporten er udarbejdet i — kun issuu.com og det indekserede nyhedsarkiv var tilgængelige. Det betyder, at datagrundlaget er markant tættere for numre udgivet efter ca. 2015 (hvor Issuu-arkivet er komplet) end for numre fra 2005–2014, hvor kun {conf_counts.get("high",0)+conf_counts.get("medium",0)+conf_counts.get("low",0)} af {TOTAL} numre samlet er dokumenteret. Se dækningsgraden nedenfor.</div>
+<p>Analysen bygger på to niveauer. For samtlige {TOTAL} numre af Dynamo (nr. 1, april 2005 – nr. 86, august 2026) er udgivelsesår og forsidetema forsøgt fastslået ("issue-niveau"). For {STORY_ISSUE_COUNT} af numrene (nr. {min(STORY_ISSUE_NUMS)}–{max(STORY_ISSUE_NUMS)}, 2015–2026) er der derudover gået et niveau dybere: hver enkelt historie i magasinet er læst og katalogiseret individuelt ("historie-niveau") — {STORY_COUNT_DA} historier med titel, DTU-institut (hvor nævnt), emne og en kort beskrivelse hver.</p>
+<p><b>Historie-niveau (2015–2026):</b> issuu.com's visningsplatform gemmer internt et fuldt tekstlag pr. side til sin søgefunktion. Et lille udtræksscript (<code>extract_issuu_text.py</code>) henter dette tekstlag direkte fra issuu's egen API for hvert nummer — det er magasinets rigtige, fulde brødtekst, ikke kun forsidebeskrivelsen. Den udtrukne tekst er derefter læst nummer for nummer og struktureret til enkeltstående historier.</p>
+<p><b>Issue-niveau (alle 86 numre):</b> forsidetema, udgivelsesår og evt. institutnavn er fastslået via issuu.com/dtudk (numre fra ca. 2015) samt DTU's eget mediebibliotek på dtu.dk, hvor de originale PDF'er af ældre numre (2005–2014) er hostet direkte — cover og indholdsfortegnelse er læst for hvert nummer, hvor PDF'en kunne lokaliseres.</p>
+<div class="insight"><b>Begrænsning:</b> {len(STORY_UNCOVERED)} numre (nr. {', '.join(str(n) for n in STORY_UNCOVERED)}) har ikke kunnet historie-udtrækkes — enten fordi de ligger på en anden visningsplatform end issuu, eller fordi issuu's tekstlag-API afviste netop de numre — og har derfor kun issue-niveau-dokumentation. For 2005–2014 er {sum(1 for i in issues if i["year"]<=2014 and i.get("confidence")=="not_found")} af {sum(1 for i in issues if i["year"]<=2014)} numre fortsat udokumenterede efter udvidet søgning i DTU's mediebibliotek — et par lovende kilder (yumpu.com, Wayback Machine) var blokeret af netværksproxyen i analysemiljøet. Se dækningsgraden nedenfor.</div>
 <div class="cols">
   <div class="col" style="flex:1.4;">
     <h3>Datadækning pr. sikkerhedsniveau</h3>
@@ -477,8 +493,8 @@ strategy_page = f"""
 </div>"""
 
 # ================= INSTITUTES =================
-inst_pairs = inst_counter if isinstance(inst_counter, list) else sorted(inst_counter.items(), key=lambda x: -x[1])
-inst_rows = "".join(f"<tr><td>{esc(name)}</td><td>{n}</td></tr>" for name, n in inst_pairs) if inst_pairs else "<tr><td colspan='2' class='small'>Ingen eksplicit institut-nævning fundet i de gennemgåede kilder.</td></tr>"
+story_inst_pairs = STORY_INST_COUNTER.most_common()
+inst_rows = "".join(f"<tr><td>{esc(name)}</td><td>{n}</td></tr>" for name, n in story_inst_pairs) if story_inst_pairs else "<tr><td colspan='2' class='small'>Ingen eksplicit institut-nævning fundet.</td></tr>"
 
 institute_ref_rows = "".join(
     f"<tr><td>{esc(i['name'])}</td><td>{esc(i['focus'])}</td></tr>" for i in INSTITUTES
@@ -488,10 +504,11 @@ institutes_page = f"""
 <div class="section" id="sec-institutter">
 <div class="kicker">Institutter</div>
 <h2>Institutter i Dynamo</h2>
-<p>Et centralt fund i denne analyse er, at Dynamo redaktionelt er bygget op om <b>temaer og samfundsudfordringer</b> — ikke om hvilket DTU-institut der står bag forskningen. På tværs af {DOCUMENTED} dokumenterede numre kunne kun {sum(n for _,n in inst_pairs)} eksplicitte institut-nævninger findes i den tilgængelige forsidetekst/beskrivelse:</p>
-{bar_rows(inst_pairs, color="var(--dtu-blue)") if inst_pairs else ""}
-<table><tr><th>Institut/center</th><th>Nævnt i antal numre</th></tr>{inst_rows}</table>
-<div class="insight"><b>Fortolkning:</b> Dette er sandsynligvis en bevidst redaktionel linje snarere end et hul i datagrundlaget — Dynamo henvender sig til et bredt eksternt publikum (erhvervsliv, myndigheder, politikere), hvor et samfundstema ("klima", "kunstig intelligens", "vandmangel") kommunikerer bedre end et instituts navn. En fuld institut-attribuering ville kræve adgang til den fulde artikeltekst i hvert nummers PDF, ikke kun issuu-forsiden/beskrivelsen.</div>
+<p>Set på forsidetema alene virker Dynamo redaktionelt bygget op om <b>temaer og samfundsudfordringer</b> frem for organisatorisk afsender — på issue-niveau (alle 86 numre) findes stort set ingen institut-nævninger i forsidebeskrivelserne. Læses hver enkelt historie i fuld tekst i stedet (nr. {min(STORY_ISSUE_NUMS)}–{max(STORY_ISSUE_NUMS)}, 2015–2026), viser billedet sig markant rigere: <b>{STORY_WITH_INST} af {STORY_COUNT_DA} historier ({STORY_INST_PCT}%)</b> navngiver et konkret DTU-institut eller -center, fordelt på {len(story_inst_pairs)} forskellige enheder.</p>
+{bar_rows(story_inst_pairs[:15], color="var(--dtu-blue)")}
+<p class="small">Top 15 af {len(story_inst_pairs)} institutter/centre, optalt pr. historie (2015–2026). Fuld liste nedenfor.</p>
+<table><tr><th>Institut/center</th><th>Historier</th></tr>{inst_rows}</table>
+<div class="insight"><b>Fortolkning:</b> Instituttavlen var altså ikke et hul i Dynamos indhold, men i den oprindelige analysemetode — magasinet navngiver rent faktisk institutter jævnligt, bare inde i de enkelte historier, ikke på forsiden eller i den korte temabeskrivelse. DTU Compute, DTU Fødevareinstituttet, DTU Elektro, DTU Space og DTU Fotonik er de hyppigst navngivne, hvilket afspejler både forskningsvolumen og hvilke institutter der hyppigt bidrager med "lette" historier (studenterprojekter, portrætter) ud over de tunge forskningsartikler.</div>
 <h3>DTU's institutter og centre (reference, 2026)</h3>
 <p class="small">Til reference: DTU's nuværende institutstruktur, som ethvert fremtidigt dybere tekstudtræk fra Dynamo bør mappes op imod. Bemærk at flere institutter er omdøbt eller fusioneret i perioden 2005–2026 (fx DTU Compute fra 2013, DTU Sustain og DTU Construct fra ca. 2022-23) — se metodenoten.</p>
 <table><tr><th>Institut/center</th><th>Fokusområde</th></tr>{institute_ref_rows}</table>
@@ -536,8 +553,8 @@ for it in issues:
 # `display:table-header-group` (see template.html).
 appendix_html = f"""
 <div class="section" id="sec-appendiks">
-<div class="kicker">Appendiks</div>
-<h2>Appendiks: alle katalogiserede numre</h2>
+<div class="kicker">Appendiks A</div>
+<h2>Appendiks A: alle katalogiserede numre</h2>
 <p class="small">"Kilde" linker til de sider (issuu.com/dtudk, DTU's nyhedsarkiv m.fl.), hvor nummerets forside/tema er dokumenteret — brug dem til at slå den fulde historie op.</p>
 <table>
 <thead><tr><th>Nr.</th><th>År</th><th>Tema</th><th>Sikkerhed</th><th>Kilde</th></tr></thead>
@@ -547,12 +564,37 @@ appendix_html = f"""
 </table>
 </div>"""
 
+# ================= APPENDIX B: EVERY SINGLE STORY =================
+NO_INST = "<span class='small'>–</span>"
+
+def story_row(s):
+    inst = esc(s["institute"]) if s.get("institute") else NO_INST
+    return (
+        f"<tr><td>{s['issue_number']}</td><td>{s['year']}</td><td>{esc(s['title'])}</td>"
+        f"<td>{inst}</td><td>{esc(s.get('topic') or '–')}</td></tr>"
+    )
+
+story_rows_sorted = sorted(STORIES, key=lambda s: (s["issue_number"],))
+story_rows_html = "".join(story_row(s) for s in story_rows_sorted)
+stories_appendix_html = f"""
+<div class="section" id="sec-appendiks-b">
+<div class="kicker">Appendiks B</div>
+<h2>Appendiks B: alle {STORY_COUNT_DA} historier, nr. {min(STORY_ISSUE_NUMS)}–{max(STORY_ISSUE_NUMS)} (2015–2026)</h2>
+<p class="small">Hver enkelt historie i de {STORY_ISSUE_COUNT} numre, hvor Dynamos fulde tekst kunne udtrækkes (se metodeafsnittet) — ikke kun forsidetemaet. "Institut" er kun udfyldt, hvor historien selv navngiver et konkret DTU-institut eller -center; "–" betyder ingen specifik enhed nævnt (fx studenterprojekter eller eksterne samarbejder).</p>
+<table>
+<thead><tr><th>Nr.</th><th>År</th><th>Titel</th><th>Institut</th><th>Emne</th></tr></thead>
+<tbody>
+{story_rows_html}
+</tbody>
+</table>
+</div>"""
+
 # ================= SOURCES / LAST PAGE =================
 sources_page = f"""
 <div class="section" id="sec-kilder">
 <div class="kicker">Kilder &amp; forbehold</div>
 <h2>Kilder og forbehold</h2>
-<p>Denne rapport er udarbejdet som en automatiseret indholdsanalyse baseret på offentligt tilgængelige forsider, temabeskrivelser og udgivelsesdatoer for Dynamo-numre på <b>issuu.com/dtudk</b> samt artikler i <b>DTU's nyhedsarkiv (dtu.dk)</b>. Den er ikke baseret på fuldtekst-læsning af hvert magasins indre artikler, og bør derfor læses som en kortlægning af <i>forsidetemaer og redaktionel retning</i> — ikke en komplet indholdsanalyse af hver artikel i hvert nummer. Kildelinks til hvert enkelt nummer findes i appendiks.</p>
+<p>Denne rapport er udarbejdet i to lag: et issue-niveau (forsidetema, udgivelsesår, kilde) for alle {TOTAL} numre, katalogiseret ud fra <b>issuu.com/dtudk</b> og de originale PDF'er i <b>DTU's mediebibliotek (dtu.dk)</b> — og et historie-niveau ({STORY_COUNT_DA} enkeltstående historier med titel, institut og emne) for de {STORY_ISSUE_COUNT} numre fra 2015–2026, hvor magasinets fulde tekst kunne udtrækkes fra issuu.com's interne søgeindeks (se metodeafsnittet). {len(STORY_UNCOVERED)} numre (nr. {', '.join(str(n) for n in STORY_UNCOVERED)}) samt hovedparten af 2005–2014 har kun issue-niveau-dokumentation. Kildelinks til hvert enkelt nummer findes i appendiks A; alle historier findes i appendiks B.</p>
 <p>Koblingen til DTU's strategi (s. {TOC_PAGES.get("strategi", 5)}) er baseret på <a class="src" href="{esc(STRATEGY['source']['url'])}">{esc(STRATEGY['source']['title'])}</a>, hentet {esc(STRATEGY['source']['retrieved'])}.</p>
 <p>Numre markeret "Ikke fundet" i appendiks eksisterer efter al sandsynlighed (Dynamos kvartalskadence er bekræftet uændret gennem hele perioden), men deres tema kunne ikke dokumenteres inden for de kilder, der var tilgængelige i analysemiljøet.</p>
 <p class="small">Udarbejdet {esc(today)}. Data og metode kan genskabes/udvides ved fornyet adgang til DTU's fulde nyhedsarkiv og digitale magasinarkiv.</p>
@@ -560,7 +602,7 @@ sources_page = f"""
 
 CONTENT = (cover + toc + exec_summary + method + history + themes_page + year_by_year_page
     + world_events_page + era_page + strategy_page + institutes_page + circ_page
-    + appendix_html + sources_page)
+    + appendix_html + stories_appendix_html + sources_page)
 
 with open(os.path.join(BASE, "template.html"), encoding="utf-8") as f:
     template = f.read()

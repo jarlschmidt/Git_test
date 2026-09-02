@@ -1,6 +1,39 @@
 # Projekt: Dynamo-analyse (DTU)
 
-**Status pr. 2026-09-02 (nyeste):** Bruger bad om det modsatte af den
+**Status pr. 2026-09-02 (nyeste — historie-niveau):** Bruger afviste
+issue-niveau-analysen som utilstrækkelig ("en analyse på baggrund af
+forsider er jo mildest talt fesent... er der huller er rapporten
+værdiløs") og krævede hver enkelt historie i magasinet, ikke kun
+forsidetemaet. Løsning fundet: issuu.com gemmer internt et fuldt tekstlag
+pr. side til sin søgefunktion, som kan trækkes ud direkte (se
+`extract_issuu_text.py` — bruger issuu's uofficielle reader3-API, ikke en
+dokumenteret offentlig API). Kørt for alle 46 numre 2015-2026: lykkedes for
+41 (numre 42-82); 4 numre (83-86) gav 403 fra issuu's tekstlag-API, og nr.
+41 ligger på en anden platform (emagstudio.win.dtu.dk, ikke længere
+DNS-opløselig). De 41 numres tekst blev læst og struktureret til **1.013
+historier** (titel, DTU-institut, emne, beskrivelse) i `data/stories.json`
+via 6 parallelle baggrundsagenter. Samtidig blev de 36 dårligst dokumenterede
+issue-niveau-numre (2005-2014, nr. 2-40) gen-researchet med den nu åbne
+dtu.dk-adgang (DTU's eget mediebibliotek hoster de originale PDF'er af
+gamle numre) — 19 af 36 blev opgraderet til reelt dokumenterede (primærkilde:
+læst cover + indholdsfortegnelse), resten (mest nr. 22-32, 34-40) forbliver
+ærligt "ikke fundet" efter udvidet søgning (yumpu.com og Wayback Machine er
+blokeret af netværksproxyen — mulige næste skridt hvis adgang åbnes).
+
+Rapporten er bygget om: institutanalysen viser nu 62 institutter/62% —
+markant stærkere end de tidligere 7 nævninger — og der er tilføjet et helt
+nyt "Appendiks B" med alle 1.013 historier. Rapporten er vokset til **48
+sider** (op fra 13) — igen ægte nyt indhold (primært den lange, men
+eksplicit ønskede, historie-liste), ikke whitespace.
+
+**Vigtigt for næste session:** De midlertidige `data/stories_batch_*.json`-filer
+er slettet efter merge til `data/stories.json` — kun sidstnævnte er kilden
+fremover. Hvis flere numre skal historie-udtrækkes (fx nr. 83-86, hvis
+issuu's API-blokering findes en vej rundt om), er mønstret: kør
+`extract_issuu_text.py <slug> <outfile>`, læs outputtet, strukturér til
+samme skema som `data/stories.json`, tilføj til filen, genkør build-kæden.
+
+**Status pr. 2026-09-02 (tidligere — diagrammer):** Bruger bad om det modsatte af den
 foregående minimalisme: en grundig rapport fuld af diagrammer, egnet til
 senere at blive lavet om til et slideshow. Tilføjet: et stablet
 år-for-år-tema-diagram (10 kategorier × 21 år), cirkeldiagrammer
