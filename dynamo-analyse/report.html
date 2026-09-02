@@ -48,8 +48,11 @@
   .section{ padding-top:0; position:relative; margin-top:9mm;}
   .section:first-of-type{margin-top:0;}
 
-  /* keep small, self-contained blocks from splitting across a page break */
-  .tiles, .insight, .quote, .tile, .cols, .barchart{ break-inside:avoid-page; page-break-inside:avoid;}
+  /* keep small, self-contained blocks from splitting across a page break —
+     .cols is deliberately NOT here: it can hold a tall chart, and forcing a
+     tall block to move as one unit is what left the big blank gaps the first
+     redesign was fixing; a two-column row is fine to break mid-way. */
+  .tiles, .insight, .quote, .tile, .barchart, .donut-wrap{ break-inside:avoid-page; page-break-inside:avoid;}
   tr{ break-inside:avoid-page; page-break-inside:avoid;}
   thead{ display:table-header-group;}
 
@@ -93,16 +96,40 @@
   .barrow .fill{position:absolute; left:0; top:0; bottom:0; border-radius:1.5px; background:var(--blue);}
   .barrow .val{min-width:13mm; width:auto; text-align:right; font-size:8.3pt; color:var(--ink); font-weight:700; flex-shrink:0; white-space:nowrap;}
 
-  /* TIMELINE */
-  .timeline{margin:5mm 0;}
-  .tl-row{display:flex; align-items:flex-end; gap:1.4px; height:34mm; border-bottom:1pt solid var(--rule); padding-bottom:1mm;}
-  .tl-bar{flex:1; background:var(--blue); border-radius:1.5px 1.5px 0 0; position:relative;}
-  .tl-labels{display:flex; gap:1.4px; margin-top:1.5mm;}
-  .tl-labels span{flex:1; font-size:6.3pt; color:var(--muted); text-align:center; writing-mode:vertical-rl; transform:rotate(180deg); height:10mm;}
-
   /* LEGEND */
   .legend{display:flex; flex-wrap:wrap; gap:4mm; margin:2mm 0 4mm 0; font-size:8pt; color:var(--ink-2);}
-  .legend .sw{display:inline-block; width:2.6mm; height:2.6mm; border-radius:1px; margin-right:1.4mm; vertical-align:middle;}
+  .legend .sw, .sw{display:inline-block; width:2.6mm; height:2.6mm; border-radius:1px; margin-right:1.4mm; vertical-align:middle; flex-shrink:0;}
+
+  /* DONUT CHART */
+  .donut-wrap{display:flex; align-items:center; gap:6mm; margin:3mm 0;}
+  .donut{flex-shrink:0;}
+  .donut-num{font-size:7.4px; font-weight:700; fill:var(--dtu-navy);}
+  .donut-sub{font-size:2.6px; fill:var(--muted); text-transform:uppercase; letter-spacing:0.04em;}
+  .donut-legend{flex:1; display:flex; flex-direction:column; gap:1.6mm; font-size:8.3pt;}
+  .donut-legend--row{flex-direction:row; flex-wrap:wrap; gap:1.6mm 5mm; margin-top:2mm;}
+  .donut-legend-row{display:flex; align-items:center; gap:1.6mm;}
+  .donut-legend-lbl{flex:1; color:var(--ink-2);}
+  .donut-legend-row b{color:var(--ink);}
+
+  /* STACKED YEAR-BY-YEAR CHART */
+  .ybar-chart{display:flex; align-items:flex-end; gap:1px; height:42mm; border-bottom:1pt solid var(--rule); margin:4mm 0 1.5mm 0; break-inside:avoid-page; page-break-inside:avoid;}
+  .ybar-col{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
+  .ybar-stack{width:78%; display:flex; flex-direction:column-reverse; height:100%;}
+  .ybar-seg{width:100%; flex-shrink:0;}
+  .ybar-col span{font-size:6.4pt; color:var(--muted); margin-top:1.5mm; writing-mode:vertical-rl; transform:rotate(180deg);}
+
+  /* LINE CHART */
+  .line-chart{display:block; margin:3mm 0;}
+
+  /* VERTICAL TIMELINE (world-events correlation) */
+  .timeline-v{margin:4mm 0;}
+  .tl-row-v{display:flex; gap:5mm; break-inside:avoid-page; page-break-inside:avoid;}
+  .tl-year-col{position:relative; flex:0 0 15mm; border-left:1.4pt solid var(--rule); padding:0 0 6mm 4mm; margin-top:0.5mm;}
+  .tl-row-v:last-child .tl-year-col{padding-bottom:0.5mm;}
+  .tl-year-col b{font-size:11.5pt; color:var(--dtu-navy); display:block;}
+  .tl-dot{position:absolute; left:-2.3mm; top:0.5mm; width:3.6mm; height:3.6mm; border-radius:50%; border:1.5pt solid var(--page);}
+  .tl-body{flex:1; padding-bottom:5mm;}
+  .tl-body p{margin:0 0 1.2mm 0;}
 
   /* TABLE */
   table{width:100%; border-collapse:collapse; font-size:8.3pt;}
@@ -149,7 +176,7 @@
   </div>
   <div class="footline"><span>Kilder: issuu.com/dtudk · DTU nyhedsarkiv (dtu.dk)</span><span>02. September 2026</span></div>
 </div>
-<div class='section' id='sec-toc'><div class='kicker'>Indhold</div><h2>Indholdsfortegnelse</h2><div class='toc-row'><span>Executive summary</span><span>3</span></div><div class='toc-row'><span>Metode og datagrundlag</span><span>3</span></div><div class='toc-row'><span>Dynamo gennem tiden — historien</span><span>4</span></div><div class='toc-row'><span>Temaer på tværs af 21 år</span><span>4</span></div><div class='toc-row'><span>Temaudvikling: tre æraer</span><span>5</span></div><div class='toc-row'><span>Temaerne og DTU's strategi 2026–2031</span><span>5</span></div><div class='toc-row'><span>Institutter i Dynamo</span><span>6</span></div><div class='toc-row'><span>Oplag og målgruppe over tid</span><span>7</span></div><div class='toc-row'><span>Appendiks: alle katalogiserede numre</span><span>8</span></div><div class='toc-row'><span>Kilder og forbehold</span><span>11</span></div><p class='small' style='margin-top:8mm;'>Rapporten er søgbar (fuld tekst) — brug Ctrl/Cmd+F i din PDF-læser for at slå numre, temaer eller institutter op.</p></div>
+<div class='section' id='sec-toc'><div class='kicker'>Indhold</div><h2>Indholdsfortegnelse</h2><div class='toc-row'><span>Executive summary</span><span>3</span></div><div class='toc-row'><span>Metode og datagrundlag</span><span>3</span></div><div class='toc-row'><span>Dynamo gennem tiden — historien</span><span>3</span></div><div class='toc-row'><span>Temaer på tværs af 21 år</span><span>4</span></div><div class='toc-row'><span>Temaer år for år</span><span>5</span></div><div class='toc-row'><span>Falder Dynamo sammen med verden?</span><span>5</span></div><div class='toc-row'><span>Temaudvikling: tre æraer</span><span>6</span></div><div class='toc-row'><span>Temaerne og DTU's strategi 2026–2031</span><span>6</span></div><div class='toc-row'><span>Institutter i Dynamo</span><span>7</span></div><div class='toc-row'><span>Oplag og målgruppe over tid</span><span>9</span></div><div class='toc-row'><span>Appendiks: alle katalogiserede numre</span><span>10</span></div><div class='toc-row'><span>Kilder og forbehold</span><span>13</span></div><p class='small' style='margin-top:8mm;'>Rapporten er søgbar (fuld tekst) — brug Ctrl/Cmd+F i din PDF-læser for at slå numre, temaer eller institutter op.</p></div>
 <div class="section" id="sec-exec">
 <div class="kicker">Executive summary</div>
 <h2>21 år, 86 numre — fra klimadebat til kunstig intelligens</h2>
@@ -180,8 +207,16 @@
 <p><b>1. issuu.com/dtudk</b> — DTU's officielle udgiver-konto på Issuu, hvor numre fra ca. 2015 og frem er tilgængelige som gennembladrbare digitale udgaver med forsidetekst og beskrivelse.<br>
 <b>2. DTU's nyhedsarkiv (dtu.dk)</b> — søgt via et indekseret arkiv af DTU-nyheder, herunder de korte "Nyt nummer af DYNAMO"-artikler, som DTU historisk har udgivet ved hver ny udgave.</p>
 <div class="insight"><b>Vigtig begrænsning:</b> Direkte adgang til www.dtu.dk, alumni.dtu.dk og inside.dtu.dk var blokeret af netværkspolitikken i den analysemiljø, rapporten er udarbejdet i — kun issuu.com og det indekserede nyhedsarkiv var tilgængelige. Det betyder, at datagrundlaget er markant tættere for numre udgivet efter ca. 2015 (hvor Issuu-arkivet er komplet) end for numre fra 2005–2014, hvor kun 52 af 86 numre samlet er dokumenteret. Se dækningsgraden nedenfor.</div>
-<h3>Datadækning pr. sikkerhedsniveau</h3>
-<div class='barchart'><div class='barrow'><div class='lbl'>Høj sikkerhed</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>38</div></div><div class='barrow'><div class='lbl'>Middel sikkerhed</div><div class='track'><div class='fill' style='width:26%; background:var(--dtu-blue);'></div></div><div class='val'>10</div></div><div class='barrow'><div class='lbl'>Lav sikkerhed</div><div class='track'><div class='fill' style='width:11%; background:var(--dtu-blue);'></div></div><div class='val'>4</div></div><div class='barrow'><div class='lbl'>Ikke fundet</div><div class='track'><div class='fill' style='width:89%; background:var(--dtu-blue);'></div></div><div class='val'>34</div></div></div>
+<div class="cols">
+  <div class="col" style="flex:1.4;">
+    <h3>Datadækning pr. sikkerhedsniveau</h3>
+    <div class='barchart'><div class='barrow'><div class='lbl'>Høj sikkerhed</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>38</div></div><div class='barrow'><div class='lbl'>Middel sikkerhed</div><div class='track'><div class='fill' style='width:26%; background:var(--dtu-blue);'></div></div><div class='val'>10</div></div><div class='barrow'><div class='lbl'>Lav sikkerhed</div><div class='track'><div class='fill' style='width:11%; background:var(--dtu-blue);'></div></div><div class='val'>4</div></div><div class='barrow'><div class='lbl'>Ikke fundet</div><div class='track'><div class='fill' style='width:89%; background:var(--dtu-blue);'></div></div><div class='val'>34</div></div></div>
+  </div>
+  <div class="col">
+    <h3>Andel dokumenteret</h3>
+    <div class='donut-wrap'><svg viewBox="0 0 42 42" class="donut" width="32mm" height="32mm"><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="var(--grid)" stroke-width="6.4"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#005cff" stroke-width="6.4" stroke-dasharray="44.186 55.814" stroke-dashoffset="25.000"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#4a5fc1" stroke-width="6.4" stroke-dasharray="11.628 88.372" stroke-dashoffset="-19.186"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#c99a2e" stroke-width="6.4" stroke-dasharray="4.651 95.349" stroke-dashoffset="-30.814"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#9a9a91" stroke-width="6.4" stroke-dasharray="39.535 60.465" stroke-dashoffset="-35.465"/><text x="21" y="20.5" text-anchor="middle" class="donut-num">58%</text><text x="21" y="26" text-anchor="middle" class="donut-sub">dokumenteret</text></svg><div class='donut-legend'><div class='donut-legend-row'><span class='sw' style='background:#005cff;'></span><span class='donut-legend-lbl'>Høj</span><b>38</b><span class='small'>(44%)</span></div><div class='donut-legend-row'><span class='sw' style='background:#4a5fc1;'></span><span class='donut-legend-lbl'>Middel</span><b>10</b><span class='small'>(12%)</span></div><div class='donut-legend-row'><span class='sw' style='background:#c99a2e;'></span><span class='donut-legend-lbl'>Lav</span><b>4</b><span class='small'>(5%)</span></div><div class='donut-legend-row'><span class='sw' style='background:#9a9a91;'></span><span class='donut-legend-lbl'>Ikke fundet</span><b>34</b><span class='small'>(40%)</span></div></div></div>
+  </div>
+</div>
 <h3>Tema-taksonomi</h3>
 <p class="small">Hvert dokumenteret nummer er kategoriseret efter nøgleord i tema og beskrivelse i én eller flere af 10 kategorier (Klima &amp; Energi, Vand/Miljø/Ressourcer, Sundhed &amp; Bioteknologi, Fødevarer &amp; Landbrug, Digitalt/AI/Data, Rum &amp; Klode, Materialer/Nano/Kvante, Transport/Byggeri/Byer, Forsvar &amp; Sikkerhed, Samfund &amp; Iværksætteri). Kategoriseringen er tekstbaseret og automatiseret — den fanger den dominerende vinkel, ikke nødvendigvis alle artikler i det enkelte nummer.</p>
 </div>
@@ -204,8 +239,99 @@
 <div class="kicker">Tema-analyse</div>
 <h2>Temaer på tværs af 21 år</h2>
 <p>Fordelingen nedenfor bygger på de 50 numre, hvor et forsidetema kunne dokumenteres (ud af 86 numre i alt). Et nummer kan optræde i mere end én kategori, hvis temaet spænder over flere felter (fx "energiøer" tæller både klima/energi og infrastruktur).</p>
-<div class='barchart'><div class='barrow'><div class='lbl'>Klima &amp; Energi</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-orange);'></div></div><div class='val'>19</div></div><div class='barrow'><div class='lbl'>Vand, Miljø &amp; Ressourcer</div><div class='track'><div class='fill' style='width:68%; background:var(--dtu-blue);'></div></div><div class='val'>13</div></div><div class='barrow'><div class='lbl'>Materialer, Nano &amp; Kvante</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Sundhed &amp; Bioteknologi</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Digitalt, AI &amp; Data</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Transport, Byggeri &amp; Byer</div><div class='track'><div class='fill' style='width:32%; background:var(--dtu-blue);'></div></div><div class='val'>6</div></div><div class='barrow'><div class='lbl'>Fødevarer &amp; Landbrug</div><div class='track'><div class='fill' style='width:32%; background:var(--dtu-blue);'></div></div><div class='val'>6</div></div><div class='barrow'><div class='lbl'>Forsvar &amp; Sikkerhed</div><div class='track'><div class='fill' style='width:26%; background:var(--dtu-blue);'></div></div><div class='val'>5</div></div><div class='barrow'><div class='lbl'>Samfund &amp; Iværksætteri</div><div class='track'><div class='fill' style='width:16%; background:var(--dtu-blue);'></div></div><div class='val'>3</div></div><div class='barrow'><div class='lbl'>Rum &amp; Klode</div><div class='track'><div class='fill' style='width:16%; background:var(--dtu-blue);'></div></div><div class='val'>3</div></div><div class='barrow'><div class='lbl'>Andet/uklassificeret</div><div class='track'><div class='fill' style='width:5%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div></div>
+<div class="cols">
+  <div class="col" style="flex:1.4;">
+    <div class='barchart'><div class='barrow'><div class='lbl'>Klima &amp; Energi</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-orange);'></div></div><div class='val'>19</div></div><div class='barrow'><div class='lbl'>Vand, Miljø &amp; Ressourcer</div><div class='track'><div class='fill' style='width:68%; background:var(--dtu-blue);'></div></div><div class='val'>13</div></div><div class='barrow'><div class='lbl'>Materialer, Nano &amp; Kvante</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Sundhed &amp; Bioteknologi</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Digitalt, AI &amp; Data</div><div class='track'><div class='fill' style='width:42%; background:var(--dtu-blue);'></div></div><div class='val'>8</div></div><div class='barrow'><div class='lbl'>Transport, Byggeri &amp; Byer</div><div class='track'><div class='fill' style='width:32%; background:var(--dtu-blue);'></div></div><div class='val'>6</div></div><div class='barrow'><div class='lbl'>Fødevarer &amp; Landbrug</div><div class='track'><div class='fill' style='width:32%; background:var(--dtu-blue);'></div></div><div class='val'>6</div></div><div class='barrow'><div class='lbl'>Forsvar &amp; Sikkerhed</div><div class='track'><div class='fill' style='width:26%; background:var(--dtu-blue);'></div></div><div class='val'>5</div></div><div class='barrow'><div class='lbl'>Samfund &amp; Iværksætteri</div><div class='track'><div class='fill' style='width:16%; background:var(--dtu-blue);'></div></div><div class='val'>3</div></div><div class='barrow'><div class='lbl'>Rum &amp; Klode</div><div class='track'><div class='fill' style='width:16%; background:var(--dtu-blue);'></div></div><div class='val'>3</div></div><div class='barrow'><div class='lbl'>Andet/uklassificeret</div><div class='track'><div class='fill' style='width:5%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div></div>
+  </div>
+  <div class="col">
+    <h3>Andel af kategori-optællinger</h3>
+    <div class='donut-wrap'><svg viewBox="0 0 42 42" class="donut" width="32mm" height="32mm"><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="var(--grid)" stroke-width="6.4"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#ff5924" stroke-width="6.4" stroke-dasharray="23.750 76.250" stroke-dashoffset="25.000"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#005cff" stroke-width="6.4" stroke-dasharray="16.250 83.750" stroke-dashoffset="1.250"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#c23b3b" stroke-width="6.4" stroke-dasharray="10.000 90.000" stroke-dashoffset="-15.000"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#0d8a72" stroke-width="6.4" stroke-dasharray="10.000 90.000" stroke-dashoffset="-25.000"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#c99a2e" stroke-width="6.4" stroke-dasharray="10.000 90.000" stroke-dashoffset="-35.000"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#4a5fc1" stroke-width="6.4" stroke-dasharray="7.500 92.500" stroke-dashoffset="-45.000"/><circle cx="21" cy="21" r="15.9155" fill="transparent" stroke="#9a9a91" stroke-width="6.4" stroke-dasharray="22.500 77.500" stroke-dashoffset="-52.500"/><text x="21" y="20.5" text-anchor="middle" class="donut-num">80</text><text x="21" y="26" text-anchor="middle" class="donut-sub">optællinger</text></svg><div class='donut-legend'><div class='donut-legend-row'><span class='sw' style='background:#ff5924;'></span><span class='donut-legend-lbl'>Klima &amp; Energi</span><b>19</b><span class='small'>(24%)</span></div><div class='donut-legend-row'><span class='sw' style='background:#005cff;'></span><span class='donut-legend-lbl'>Vand, Miljø &amp; Ressourcer</span><b>13</b><span class='small'>(16%)</span></div><div class='donut-legend-row'><span class='sw' style='background:#c23b3b;'></span><span class='donut-legend-lbl'>Materialer, Nano &amp; Kvante</span><b>8</b><span class='small'>(10%)</span></div><div class='donut-legend-row'><span class='sw' style='background:#0d8a72;'></span><span class='donut-legend-lbl'>Sundhed &amp; Bioteknologi</span><b>8</b><span class='small'>(10%)</span></div><div class='donut-legend-row'><span class='sw' style='background:#c99a2e;'></span><span class='donut-legend-lbl'>Digitalt, AI &amp; Data</span><b>8</b><span class='small'>(10%)</span></div><div class='donut-legend-row'><span class='sw' style='background:#4a5fc1;'></span><span class='donut-legend-lbl'>Transport, Byggeri &amp; Byer</span><b>6</b><span class='small'>(8%)</span></div><div class='donut-legend-row'><span class='sw' style='background:#9a9a91;'></span><span class='donut-legend-lbl'>Øvrige temaer</span><b>18</b><span class='small'>(22%)</span></div></div></div>
+  </div>
+</div>
 <div class="insight"><b>Klima &amp; energi er det mest genkommende tema i hele Dynamos historie</b> — fra den første klimafokuserede udgave i 2009 over "Energiøer" (2022) til bæredygtige byggematerialer (2025) og skibsfart (2025). Vand-, miljø- og ressourceknaphed er tæt følgende som nummer to, hvilket afspejler DTU's tunge forskningsprofil inden for miljøteknologi og ressourceøkonomi.</div>
+</div>
+<div class="section" id="sec-temaeraar">
+<div class="kicker">Tema-analyse</div>
+<h2>Temaer år for år</h2>
+<p>Samme 10 kategorier som ovenfor, men brudt ud år for år i stedet for summeret over hele perioden — søjlerne viser, hvilke temaer der prægede Dynamo hvert enkelt år (kun de 50 dokumenterede numre er talt med; se dækningsgraden i metodeafsnittet for hvorfor 2005–2014 er tyndere).</p>
+<div class='ybar-chart'><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#9a9a91;"></div></div><span>2005</span></div><div class="ybar-col"><div class="ybar-stack"></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#ff5924;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#9a9a91;"></div></div><span>2011</span></div><div class="ybar-col"><div class="ybar-stack"></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#005cff;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#ff5924;"></div><div class="ybar-seg" style="height:11.11%; background:#005cff;"></div><div class="ybar-seg" style="height:11.11%; background:#c23b3b;"></div><div class="ybar-seg" style="height:11.11%; background:#4a5fc1;"></div><div class="ybar-seg" style="height:11.11%; background:#9a9a91;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#ff5924;"></div><div class="ybar-seg" style="height:11.11%; background:#005cff;"></div><div class="ybar-seg" style="height:11.11%; background:#c23b3b;"></div><div class="ybar-seg" style="height:11.11%; background:#0d8a72;"></div><div class="ybar-seg" style="height:11.11%; background:#4a5fc1;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:22.22%; background:#ff5924;"></div><div class="ybar-seg" style="height:11.11%; background:#005cff;"></div><div class="ybar-seg" style="height:22.22%; background:#c23b3b;"></div><div class="ybar-seg" style="height:11.11%; background:#c99a2e;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#ff5924;"></div><div class="ybar-seg" style="height:22.22%; background:#0d8a72;"></div><div class="ybar-seg" style="height:11.11%; background:#9a9a91;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#ff5924;"></div><div class="ybar-seg" style="height:11.11%; background:#005cff;"></div><div class="ybar-seg" style="height:11.11%; background:#4a5fc1;"></div><div class="ybar-seg" style="height:11.11%; background:#9a9a91;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:22.22%; background:#ff5924;"></div><div class="ybar-seg" style="height:22.22%; background:#0d8a72;"></div><div class="ybar-seg" style="height:11.11%; background:#c99a2e;"></div><div class="ybar-seg" style="height:22.22%; background:#9a9a91;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:22.22%; background:#ff5924;"></div><div class="ybar-seg" style="height:11.11%; background:#c23b3b;"></div><div class="ybar-seg" style="height:11.11%; background:#0d8a72;"></div><div class="ybar-seg" style="height:11.11%; background:#c99a2e;"></div><div class="ybar-seg" style="height:33.33%; background:#9a9a91;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:22.22%; background:#ff5924;"></div><div class="ybar-seg" style="height:22.22%; background:#005cff;"></div><div class="ybar-seg" style="height:33.33%; background:#9a9a91;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#ff5924;"></div><div class="ybar-seg" style="height:22.22%; background:#005cff;"></div><div class="ybar-seg" style="height:11.11%; background:#c23b3b;"></div><div class="ybar-seg" style="height:22.22%; background:#0d8a72;"></div><div class="ybar-seg" style="height:11.11%; background:#c99a2e;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:22.22%; background:#ff5924;"></div><div class="ybar-seg" style="height:22.22%; background:#c99a2e;"></div><div class="ybar-seg" style="height:11.11%; background:#4a5fc1;"></div><div class="ybar-seg" style="height:33.33%; background:#9a9a91;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:11.11%; background:#ff5924;"></div><div class="ybar-seg" style="height:22.22%; background:#005cff;"></div><div class="ybar-seg" style="height:22.22%; background:#c23b3b;"></div><div class="ybar-seg" style="height:11.11%; background:#c99a2e;"></div><div class="ybar-seg" style="height:11.11%; background:#4a5fc1;"></div><div class="ybar-seg" style="height:22.22%; background:#9a9a91;"></div></div><span>&nbsp;</span></div><div class="ybar-col"><div class="ybar-stack"><div class="ybar-seg" style="height:22.22%; background:#ff5924;"></div><div class="ybar-seg" style="height:22.22%; background:#005cff;"></div><div class="ybar-seg" style="height:11.11%; background:#c99a2e;"></div><div class="ybar-seg" style="height:11.11%; background:#4a5fc1;"></div></div><span>2026</span></div></div><div class='donut-legend donut-legend--row'><div class='donut-legend-row'><span class='sw' style='background:#ff5924;'></span><span class='donut-legend-lbl'>Klima &amp; Energi</span></div><div class='donut-legend-row'><span class='sw' style='background:#005cff;'></span><span class='donut-legend-lbl'>Vand, Miljø &amp; Ressourcer</span></div><div class='donut-legend-row'><span class='sw' style='background:#c23b3b;'></span><span class='donut-legend-lbl'>Materialer, Nano &amp; Kvante</span></div><div class='donut-legend-row'><span class='sw' style='background:#0d8a72;'></span><span class='donut-legend-lbl'>Sundhed &amp; Bioteknologi</span></div><div class='donut-legend-row'><span class='sw' style='background:#c99a2e;'></span><span class='donut-legend-lbl'>Digitalt, AI &amp; Data</span></div><div class='donut-legend-row'><span class='sw' style='background:#4a5fc1;'></span><span class='donut-legend-lbl'>Transport, Byggeri &amp; Byer</span></div><div class='donut-legend-row'><span class='sw' style='background:#9a9a91;'></span><span class='donut-legend-lbl'>Øvrige temaer</span></div></div>
+<div class="insight"><b>Bølgerne er tydelige, når man ser år for år:</b> klima &amp; energi optræder praktisk talt hvert år fra 2015 og frem, mens digitalt/AI/data og materialer/nano/kvante først for alvor tager fart efter 2020 — konsistent med tre-æra-opdelingen nedenfor, men med langt mere detalje om <i>hvornår</i> skiftet sker.</div>
+</div>
+<div class="section" id="sec-verden">
+<div class="kicker">Dynamo og omverdenen</div>
+<h2>Falder Dynamos temaer sammen med det, der sker i verden?</h2>
+<p>Ti udvalgte, velkendte begivenheder fra 2005–2026 holdt op mod, hvor mange af de dokumenterede Dynamo-numre samme år faldt i den relaterede tema-kategori. Klima &amp; energi går igen flest gange nedenfor, fordi det også er langt Dynamos mest genkommende tema — men sammenfaldene med COP15 (2009), energikrisen efter Ruslands invasion af Ukraine (2022) og ChatGPT/ AI-forordningen (2022–2024) er slående konkrete.</p>
+<div class='timeline-v'>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#ff5924;"></div><b>2005</b></div>
+          <div class="tl-body">
+            <p><b>Kyoto-protokollen træder i kraft</b> — <a class="src" href="https://en.wikipedia.org/wiki/Kyoto_Protocol">Kyoto Protocol — Wikipedia</a></p>
+            <p class="small">Ingen numre dokumenteret med tema <b>Klima &amp; Energi</b> i netop 2005 (kan skyldes datadækningen, se metodeafsnittet).</p>
+          </div>
+        </div>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#ff5924;"></div><b>2009</b></div>
+          <div class="tl-body">
+            <p><b>COP15-klimatopmøde i København</b> — <a class="src" href="https://unfccc.int/conference/copenhagen-climate-change-conference-december-2009">Copenhagen Climate Change Conference — UNFCCC</a></p>
+            <p class="small">Dynamo bragte 1 nummer/numre om <b>Klima &amp; Energi</b> i 2009.</p>
+          </div>
+        </div>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#ff5924;"></div><b>2011</b></div>
+          <div class="tl-body">
+            <p><b>Fukushima-atomulykken</b> — <a class="src" href="https://en.wikipedia.org/wiki/Fukushima_nuclear_accident">Fukushima nuclear accident — Wikipedia</a></p>
+            <p class="small">Ingen numre dokumenteret med tema <b>Klima &amp; Energi</b> i netop 2011 (kan skyldes datadækningen, se metodeafsnittet).</p>
+          </div>
+        </div>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#ff5924;"></div><b>2015</b></div>
+          <div class="tl-body">
+            <p><b>Paris-aftalen vedtages</b> — <a class="src" href="https://unfccc.int/process-and-meetings/the-paris-agreement">Paris Agreement — UNFCCC</a></p>
+            <p class="small">Dynamo bragte 1 nummer/numre om <b>Klima &amp; Energi</b> i 2015.</p>
+          </div>
+        </div>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#c23b3b;"></div><b>2019</b></div>
+          <div class="tl-body">
+            <p><b>Google melder "kvantesupremati"</b> — <a class="src" href="https://en.wikipedia.org/wiki/Quantum_supremacy">Quantum supremacy — Wikipedia</a></p>
+            <p class="small">Ingen numre dokumenteret med tema <b>Materialer, Nano &amp; Kvante</b> i netop 2019 (kan skyldes datadækningen, se metodeafsnittet).</p>
+          </div>
+        </div>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#0d8a72;"></div><b>2020</b></div>
+          <div class="tl-body">
+            <p><b>WHO erklærer COVID-19 en pandemi</b> — <a class="src" href="https://www.who.int/director-general/speeches/detail/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020">WHO Director-General's opening remarks, 11 March 2020</a></p>
+            <p class="small">Dynamo bragte 2 nummer/numre om <b>Sundhed &amp; Bioteknologi</b> i 2020.</p>
+          </div>
+        </div>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#9a9a91;"></div><b>2021</b></div>
+          <div class="tl-body">
+            <p><b>James Webb-teleskopet opsendes</b> — <a class="src" href="https://www.jwst.nasa.gov/content/about/launch.html">James Webb Space Telescope — NASA</a></p>
+            <p class="small"><b>Rum &amp; Klode</b> topper i 2021 (1 numre) — det højeste antal i hele Dynamos historie for dette tema.</p>
+          </div>
+        </div>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#ff5924;"></div><b>2022</b></div>
+          <div class="tl-body">
+            <p><b>Ruslands invasion af Ukraine udløser europæisk energikrise</b> — <a class="src" href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine">Russian invasion of Ukraine — Wikipedia</a></p>
+            <p class="small">Dynamo bragte 2 nummer/numre om <b>Klima &amp; Energi</b> i 2022.</p>
+          </div>
+        </div>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#c99a2e;"></div><b>2022</b></div>
+          <div class="tl-body">
+            <p><b>ChatGPT lanceres</b> — <a class="src" href="https://en.wikipedia.org/wiki/ChatGPT">ChatGPT — Wikipedia</a></p>
+            <p class="small">Ingen numre dokumenteret med tema <b>Digitalt, AI &amp; Data</b> i netop 2022 (kan skyldes datadækningen, se metodeafsnittet).</p>
+          </div>
+        </div>
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:#c99a2e;"></div><b>2024</b></div>
+          <div class="tl-body">
+            <p><b>EU's AI-forordning (AI Act) træder i kraft</b> — <a class="src" href="https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en">AI Act enters into force — Europa-Kommissionen</a></p>
+            <p class="small"><b>Digitalt, AI &amp; Data</b> topper i 2024 (2 numre) — det højeste antal i hele Dynamos historie for dette tema.</p>
+          </div>
+        </div></div>
 </div>
 <div class="section" id="sec-temaudvikling">
 <div class="kicker">Tema-analyse</div>
@@ -279,6 +405,7 @@
 <div class="kicker">Institutter</div>
 <h2>Institutter i Dynamo</h2>
 <p>Et centralt fund i denne analyse er, at Dynamo redaktionelt er bygget op om <b>temaer og samfundsudfordringer</b> — ikke om hvilket DTU-institut der står bag forskningen. På tværs af 50 dokumenterede numre kunne kun 7 eksplicitte institut-nævninger findes i den tilgængelige forsidetekst/beskrivelse:</p>
+<div class='barchart'><div class='barrow'><div class='lbl'>DTU Sundhedsteknologi</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div><div class='barrow'><div class='lbl'>Quantum DTU</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div><div class='barrow'><div class='lbl'>DTU Space</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div><div class='barrow'><div class='lbl'>DTU Construct</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div><div class='barrow'><div class='lbl'>Maritime DTU</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div><div class='barrow'><div class='lbl'>DTU Management (Institut for Teknologi, Ledelse og Økonomi)</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div><div class='barrow'><div class='lbl'>DTU Sustain (Institut for Miljø- og Ressourceteknologi)</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>1</div></div></div>
 <table><tr><th>Institut/center</th><th>Nævnt i antal numre</th></tr><tr><td>DTU Sundhedsteknologi</td><td>1</td></tr><tr><td>Quantum DTU</td><td>1</td></tr><tr><td>DTU Space</td><td>1</td></tr><tr><td>DTU Construct</td><td>1</td></tr><tr><td>Maritime DTU</td><td>1</td></tr><tr><td>DTU Management (Institut for Teknologi, Ledelse og Økonomi)</td><td>1</td></tr><tr><td>DTU Sustain (Institut for Miljø- og Ressourceteknologi)</td><td>1</td></tr></table>
 <div class="insight"><b>Fortolkning:</b> Dette er sandsynligvis en bevidst redaktionel linje snarere end et hul i datagrundlaget — Dynamo henvender sig til et bredt eksternt publikum (erhvervsliv, myndigheder, politikere), hvor et samfundstema ("klima", "kunstig intelligens", "vandmangel") kommunikerer bedre end et instituts navn. En fuld institut-attribuering ville kræve adgang til den fulde artikeltekst i hvert nummers PDF, ikke kun issuu-forsiden/beskrivelsen.</div>
 <h3>DTU's institutter og centre (reference, 2026)</h3>
@@ -294,6 +421,8 @@
   <div class='tile'><b>16-19.000</b><span class='lbl'>Oplag, 2025/26</span></div>
   <div class='tile'><b>-72%</b><span class='lbl'>Fald i oplag, 2011→2026</span></div>
 </div>
+<svg viewBox="0 0 170 54" class="line-chart" preserveAspectRatio="none" style="width:100%; height:32mm;"><path d="M22.0,8.0 L148.0,32.4 L148.0,42 L22.0,42 Z" fill="var(--dtu-blue)" opacity="0.12" stroke="none"/><path d="M22.0,8.0 L148.0,32.4" fill="none" stroke="var(--dtu-blue)" stroke-width="1.1"/><circle cx="22.0" cy="8.0" r="2" fill="var(--dtu-blue)"/><circle cx="148.0" cy="32.4" r="2" fill="var(--dtu-blue)"/><text x="22.0" y="4.0" font-size="4.6" font-weight="700" text-anchor="middle" fill="var(--dtu-navy)">60.000 eks.</text><text x="148.0" y="28.4" font-size="4.6" font-weight="700" text-anchor="middle" fill="var(--dtu-navy)">17.000 eks.</text><text x="22.0" y="50" font-size="3.6" text-anchor="middle" fill="var(--muted)">2011</text><text x="148.0" y="50" font-size="3.6" text-anchor="middle" fill="var(--muted)">2025/26</text></svg>
+<p class="small">Kun to kendte datapunkter (2011 og 2025/26) — linjen mellem dem er en lige linje, ikke en målt udvikling år for år.</p>
 <div class='barchart'><div class='barrow'><div class='lbl'>2011</div><div class='track'><div class='fill' style='width:100%; background:var(--dtu-blue);'></div></div><div class='val'>60000 eks.</div></div><div class='barrow'><div class='lbl'>2025/26</div><div class='track'><div class='fill' style='width:28%; background:var(--dtu-blue);'></div></div><div class='val'>17000 eks.</div></div></div>
 <p>Oplaget er faldet markant siden 2011 — men målgruppen er samtidig blevet skarpere defineret. I dag distribueres Dynamo annoncefrit og gratis til en navngivet kreds af beslutningstagere: bestyrelses- og direktionsmedlemmer i Danmarks største virksomheder, folketings- og EU-parlamentsmedlemmer, samt fonds- og rådsbestyrelser — suppleret af udlæg i landets læge- og tandlægevente­værelser. Faldet afspejler en generel branchetrend for trykte profilmagasiner: fra bredt oplag til stærkt målrettet distribution, understøttet af en digital udgave (issuu/iPad) siden omkring 2011.</p>
 <div class="insight"><b>Konsekvens for denne analyse:</b> Den skarpere målretning falder tidsmæssigt sammen med den periode (2020-2026), hvor Dynamos temaer bliver mest teknologispecifikke (kvante, AI, forsvar) — konsistent med en strategi om at tale direkte til beslutningstagere om aktuelle teknologipolitiske dagsordener frem for et bredt oplysningsformål.</div>
@@ -313,7 +442,7 @@
 <div class="kicker">Kilder &amp; forbehold</div>
 <h2>Kilder og forbehold</h2>
 <p>Denne rapport er udarbejdet som en automatiseret indholdsanalyse baseret på offentligt tilgængelige forsider, temabeskrivelser og udgivelsesdatoer for Dynamo-numre på <b>issuu.com/dtudk</b> samt artikler i <b>DTU's nyhedsarkiv (dtu.dk)</b>. Den er ikke baseret på fuldtekst-læsning af hvert magasins indre artikler, og bør derfor læses som en kortlægning af <i>forsidetemaer og redaktionel retning</i> — ikke en komplet indholdsanalyse af hver artikel i hvert nummer. Kildelinks til hvert enkelt nummer findes i appendiks.</p>
-<p>Koblingen til DTU's strategi (s. 5) er baseret på <a class="src" href="https://www.dtu.dk/om-dtu/strategi_aarsrapporter_mv/strategi-2026-2031">DTU Strategi 2026–2031 — Til gavn for samfundet, siden 1829</a>, hentet 2026-09-02.</p>
+<p>Koblingen til DTU's strategi (s. 6) er baseret på <a class="src" href="https://www.dtu.dk/om-dtu/strategi_aarsrapporter_mv/strategi-2026-2031">DTU Strategi 2026–2031 — Til gavn for samfundet, siden 1829</a>, hentet 2026-09-02.</p>
 <p>Numre markeret "Ikke fundet" i appendiks eksisterer efter al sandsynlighed (Dynamos kvartalskadence er bekræftet uændret gennem hele perioden), men deres tema kunne ikke dokumenteres inden for de kilder, der var tilgængelige i analysemiljøet.</p>
 <p class="small">Udarbejdet 02. September 2026. Data og metode kan genskabes/udvides ved fornyet adgang til DTU's fulde nyhedsarkiv og digitale magasinarkiv.</p>
 </div>

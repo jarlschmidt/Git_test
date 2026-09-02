@@ -12,6 +12,8 @@ with open(os.path.join(BASE, "data", "dtu_institutes.json"), encoding="utf-8") a
     INSTITUTES = json.load(f)
 with open(os.path.join(BASE, "data", "dtu_strategy.json"), encoding="utf-8") as f:
     STRATEGY = json.load(f)
+with open(os.path.join(BASE, "data", "world_events.json"), encoding="utf-8") as f:
+    WORLD_EVENTS = json.load(f)
 
 # Page numbers in the TOC are measured after a first render pass (see
 # measure_toc.py) and cached here, since sections now flow freely across
@@ -70,6 +72,165 @@ def source_links(urls):
         return "<span class='small'>–</span>"
     return " · ".join(f"<a class='src' href='{esc(u)}'>{esc(domain_label(u))}</a>" for u in urls)
 
+# ---------- fixed categorical palette (validated: node scripts/validate_palette.js
+# from the dataviz skill — 6 hues, all checks pass) ----------
+# Every chart in the report that breaks down by theme-category uses this SAME
+# category -> color mapping, assigned once in fixed rank order (never re-cycled
+# per-chart), with anything past the top 6 folded into one grey "Øvrige temaer".
+CAT_PALETTE = ["#ff5924", "#005cff", "#c23b3b", "#0d8a72", "#c99a2e", "#4a5fc1"]
+OTHER_COLOR = "#9a9a91"
+OTHER_LABEL = "Øvrige temaer"
+_cats_by_count = sorted(cat_totals.items(), key=lambda x: -x[1])
+TOP_CATS = [c for c, _ in _cats_by_count[:6]]
+CAT_COLOR = {c: CAT_PALETTE[i] for i, c in enumerate(TOP_CATS)}
+
+def cat_color(cat):
+    return CAT_COLOR.get(cat, OTHER_COLOR)
+
+# ---------- donut chart (inline SVG, stroke-dasharray technique) ----------
+def donut_svg(pairs, size_mm=32, hole_num=None, hole_sub=None):
+    """pairs: list of (label, color, value)."""
+    total = sum(v for _, _, v in pairs) or 1
+    r = 15.9155
+    cum = 0.0
+    arcs = []
+    for _, color, val in pairs:
+        pct = 100 * val / total
+        if pct <= 0:
+            continue
+        dashoffset = 25 - cum
+        arcs.append(
+            f'<circle cx="21" cy="21" r="{r}" fill="transparent" stroke="{color}" '
+            f'stroke-width="6.4" stroke-dasharray="{pct:.3f} {100-pct:.3f}" '
+            f'stroke-dashoffset="{dashoffset:.3f}"/>'
+        )
+        cum += pct
+    center = ""
+    if hole_num is not None:
+        center = f'<text x="21" y="20.5" text-anchor="middle" class="donut-num">{esc(hole_num)}</text>'
+        if hole_sub:
+            center += f'<text x="21" y="26" text-anchor="middle" class="donut-sub">{esc(hole_sub)}</text>'
+    return (
+        f'<svg viewBox="0 0 42 42" class="donut" width="{size_mm}mm" height="{size_mm}mm">'
+        f'<circle cx="21" cy="21" r="{r}" fill="transparent" stroke="var(--grid)" stroke-width="6.4"/>'
+        f'{"".join(arcs)}{center}</svg>'
+    )
+
+def donut_legend(pairs):
+    """pairs: list of (label, color, value)."""
+    total = sum(v for _, _, v in pairs) or 1
+    rows = []
+    for label, color, val in pairs:
+        pct = round(100 * val / total)
+        rows.append(
+            f"<div class='donut-legend-row'><span class='sw' style='background:{color};'></span>"
+            f"<span class='donut-legend-lbl'>{esc(label)}</span><b>{val}</b>"
+            f"<span class='small'>({pct}%)</span></div>"
+        )
+    return "<div class='donut-legend'>" + "".join(rows) + "</div>"
+
+def donut_with_legend(pairs, hole_num=None, hole_sub=None, size_mm=32):
+    """pairs: list of (label, color, value)."""
+    return (
+        "<div class='donut-wrap'>"
+        f"{donut_svg(pairs, size_mm=size_mm, hole_num=hole_num, hole_sub=hole_sub)}"
+        f"{donut_legend(pairs)}"
+        "</div>"
+    )
+
+# ---------- stacked year-by-year theme chart ----------
+def year_cat_lookup(year):
+    yc = D.get("year_cat", {})
+    return yc.get(str(year), yc.get(year, {})) or {}
+
+def stacked_year_chart(years):
+    stack_order = TOP_CATS + [OTHER_LABEL]
+    col_segs = {}
+    max_total = 1
+    for y in years:
+        counts = year_cat_lookup(y)
+        segs = [(c, counts.get(c, 0)) for c in TOP_CATS]
+        other = sum(v for c, v in counts.items() if c not in TOP_CATS)
+        segs.append((OTHER_LABEL, other))
+        col_segs[y] = segs
+        max_total = max(max_total, sum(v for _, v in segs))
+    highlight = {2005, 2011, 2026}
+    cols = []
+    for y in years:
+        parts = "".join(
+            f'<div class="ybar-seg" style="height:{100*v/max_total:.2f}%; background:{cat_color(c)};"></div>'
+            for c, v in col_segs[y] if v > 0
+        )
+        label = f"<span>{y}</span>" if y in highlight else "<span>&nbsp;</span>"
+        cols.append(f'<div class="ybar-col"><div class="ybar-stack">{parts}</div>{label}</div>')
+    legend_pairs = [(c, cat_color(c), sum(counts.get(c, 0) for counts in (year_cat_lookup(y) for y in years))) for c in stack_order]
+    legend = "".join(
+        f"<div class='donut-legend-row'><span class='sw' style='background:{color};'></span>"
+        f"<span class='donut-legend-lbl'>{esc(label)}</span></div>"
+        for label, color, _ in legend_pairs
+    )
+    return (
+        f"<div class='ybar-chart'>{''.join(cols)}</div>"
+        f"<div class='donut-legend donut-legend--row'>{legend}</div>"
+    )
+
+# ---------- simple honest line chart (few real data points, no interpolation guessing) ----------
+def line_chart_svg(points, y_suffix="", w=170, h=42, pad=22, pad_top=8):
+    vals = [v for _, v in points]
+    mx, mn = max(vals), 0
+    n = len(points)
+    xs = [pad + (w - 2*pad) * i / (n - 1) if n > 1 else w / 2 for i in range(n)]
+    ys = [pad_top + (h - pad_top) * (1 - (v - mn) / (mx - mn)) if mx > mn else h / 2 for v in vals]
+    path = " ".join(f"{'M' if i == 0 else 'L'}{xs[i]:.1f},{ys[i]:.1f}" for i in range(n))
+    area = path + f" L{xs[-1]:.1f},{h} L{xs[0]:.1f},{h} Z"
+    dots = "".join(f'<circle cx="{xs[i]:.1f}" cy="{ys[i]:.1f}" r="2" fill="var(--dtu-blue)"/>' for i in range(n))
+    vlabels = "".join(
+        f'<text x="{xs[i]:.1f}" y="{ys[i]-4:.1f}" font-size="4.6" font-weight="700" text-anchor="middle" fill="var(--dtu-navy)">{esc(f"{points[i][1]:,}".replace(",", "."))}{y_suffix}</text>'
+        for i in range(n)
+    )
+    xlabels = "".join(
+        f'<text x="{xs[i]:.1f}" y="{h+8}" font-size="3.6" text-anchor="middle" fill="var(--muted)">{esc(points[i][0])}</text>'
+        for i in range(n)
+    )
+    return (
+        f'<svg viewBox="0 0 {w} {h+12}" class="line-chart" preserveAspectRatio="none" style="width:100%; height:32mm;">'
+        f'<path d="{area}" fill="var(--dtu-blue)" opacity="0.12" stroke="none"/>'
+        f'<path d="{path}" fill="none" stroke="var(--dtu-blue)" stroke-width="1.1"/>'
+        f'{dots}{vlabels}{xlabels}</svg>'
+    )
+
+# ---------- world-events correlation timeline ----------
+def peak_year_for(cat):
+    best_year, best_n = None, -1
+    for y in range(2005, 2027):
+        n = year_cat_lookup(y).get(cat, 0)
+        if n > best_n:
+            best_n, best_year = n, y
+    return best_year, best_n
+
+def world_events_timeline():
+    rows = []
+    for ev in WORLD_EVENTS:
+        y = ev["year"]
+        cat = ev["category"]
+        n_this_year = year_cat_lookup(y).get(cat, 0)
+        peak_y, peak_n = peak_year_for(cat)
+        if peak_y == y and peak_n > 0:
+            dynamo_note = f"<b>{esc(cat)}</b> topper i {y} ({peak_n} numre) — det højeste antal i hele Dynamos historie for dette tema."
+        elif n_this_year > 0:
+            dynamo_note = f"Dynamo bragte {n_this_year} nummer/numre om <b>{esc(cat)}</b> i {y}."
+        else:
+            dynamo_note = f"Ingen numre dokumenteret med tema <b>{esc(cat)}</b> i netop {y} (kan skyldes datadækningen, se metodeafsnittet)."
+        rows.append(f"""
+        <div class="tl-row-v">
+          <div class="tl-year-col"><div class="tl-dot" style="background:{cat_color(cat)};"></div><b>{y}</b></div>
+          <div class="tl-body">
+            <p><b>{esc(ev['label'])}</b> — <a class="src" href="{esc(ev['source_url'])}">{esc(ev['source_title'])}</a></p>
+            <p class="small">{dynamo_note}</p>
+          </div>
+        </div>""")
+    return "<div class='timeline-v'>" + "".join(rows) + "</div>"
+
 def year_track_html():
     year_counts = D["year_counts"]
     years = list(range(2005, 2027))
@@ -112,12 +273,14 @@ toc_items = [
     ("metode", "Metode og datagrundlag", 3),
     ("historie", "Dynamo gennem tiden — historien", 3),
     ("temaer", "Temaer på tværs af 21 år", 4),
-    ("temaudvikling", "Temaudvikling: tre æraer", 4),
-    ("strategi", "Temaerne og DTU's strategi 2026–2031", 5),
-    ("institutter", "Institutter i Dynamo", 5),
-    ("oplag", "Oplag og målgruppe over tid", 6),
-    ("appendiks", "Appendiks: alle katalogiserede numre", 7),
-    ("kilder", "Kilder og forbehold", 10),
+    ("temaeraar", "Temaer år for år", 4),
+    ("verden", "Falder Dynamo sammen med verden?", 5),
+    ("temaudvikling", "Temaudvikling: tre æraer", 5),
+    ("strategi", "Temaerne og DTU's strategi 2026–2031", 6),
+    ("institutter", "Institutter i Dynamo", 6),
+    ("oplag", "Oplag og målgruppe over tid", 7),
+    ("appendiks", "Appendiks: alle katalogiserede numre", 8),
+    ("kilder", "Kilder og forbehold", 11),
 ]
 toc = "<div class='section' id='sec-toc'><div class='kicker'>Indhold</div><h2>Indholdsfortegnelse</h2>"
 toc += "".join(f"<div class='toc-row'><span>{esc(t)}</span><span>{TOC_PAGES.get(k, p)}</span></div>" for k,t,p in toc_items)
@@ -171,8 +334,21 @@ method = f"""
 <p><b>1. issuu.com/dtudk</b> — DTU's officielle udgiver-konto på Issuu, hvor numre fra ca. 2015 og frem er tilgængelige som gennembladrbare digitale udgaver med forsidetekst og beskrivelse.<br>
 <b>2. DTU's nyhedsarkiv (dtu.dk)</b> — søgt via et indekseret arkiv af DTU-nyheder, herunder de korte "Nyt nummer af DYNAMO"-artikler, som DTU historisk har udgivet ved hver ny udgave.</p>
 <div class="insight"><b>Vigtig begrænsning:</b> Direkte adgang til www.dtu.dk, alumni.dtu.dk og inside.dtu.dk var blokeret af netværkspolitikken i den analysemiljø, rapporten er udarbejdet i — kun issuu.com og det indekserede nyhedsarkiv var tilgængelige. Det betyder, at datagrundlaget er markant tættere for numre udgivet efter ca. 2015 (hvor Issuu-arkivet er komplet) end for numre fra 2005–2014, hvor kun {conf_counts.get("high",0)+conf_counts.get("medium",0)+conf_counts.get("low",0)} af {TOTAL} numre samlet er dokumenteret. Se dækningsgraden nedenfor.</div>
-<h3>Datadækning pr. sikkerhedsniveau</h3>
-{bar_rows(conf_pairs, color="var(--dtu-blue)")}
+<div class="cols">
+  <div class="col" style="flex:1.4;">
+    <h3>Datadækning pr. sikkerhedsniveau</h3>
+    {bar_rows(conf_pairs, color="var(--dtu-blue)")}
+  </div>
+  <div class="col">
+    <h3>Andel dokumenteret</h3>
+    {donut_with_legend([
+        ("Høj", "#005cff", conf_counts.get("high",0)),
+        ("Middel", "#4a5fc1", conf_counts.get("medium",0)),
+        ("Lav", "#c99a2e", conf_counts.get("low",0)),
+        ("Ikke fundet", OTHER_COLOR, conf_counts.get("not_found",0)),
+    ], hole_num=f"{PCT_DOC}%", hole_sub="dokumenteret")}
+  </div>
+</div>
 <h3>Tema-taksonomi</h3>
 <p class="small">Hvert dokumenteret nummer er kategoriseret efter nøgleord i tema og beskrivelse i én eller flere af 10 kategorier (Klima &amp; Energi, Vand/Miljø/Ressourcer, Sundhed &amp; Bioteknologi, Fødevarer &amp; Landbrug, Digitalt/AI/Data, Rum &amp; Klode, Materialer/Nano/Kvante, Transport/Byggeri/Byer, Forsvar &amp; Sikkerhed, Samfund &amp; Iværksætteri). Kategoriseringen er tekstbaseret og automatiseret — den fanger den dominerende vinkel, ikke nødvendigvis alle artikler i det enkelte nummer.</p>
 </div>"""
@@ -197,13 +373,43 @@ history = f"""
 
 # ================= THEMES ACROSS 21 YEARS =================
 all_cats_sorted = sorted(cat_totals.items(), key=lambda x: -x[1]) if isinstance(cat_totals, dict) else cat_totals
+donut_pairs_all = [(c, cat_color(c), n) for c, n in all_cats_sorted[:6]]
+donut_pairs_all.append((OTHER_LABEL, OTHER_COLOR, sum(n for c, n in all_cats_sorted[6:])))
 themes_page = f"""
 <div class="section" id="sec-temaer">
 <div class="kicker">Tema-analyse</div>
 <h2>Temaer på tværs af 21 år</h2>
 <p>Fordelingen nedenfor bygger på de {DOCUMENTED} numre, hvor et forsidetema kunne dokumenteres (ud af {TOTAL} numre i alt). Et nummer kan optræde i mere end én kategori, hvis temaet spænder over flere felter (fx "energiøer" tæller både klima/energi og infrastruktur).</p>
-{bar_rows(all_cats_sorted, color="var(--dtu-blue)", highlight_first=True)}
+<div class="cols">
+  <div class="col" style="flex:1.4;">
+    {bar_rows(all_cats_sorted, color="var(--dtu-blue)", highlight_first=True)}
+  </div>
+  <div class="col">
+    <h3>Andel af kategori-optællinger</h3>
+    {donut_with_legend(donut_pairs_all, hole_num=str(sum(n for _,n in all_cats_sorted)), hole_sub="optællinger")}
+  </div>
+</div>
 <div class="insight"><b>Klima &amp; energi er det mest genkommende tema i hele Dynamos historie</b> — fra den første klimafokuserede udgave i 2009 over "Energiøer" (2022) til bæredygtige byggematerialer (2025) og skibsfart (2025). Vand-, miljø- og ressourceknaphed er tæt følgende som nummer to, hvilket afspejler DTU's tunge forskningsprofil inden for miljøteknologi og ressourceøkonomi.</div>
+</div>"""
+
+# ================= THEMES YEAR BY YEAR =================
+_all_years = list(range(2005, 2027))
+year_by_year_page = f"""
+<div class="section" id="sec-temaeraar">
+<div class="kicker">Tema-analyse</div>
+<h2>Temaer år for år</h2>
+<p>Samme 10 kategorier som ovenfor, men brudt ud år for år i stedet for summeret over hele perioden — søjlerne viser, hvilke temaer der prægede Dynamo hvert enkelt år (kun de {DOCUMENTED} dokumenterede numre er talt med; se dækningsgraden i metodeafsnittet for hvorfor 2005–2014 er tyndere).</p>
+{stacked_year_chart(_all_years)}
+<div class="insight"><b>Bølgerne er tydelige, når man ser år for år:</b> klima &amp; energi optræder praktisk talt hvert år fra 2015 og frem, mens digitalt/AI/data og materialer/nano/kvante først for alvor tager fart efter 2020 — konsistent med tre-æra-opdelingen nedenfor, men med langt mere detalje om <i>hvornår</i> skiftet sker.</div>
+</div>"""
+
+# ================= DYNAMO AND WORLD EVENTS =================
+world_events_page = f"""
+<div class="section" id="sec-verden">
+<div class="kicker">Dynamo og omverdenen</div>
+<h2>Falder Dynamos temaer sammen med det, der sker i verden?</h2>
+<p>Ti udvalgte, velkendte begivenheder fra 2005–2026 holdt op mod, hvor mange af de dokumenterede Dynamo-numre samme år faldt i den relaterede tema-kategori. Klima &amp; energi går igen flest gange nedenfor, fordi det også er langt Dynamos mest genkommende tema — men sammenfaldene med COP15 (2009), energikrisen efter Ruslands invasion af Ukraine (2022) og ChatGPT/ AI-forordningen (2022–2024) er slående konkrete.</p>
+{world_events_timeline()}
 </div>"""
 
 # ================= ERA COMPARISON =================
@@ -283,6 +489,7 @@ institutes_page = f"""
 <div class="kicker">Institutter</div>
 <h2>Institutter i Dynamo</h2>
 <p>Et centralt fund i denne analyse er, at Dynamo redaktionelt er bygget op om <b>temaer og samfundsudfordringer</b> — ikke om hvilket DTU-institut der står bag forskningen. På tværs af {DOCUMENTED} dokumenterede numre kunne kun {sum(n for _,n in inst_pairs)} eksplicitte institut-nævninger findes i den tilgængelige forsidetekst/beskrivelse:</p>
+{bar_rows(inst_pairs, color="var(--dtu-blue)") if inst_pairs else ""}
 <table><tr><th>Institut/center</th><th>Nævnt i antal numre</th></tr>{inst_rows}</table>
 <div class="insight"><b>Fortolkning:</b> Dette er sandsynligvis en bevidst redaktionel linje snarere end et hul i datagrundlaget — Dynamo henvender sig til et bredt eksternt publikum (erhvervsliv, myndigheder, politikere), hvor et samfundstema ("klima", "kunstig intelligens", "vandmangel") kommunikerer bedre end et instituts navn. En fuld institut-attribuering ville kræve adgang til den fulde artikeltekst i hvert nummers PDF, ikke kun issuu-forsiden/beskrivelsen.</div>
 <h3>DTU's institutter og centre (reference, 2026)</h3>
@@ -301,6 +508,8 @@ circ_page = f"""
   {stat_tile("16-19.000", "Oplag, 2025/26")}
   {stat_tile("-72%", "Fald i oplag, 2011→2026")}
 </div>
+{line_chart_svg([("2011", 60000), ("2025/26", 17000)], y_suffix=" eks.")}
+<p class="small">Kun to kendte datapunkter (2011 og 2025/26) — linjen mellem dem er en lige linje, ikke en målt udvikling år for år.</p>
 {bar_rows([("2011", 60000), ("2025/26", 17000)], color="var(--dtu-blue)", val_suffix=" eks.")}
 <p>Oplaget er faldet markant siden 2011 — men målgruppen er samtidig blevet skarpere defineret. I dag distribueres Dynamo annoncefrit og gratis til en navngivet kreds af beslutningstagere: bestyrelses- og direktionsmedlemmer i Danmarks største virksomheder, folketings- og EU-parlamentsmedlemmer, samt fonds- og rådsbestyrelser — suppleret af udlæg i landets læge- og tandlægevente­værelser. Faldet afspejler en generel branchetrend for trykte profilmagasiner: fra bredt oplag til stærkt målrettet distribution, understøttet af en digital udgave (issuu/iPad) siden omkring 2011.</p>
 <div class="insight"><b>Konsekvens for denne analyse:</b> Den skarpere målretning falder tidsmæssigt sammen med den periode (2020-2026), hvor Dynamos temaer bliver mest teknologispecifikke (kvante, AI, forsvar) — konsistent med en strategi om at tale direkte til beslutningstagere om aktuelle teknologipolitiske dagsordener frem for et bredt oplysningsformål.</div>
@@ -349,7 +558,9 @@ sources_page = f"""
 <p class="small">Udarbejdet {esc(today)}. Data og metode kan genskabes/udvides ved fornyet adgang til DTU's fulde nyhedsarkiv og digitale magasinarkiv.</p>
 </div>"""
 
-CONTENT = cover + toc + exec_summary + method + history + themes_page + era_page + strategy_page + institutes_page + circ_page + appendix_html + sources_page
+CONTENT = (cover + toc + exec_summary + method + history + themes_page + year_by_year_page
+    + world_events_page + era_page + strategy_page + institutes_page + circ_page
+    + appendix_html + sources_page)
 
 with open(os.path.join(BASE, "template.html"), encoding="utf-8") as f:
     template = f.read()

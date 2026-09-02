@@ -114,6 +114,12 @@ for it in documented:
     for c in it["categories"]:
         cat_totals[c] += 1
 
+# category counts per calendar year, for the year-by-year stacked chart
+year_cat = defaultdict(Counter)
+for it in documented:
+    for c in it["categories"]:
+        year_cat[it["year"]][c] += 1
+
 # issues per calendar year (all issues, using interpolated/actual year) for timeline
 year_counts = Counter(it["year"] for it in issues)
 min_y, max_y = min(year_counts), max(year_counts)
@@ -148,6 +154,7 @@ with open(os.path.join(DATA, "dataset.json"), "w", encoding="utf-8") as f:
         "era_counts_documented": dict(era_counts_documented),
         "cat_totals": dict(cat_totals),
         "year_counts": dict(year_counts),
+        "year_cat": {y: dict(c) for y, c in year_cat.items()},
         "inst_counter": dict(inst_counter),
         "conf_counts": dict(conf_counts),
         "eras": ERAS,

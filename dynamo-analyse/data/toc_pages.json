@@ -1,12 +1,14 @@
 {
   "exec": 3,
   "metode": 3,
-  "historie": 4,
+  "historie": 3,
   "temaer": 4,
-  "temaudvikling": 5,
-  "strategi": 5,
-  "institutter": 6,
-  "oplag": 7,
-  "appendiks": 8,
-  "kilder": 11
+  "temaeraar": 5,
+  "verden": 5,
+  "temaudvikling": 6,
+  "strategi": 6,
+  "institutter": 7,
+  "oplag": 9,
+  "appendiks": 10,
+  "kilder": 13
 }

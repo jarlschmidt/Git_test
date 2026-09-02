@@ -1283,6 +1283,103 @@
     "2025": 4,
     "2026": 3
   },
+  "year_cat": {
+    "2005": {
+      "Andet/uklassificeret": 1
+    },
+    "2009": {
+      "Klima & Energi": 1
+    },
+    "2011": {
+      "Forsvar & Sikkerhed": 1
+    },
+    "2013": {
+      "Vand, Miljø & Ressourcer": 1
+    },
+    "2015": {
+      "Materialer, Nano & Kvante": 1,
+      "Samfund & Iværksætteri": 1,
+      "Vand, Miljø & Ressourcer": 1,
+      "Klima & Energi": 1,
+      "Transport, Byggeri & Byer": 1
+    },
+    "2016": {
+      "Vand, Miljø & Ressourcer": 1,
+      "Transport, Byggeri & Byer": 1,
+      "Sundhed & Bioteknologi": 1,
+      "Materialer, Nano & Kvante": 1,
+      "Klima & Energi": 1
+    },
+    "2017": {
+      "Klima & Energi": 2,
+      "Digitalt, AI & Data": 1,
+      "Materialer, Nano & Kvante": 2,
+      "Vand, Miljø & Ressourcer": 1
+    },
+    "2018": {
+      "Sundhed & Bioteknologi": 2,
+      "Forsvar & Sikkerhed": 1,
+      "Klima & Energi": 1
+    },
+    "2019": {
+      "Fødevarer & Landbrug": 1,
+      "Transport, Byggeri & Byer": 1,
+      "Vand, Miljø & Ressourcer": 1,
+      "Klima & Energi": 1
+    },
+    "2020": {
+      "Klima & Energi": 2,
+      "Sundhed & Bioteknologi": 2,
+      "Fødevarer & Landbrug": 1,
+      "Digitalt, AI & Data": 1,
+      "Forsvar & Sikkerhed": 1
+    },
+    "2021": {
+      "Rum & Klode": 1,
+      "Materialer, Nano & Kvante": 1,
+      "Klima & Energi": 2,
+      "Fødevarer & Landbrug": 2,
+      "Sundhed & Bioteknologi": 1,
+      "Digitalt, AI & Data": 1
+    },
+    "2022": {
+      "Vand, Miljø & Ressourcer": 2,
+      "Klima & Energi": 2,
+      "Fødevarer & Landbrug": 1,
+      "Samfund & Iværksætteri": 1,
+      "Forsvar & Sikkerhed": 1
+    },
+    "2023": {
+      "Sundhed & Bioteknologi": 2,
+      "Digitalt, AI & Data": 1,
+      "Materialer, Nano & Kvante": 1,
+      "Klima & Energi": 1,
+      "Vand, Miljø & Ressourcer": 2
+    },
+    "2024": {
+      "Digitalt, AI & Data": 2,
+      "Klima & Energi": 2,
+      "Transport, Byggeri & Byer": 1,
+      "Fødevarer & Landbrug": 1,
+      "Samfund & Iværksætteri": 1,
+      "Rum & Klode": 1
+    },
+    "2025": {
+      "Klima & Energi": 1,
+      "Vand, Miljø & Ressourcer": 2,
+      "Materialer, Nano & Kvante": 2,
+      "Transport, Byggeri & Byer": 1,
+      "Digitalt, AI & Data": 1,
+      "Rum & Klode": 1,
+      "Forsvar & Sikkerhed": 1
+    },
+    "2026": {
+      "Klima & Energi": 2,
+      "Vand, Miljø & Ressourcer": 2,
+      "Digitalt, AI & Data": 1,
+      "Transport, Byggeri & Byer": 1
+    }
+  },
   "inst_counter": {
     "DTU Sundhedsteknologi": 1,
     "Quantum DTU": 1,

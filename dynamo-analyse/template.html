@@ -48,8 +48,11 @@
   .section{ padding-top:0; position:relative; margin-top:9mm;}
   .section:first-of-type{margin-top:0;}
 
-  /* keep small, self-contained blocks from splitting across a page break */
-  .tiles, .insight, .quote, .tile, .cols, .barchart{ break-inside:avoid-page; page-break-inside:avoid;}
+  /* keep small, self-contained blocks from splitting across a page break —
+     .cols is deliberately NOT here: it can hold a tall chart, and forcing a
+     tall block to move as one unit is what left the big blank gaps the first
+     redesign was fixing; a two-column row is fine to break mid-way. */
+  .tiles, .insight, .quote, .tile, .barchart, .donut-wrap{ break-inside:avoid-page; page-break-inside:avoid;}
   tr{ break-inside:avoid-page; page-break-inside:avoid;}
   thead{ display:table-header-group;}
 
@@ -93,16 +96,40 @@
   .barrow .fill{position:absolute; left:0; top:0; bottom:0; border-radius:1.5px; background:var(--blue);}
   .barrow .val{min-width:13mm; width:auto; text-align:right; font-size:8.3pt; color:var(--ink); font-weight:700; flex-shrink:0; white-space:nowrap;}
 
-  /* TIMELINE */
-  .timeline{margin:5mm 0;}
-  .tl-row{display:flex; align-items:flex-end; gap:1.4px; height:34mm; border-bottom:1pt solid var(--rule); padding-bottom:1mm;}
-  .tl-bar{flex:1; background:var(--blue); border-radius:1.5px 1.5px 0 0; position:relative;}
-  .tl-labels{display:flex; gap:1.4px; margin-top:1.5mm;}
-  .tl-labels span{flex:1; font-size:6.3pt; color:var(--muted); text-align:center; writing-mode:vertical-rl; transform:rotate(180deg); height:10mm;}
-
   /* LEGEND */
   .legend{display:flex; flex-wrap:wrap; gap:4mm; margin:2mm 0 4mm 0; font-size:8pt; color:var(--ink-2);}
-  .legend .sw{display:inline-block; width:2.6mm; height:2.6mm; border-radius:1px; margin-right:1.4mm; vertical-align:middle;}
+  .legend .sw, .sw{display:inline-block; width:2.6mm; height:2.6mm; border-radius:1px; margin-right:1.4mm; vertical-align:middle; flex-shrink:0;}
+
+  /* DONUT CHART */
+  .donut-wrap{display:flex; align-items:center; gap:6mm; margin:3mm 0;}
+  .donut{flex-shrink:0;}
+  .donut-num{font-size:7.4px; font-weight:700; fill:var(--dtu-navy);}
+  .donut-sub{font-size:2.6px; fill:var(--muted); text-transform:uppercase; letter-spacing:0.04em;}
+  .donut-legend{flex:1; display:flex; flex-direction:column; gap:1.6mm; font-size:8.3pt;}
+  .donut-legend--row{flex-direction:row; flex-wrap:wrap; gap:1.6mm 5mm; margin-top:2mm;}
+  .donut-legend-row{display:flex; align-items:center; gap:1.6mm;}
+  .donut-legend-lbl{flex:1; color:var(--ink-2);}
+  .donut-legend-row b{color:var(--ink);}
+
+  /* STACKED YEAR-BY-YEAR CHART */
+  .ybar-chart{display:flex; align-items:flex-end; gap:1px; height:42mm; border-bottom:1pt solid var(--rule); margin:4mm 0 1.5mm 0; break-inside:avoid-page; page-break-inside:avoid;}
+  .ybar-col{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
+  .ybar-stack{width:78%; display:flex; flex-direction:column-reverse; height:100%;}
+  .ybar-seg{width:100%; flex-shrink:0;}
+  .ybar-col span{font-size:6.4pt; color:var(--muted); margin-top:1.5mm; writing-mode:vertical-rl; transform:rotate(180deg);}
+
+  /* LINE CHART */
+  .line-chart{display:block; margin:3mm 0;}
+
+  /* VERTICAL TIMELINE (world-events correlation) */
+  .timeline-v{margin:4mm 0;}
+  .tl-row-v{display:flex; gap:5mm; break-inside:avoid-page; page-break-inside:avoid;}
+  .tl-year-col{position:relative; flex:0 0 15mm; border-left:1.4pt solid var(--rule); padding:0 0 6mm 4mm; margin-top:0.5mm;}
+  .tl-row-v:last-child .tl-year-col{padding-bottom:0.5mm;}
+  .tl-year-col b{font-size:11.5pt; color:var(--dtu-navy); display:block;}
+  .tl-dot{position:absolute; left:-2.3mm; top:0.5mm; width:3.6mm; height:3.6mm; border-radius:50%; border:1.5pt solid var(--page);}
+  .tl-body{flex:1; padding-bottom:5mm;}
+  .tl-body p{margin:0 0 1.2mm 0;}
 
   /* TABLE */
   table{width:100%; border-collapse:collapse; font-size:8.3pt;}

@@ -22,6 +22,8 @@ HEADINGS = {
     "metode": "Metode og datagrundlag",
     "historie": "Dynamo gennem tiden",
     "temaer": "Temaer på tværs af 21 år",
+    "temaeraar": "Temaer år for år",
+    "verden": "Falder Dynamos temaer sammen med",
     "temaudvikling": "Temaudvikling: tre æraer",
     "strategi": "Temaerne og DTU's strategi 2026",
     "institutter": "Institutter i Dynamo",

@@ -1,6 +1,24 @@
 # Projekt: Dynamo-analyse (DTU)
 
-**Status pr. 2026-09-02:** Rapporten er redesignet efter feedback om at den
+**Status pr. 2026-09-02 (nyeste):** Bruger bad om det modsatte af den
+foregående minimalisme: en grundig rapport fuld af diagrammer, egnet til
+senere at blive lavet om til et slideshow. Tilføjet: et stablet
+år-for-år-tema-diagram (10 kategorier × 21 år), cirkeldiagrammer
+(tema-fordeling, dokumentationsgrad), en linjegraf for oplagsudvikling, et
+søjlediagram for institut-nævninger, og en ny sektion "Falder Dynamos temaer
+sammen med det, der sker i verden?" — en tidslinje der kobler 10 kendte
+verdensbegivenheder (COP15 2009, Fukushima 2011, Paris-aftalen 2015,
+COVID-pandemien 2020, Ruslands invasion af Ukraine/energikrise 2022, ChatGPT
+2022, EU's AI-forordning 2024, m.fl. — kilder i `data/world_events.json`) til
+faktiske tal fra datasættet (fx "Digitalt, AI & Data topper i 2024, det
+højeste antal i hele Dynamos historie for dette tema"). Alle kategori-farver
+i diagrammerne er valideret med dataviz-skillets palette-validator (fast
+rækkefølge, ingen regnbue, farveblindhedssikret) — se README.md. Rapporten
+er nu 13 sider (op fra 10) — væksten er ægte nyt indhold/diagrammer, ikke
+whitespace-spild; den tidligere no-forced-page-break-arkitektur holdt
+stand under den større indholdsmængde.
+
+**Status pr. 2026-09-02 (tidligere):** Rapporten er redesignet efter feedback om at den
 oprindelige version var for rodet (massevis af tom plads, fordi hver
 sektion tvang et sideskift uanset indholdsmængde). Nyt layout: sektioner
 flyder frit over siderne, appendiks-tabellen er én løbende tabel med
