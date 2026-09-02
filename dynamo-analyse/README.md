@@ -14,6 +14,7 @@ institutter og oplagsudvikling over 21 år.
 - `measure_toc.py` — læser en trykt PDF og finder den fysiske side, hvert kapitel rent faktisk starter på (sektionerne har ikke længere tvungne sideskift, så siderne kendes først efter layout); skriver `data/toc_pages.json`, som `build_html.py` bruger til at vise korrekte sidetal i indholdsfortegnelsen.
 - `data/issues_01_20.json`, `issues_21_44.json`, `issues_45_66.json`, `issues_67_86.json` — katalog over hvert Dynamo-nummer (år, tema, beskrivelse, institutter, kilder, sikkerhedsniveau), indsamlet fra issuu.com/dtudk og DTU's nyhedsarkiv.
 - `data/dtu_institutes.json` — DTU's nuværende institutter/centre (reference for institut-mapping).
+- `data/dtu_strategy.json` — DTU's fem strategiske indsatsområder (Strategi 2026–2031, se kildelink i filen) og hvilke af rapportens 10 tema-kategorier der understøtter hvert område.
 - `data/toc_pages.json` — cachede, målte sidetal til indholdsfortegnelsen (se `measure_toc.py`).
 - `context_notes.md` — research-noter (historik, oplagstal, instituthistorik/omdøbninger).
 

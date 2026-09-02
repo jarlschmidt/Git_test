@@ -12,6 +12,17 @@ whitespace-spild. Se `dynamo-analyse/README.md` for detaljer om filer og den
 nye to-pass build (sidetal i indholdsfortegnelsen måles nu efter et
 prøvetryk, se `measure_toc.py`).
 
+**Nyt siden redesignet:** Appendiks-tabellen har nu en "Kilde"-kolonne med
+klikbare links (issuu.com, dtu.dk, ing.dk m.fl.) pr. nummer, hentet fra
+`source_urls` i `data/issues_*.json` (var indsamlet, men ikke vist i
+rapporten før). Der er også en ny sektion "Temaerne og DTU's strategi
+2026–2031" (efter Temaudvikling, før Institutter) der holder de 10
+tema-kategorier op mod DTU's fem strategiske indsatsområder — data og
+kildehenvisning i `data/dtu_strategy.json` (hentet fra dtu.dk 2026-09-02).
+Ærligt om begrænsning: 2 af de 5 områder (uddannelse; videnskabeligt
+lederskab/demokratisk ansvar) har ingen naturlig kobling til Dynamos
+tema-taksonomi og er markeret som "–" i rapporten i stedet for tvunget ind.
+
 **dtu.dk-netværksadgang:** Bekræftet åben i denne session (`curl -sI
 https://www.dtu.dk` → 200, rigtigt DTU-indhold). Den oprindelige
 netværksblokering nævnt nedenfor er altså ophævet — men indholdsanalysen

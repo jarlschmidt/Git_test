@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import json, html, os
 from datetime import date
+from urllib.parse import urlparse
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -9,6 +10,8 @@ with open(os.path.join(BASE, "data", "dataset.json"), encoding="utf-8") as f:
     D = json.load(f)
 with open(os.path.join(BASE, "data", "dtu_institutes.json"), encoding="utf-8") as f:
     INSTITUTES = json.load(f)
+with open(os.path.join(BASE, "data", "dtu_strategy.json"), encoding="utf-8") as f:
+    STRATEGY = json.load(f)
 
 # Page numbers in the TOC are measured after a first render pass (see
 # measure_toc.py) and cached here, since sections now flow freely across
@@ -55,6 +58,18 @@ def bar_rows(pairs, max_val=None, color="var(--dtu-blue)", highlight_first=False
 def stat_tile(big, label):
     return f"<div class='tile'><b>{esc(big)}</b><span class='lbl'>{esc(label)}</span></div>"
 
+def domain_label(url):
+    try:
+        netloc = urlparse(url).netloc
+        return netloc[4:] if netloc.startswith("www.") else netloc
+    except ValueError:
+        return url
+
+def source_links(urls):
+    if not urls:
+        return "<span class='small'>–</span>"
+    return " · ".join(f"<a class='src' href='{esc(u)}'>{esc(domain_label(u))}</a>" for u in urls)
+
 def year_track_html():
     year_counts = D["year_counts"]
     years = list(range(2005, 2027))
@@ -98,10 +113,11 @@ toc_items = [
     ("historie", "Dynamo gennem tiden — historien", 3),
     ("temaer", "Temaer på tværs af 21 år", 4),
     ("temaudvikling", "Temaudvikling: tre æraer", 4),
+    ("strategi", "Temaerne og DTU's strategi 2026–2031", 5),
     ("institutter", "Institutter i Dynamo", 5),
-    ("oplag", "Oplag og målgruppe over tid", 5),
-    ("appendiks", "Appendiks: alle katalogiserede numre", 6),
-    ("kilder", "Kilder og forbehold", 9),
+    ("oplag", "Oplag og målgruppe over tid", 6),
+    ("appendiks", "Appendiks: alle katalogiserede numre", 7),
+    ("kilder", "Kilder og forbehold", 10),
 ]
 toc = "<div class='section' id='sec-toc'><div class='kicker'>Indhold</div><h2>Indholdsfortegnelse</h2>"
 toc += "".join(f"<div class='toc-row'><span>{esc(t)}</span><span>{TOC_PAGES.get(k, p)}</span></div>" for k,t,p in toc_items)
@@ -220,6 +236,40 @@ era_page = f"""
 </div>
 </div>"""
 
+# ================= STRATEGY ALIGNMENT =================
+def issue_label(it):
+    return f"nr. {it['issue_number']} ({it['year']}) — {it['theme']}"
+
+strategy_rows = []
+mapped_issue_numbers = set()
+for area in STRATEGY["areas"]:
+    cats = set(area["categories"])
+    matches = [it for it in issues if cats & set(it.get("categories") or [])] if cats else []
+    mapped_issue_numbers |= {it["issue_number"] for it in matches}
+    examples = sorted(matches, key=lambda it: -it["year"])[:3]
+    pct = round(100 * len(matches) / DOCUMENTED) if DOCUMENTED else 0
+    strategy_rows.append(f"""
+    <div class="strategy-row">
+      <div class="strategy-head">
+        <h3>{esc(area['name'])}</h3>
+        {f"<div class='strategy-count'><b>{len(matches)}</b><span>af {DOCUMENTED} numre ({pct}%)</span></div>" if cats else "<div class='strategy-count strategy-count--none'><b>–</b><span>Ingen af de 10 tema-kategorier dækker dette område</span></div>"}
+      </div>
+      <p class="small">{esc(area['note'])}</p>
+      {"<p class='small'><b>Eksempler:</b> " + "; ".join(esc(issue_label(it)) for it in examples) + "</p>" if examples else ""}
+    </div>""")
+
+strategy_covered_pct = round(100 * len(mapped_issue_numbers) / DOCUMENTED) if DOCUMENTED else 0
+
+strategy_page = f"""
+<div class="section" id="sec-strategi">
+<div class="kicker">Strategi-kobling</div>
+<h2>Temaerne og DTU's strategi 2026–2031</h2>
+<p>DTU vedtog i 2026 en ny strategi med fem strategiske indsatsområder (se kilde nedenfor). Nedenfor er Dynamos 10 tema-kategorier holdt op mod de fem områder, for at vise hvor godt magasinets historiske tema-profil allerede understøtter den fremadrettede strategi.</p>
+<div class="insight"><b>{len(mapped_issue_numbers)} af {DOCUMENTED} dokumenterede numre ({strategy_covered_pct}%)</b> har et tema, der falder inden for mindst ét af de tre teknologi-/erhvervsrettede indsatsområder nedenfor. De to resterende områder — uddannelse og videnskabeligt lederskab/demokratisk ansvar — er ikke emner, Dynamos forsidetemaer historisk beskriver, da magasinet er organiseret om forsknings- og samfundstemaer, ikke om uddannelses- eller governance-indsatser. Det er forventeligt snarere end en svaghed: strategien er ny (2026–2031), mens Dynamo dækker 21 år bagud, så koblingen viser <i>fremadrettet relevans</i>, ikke historisk eksekvering af strategien.</div>
+{"".join(strategy_rows)}
+<p class="small">Kilde: <a class="src" href="{esc(STRATEGY['source']['url'])}">{esc(STRATEGY['source']['title'])}</a>, hentet {esc(STRATEGY['source']['retrieved'])}.</p>
+</div>"""
+
 # ================= INSTITUTES =================
 inst_pairs = inst_counter if isinstance(inst_counter, list) else sorted(inst_counter.items(), key=lambda x: -x[1])
 inst_rows = "".join(f"<tr><td>{esc(name)}</td><td>{n}</td></tr>" for name, n in inst_pairs) if inst_pairs else "<tr><td colspan='2' class='small'>Ingen eksplicit institut-nævning fundet i de gennemgåede kilder.</td></tr>"
@@ -268,7 +318,8 @@ for it in issues:
     rows_html.append(
         f"<tr><td>{it['issue_number']}</td><td>{it['year']}</td>"
         f"<td>{theme if it.get('theme') else theme}{('<br>'+tags) if tags else ''}</td>"
-        f"<td>{conf_label(it.get('confidence','not_found'))}</td></tr>"
+        f"<td>{conf_label(it.get('confidence','not_found'))}</td>"
+        f"<td>{source_links(it.get('source_urls'))}</td></tr>"
     )
 
 # One continuous table — it flows across as many pages as it needs, with the
@@ -278,8 +329,9 @@ appendix_html = f"""
 <div class="section" id="sec-appendiks">
 <div class="kicker">Appendiks</div>
 <h2>Appendiks: alle katalogiserede numre</h2>
+<p class="small">"Kilde" linker til de sider (issuu.com/dtudk, DTU's nyhedsarkiv m.fl.), hvor nummerets forside/tema er dokumenteret — brug dem til at slå den fulde historie op.</p>
 <table>
-<thead><tr><th>Nr.</th><th>År</th><th>Tema</th><th>Sikkerhed</th></tr></thead>
+<thead><tr><th>Nr.</th><th>År</th><th>Tema</th><th>Sikkerhed</th><th>Kilde</th></tr></thead>
 <tbody>
 {''.join(rows_html)}
 </tbody>
@@ -291,12 +343,13 @@ sources_page = f"""
 <div class="section" id="sec-kilder">
 <div class="kicker">Kilder &amp; forbehold</div>
 <h2>Kilder og forbehold</h2>
-<p>Denne rapport er udarbejdet som en automatiseret indholdsanalyse baseret på offentligt tilgængelige forsider, temabeskrivelser og udgivelsesdatoer for Dynamo-numre på <b>issuu.com/dtudk</b> samt artikler i <b>DTU's nyhedsarkiv (dtu.dk)</b>. Den er ikke baseret på fuldtekst-læsning af hvert magasins indre artikler, og bør derfor læses som en kortlægning af <i>forsidetemaer og redaktionel retning</i> — ikke en komplet indholdsanalyse af hver artikel i hvert nummer.</p>
+<p>Denne rapport er udarbejdet som en automatiseret indholdsanalyse baseret på offentligt tilgængelige forsider, temabeskrivelser og udgivelsesdatoer for Dynamo-numre på <b>issuu.com/dtudk</b> samt artikler i <b>DTU's nyhedsarkiv (dtu.dk)</b>. Den er ikke baseret på fuldtekst-læsning af hvert magasins indre artikler, og bør derfor læses som en kortlægning af <i>forsidetemaer og redaktionel retning</i> — ikke en komplet indholdsanalyse af hver artikel i hvert nummer. Kildelinks til hvert enkelt nummer findes i appendiks.</p>
+<p>Koblingen til DTU's strategi (s. {TOC_PAGES.get("strategi", 5)}) er baseret på <a class="src" href="{esc(STRATEGY['source']['url'])}">{esc(STRATEGY['source']['title'])}</a>, hentet {esc(STRATEGY['source']['retrieved'])}.</p>
 <p>Numre markeret "Ikke fundet" i appendiks eksisterer efter al sandsynlighed (Dynamos kvartalskadence er bekræftet uændret gennem hele perioden), men deres tema kunne ikke dokumenteres inden for de kilder, der var tilgængelige i analysemiljøet.</p>
 <p class="small">Udarbejdet {esc(today)}. Data og metode kan genskabes/udvides ved fornyet adgang til DTU's fulde nyhedsarkiv og digitale magasinarkiv.</p>
 </div>"""
 
-CONTENT = cover + toc + exec_summary + method + history + themes_page + era_page + institutes_page + circ_page + appendix_html + sources_page
+CONTENT = cover + toc + exec_summary + method + history + themes_page + era_page + strategy_page + institutes_page + circ_page + appendix_html + sources_page
 
 with open(os.path.join(BASE, "template.html"), encoding="utf-8") as f:
     template = f.read()

@@ -23,6 +23,7 @@ HEADINGS = {
     "historie": "Dynamo gennem tiden",
     "temaer": "Temaer på tværs af 21 år",
     "temaudvikling": "Temaudvikling: tre æraer",
+    "strategi": "Temaerne og DTU's strategi 2026",
     "institutter": "Institutter i Dynamo",
     "oplag": "Oplag og målgruppe over tid",
     "appendiks": "Appendiks: alle katalogiserede numre",

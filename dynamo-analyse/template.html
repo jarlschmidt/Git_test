@@ -110,6 +110,8 @@
   td{padding:1.6mm 2mm; border-bottom:0.5pt solid var(--grid); vertical-align:top;}
   tr:nth-child(even) td{background:#f9f9f7;}
   .tag{display:inline-block; font-size:6.8pt; background:#eef3fa; color:var(--blue-dark); border-radius:2px; padding:0.4mm 1.6mm; margin:0.4mm 0.6mm 0 0;}
+  .src{color:var(--dtu-blue); text-decoration:none; white-space:nowrap;}
+  .src:hover{text-decoration:underline;}
 
   .quote{border-left:2.2pt solid var(--orange); padding-left:4mm; font-size:10.5pt; color:var(--navy-2); font-style:italic; margin:4mm 0;}
   .insight{background:#f4f7fb; border-left:2.2pt solid var(--blue); padding:3mm 4mm; margin:3mm 0; font-size:9pt;}
@@ -117,6 +119,17 @@
   .small{font-size:7.8pt; color:var(--muted);}
   .toc a{color:var(--ink); text-decoration:none;}
   .toc-row{display:flex; justify-content:space-between; border-bottom:0.5pt dotted var(--rule); padding:2mm 0; font-size:9.5pt;}
+
+  /* STRATEGY ALIGNMENT */
+  .strategy-row{border-top:0.6pt solid var(--rule); padding:3.5mm 0; break-inside:avoid-page; page-break-inside:avoid;}
+  .strategy-row:first-of-type{border-top:none;}
+  .strategy-head{display:flex; justify-content:space-between; align-items:baseline; gap:6mm;}
+  .strategy-head h3{margin-bottom:0;}
+  .strategy-count{text-align:right; flex-shrink:0;}
+  .strategy-count b{font-size:15pt; color:var(--dtu-navy);}
+  .strategy-count span{display:block; font-size:7.4pt; color:var(--muted); text-transform:uppercase; letter-spacing:0.04em;}
+  .strategy-count--none b{color:var(--muted);}
+  .strategy-count--none span{max-width:55mm; text-transform:none; letter-spacing:0;}
 </style>
 </head>
 <body>

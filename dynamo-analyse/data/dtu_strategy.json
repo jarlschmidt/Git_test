@@ -1,0 +1,39 @@
+{
+  "source": {
+    "title": "DTU Strategi 2026–2031 — Til gavn for samfundet, siden 1829",
+    "url": "https://www.dtu.dk/om-dtu/strategi_aarsrapporter_mv/strategi-2026-2031",
+    "retrieved": "2026-09-02"
+  },
+  "areas": [
+    {
+      "key": "omstilling",
+      "name": "Bæredygtig teknologisk omstilling",
+      "note": "Grøn energiteknologi, cirkulær økonomi, kvanteteknologi, vandteknologi, akustik, bioteknologi, fødevareteknologi, energikonvertering, computing, materialer og rumteknologi.",
+      "categories": ["Klima & Energi", "Vand, Miljø & Ressourcer", "Sundhed & Bioteknologi", "Fødevarer & Landbrug", "Rum & Klode", "Materialer, Nano & Kvante", "Transport, Byggeri & Byer"]
+    },
+    {
+      "key": "kritiske_teknologier",
+      "name": "Europæisk førerskab i kritiske teknologier",
+      "note": "Sikker, gennemsigtig og demokratisk forankret kunstig intelligens — og andre strategisk kritiske teknologier.",
+      "categories": ["Digitalt, AI & Data", "Materialer, Nano & Kvante", "Forsvar & Sikkerhed"]
+    },
+    {
+      "key": "uddannelse",
+      "name": "Uddannelse af Europas mest kompetente ingeniører",
+      "note": "Kritisk tænkende, kreative, samarbejdsorienterede ingeniører, der kan navigere i kompleksitet.",
+      "categories": []
+    },
+    {
+      "key": "viden_til_virksomhed",
+      "name": "Fra viden til virksomhed",
+      "note": "Omsætte forskning til konkrete løsninger, der styrker europæisk konkurrenceevne.",
+      "categories": ["Samfund & Iværksætteri"]
+    },
+    {
+      "key": "videnskab_demokrati",
+      "name": "Videnskabeligt lederskab og demokratisk ansvar",
+      "note": "Garant for videnskabelig excellence, integritet og evidens.",
+      "categories": []
+    }
+  ]
+}
