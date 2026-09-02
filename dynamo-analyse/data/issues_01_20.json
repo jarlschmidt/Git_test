@@ -16,174 +16,213 @@
   {
     "issue_number": 2,
     "year": 2005,
-    "month": 8,
-    "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret bud baseret på et bekræftet kvartalsvist udgivelsesmønster (nr. 1 = apr/maj 2005; nr. 19 = nov 2009; nr. 30 = sep 2012; nr. 42 = sep 2015; nr. 58 = sep 2019; nr. 73 = 2023; nr. 86 = aug 2026).",
+    "month": 9,
+    "theme": "Intellektuel ejendomsret (IPR) / Intellectual Property Rights",
+    "description": "Dynamo nr. 2 (september 2005) har ingen enkelt gennemgående forsidetema, men bladets eneste eksplicit mærkede 'TEMA'-sektion (s.16-22) handler om intellektuel ejendomsret: opfindelsers pris, patentcertificering og samarbejde med erhvervslivet om værditilvækst. Forsidehistorien 'Medvind' (s.14) handler i stedet om Danmarks position inden for vindenergi. Øvrige sektioner dækker byggetrend, renere teknologi, globalisering og bioteknologi.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/02/dynamo_2.ashx"
+    ],
+    "confidence": "medium"
   },
   {
     "issue_number": 3,
     "year": 2005,
     "month": 11,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt (se nr. 1, 19, 30, 42, 58, 73, 86).",
+    "theme": "Transport",
+    "description": "Dynamo nr. 3 (november 2005) er eksplicit mærket 'TEMA: TRANSPORT' som bladets klart største sektion (s.8-32): containerskibes miljøpåvirkning, trafiksikkerhed, flysikkerhed og broteknik. Forsidehistorien 'En nation af brobyggere' (s.24) hylder Øresundsbroen og dansk brobygningskompetence, i tråd med transporttemaet.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/03/dynamo_3.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 4,
     "year": 2006,
     "month": 2,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "theme": "Energi / Energy",
+    "description": "Dynamo nr. 4 (februar 2006) er eksplicit mærket 'TEMA: ENERGI' som bladets klart største sektion (s.12-36): olie- og gasudvinding, biobrændstof (halm, bioethanol, DME), solenergi og energieffektive byggeregler. Forsidehistorien 'Energibundt' (s.18) er et interview med DONG-direktør Anders Eldrup om Danmark som fremtidigt energi-kraftcenter.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/04/dynamo_4.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 5,
     "year": 2006,
     "month": 5,
     "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "description": "Dynamo nr. 5 (maj 2006) har ingen eksplicit mærket 'TEMA'-sektion - et blandet generelt nummer (kodning, strømforbrug, polymerforskning, arkitektur/ingeniørvidenskab, vinproduktion, arbejdsmiljø) med DTU's Årsberetning 2005 indlagt (s.39-58). Forsidehistorien 'For fulde sejl' (s.8) handler om et træbeskyttelsesmiddel, der mistænkes for at nedbryde gamle træskibe, og DTU's arbejde med at løse problemet.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/05/dynamo_05.ashx"
+    ],
+    "confidence": "medium"
   },
   {
     "issue_number": 6,
     "year": 2006,
-    "month": 8,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "month": 9,
+    "theme": "Life Sciences",
+    "description": "Dynamo nr. 6 (september 2006) er eksplicit mærket 'Tema om life sciences' på forsiden, med sektionen 'LIFE SCIENCES' som bladets største (s.12-30): indeklimaets effekt på indlæring, kræftmedicin, høreforskning og medicinalindustri. Forsidehistorien 'Godt indeklima øger lærdom' refererer til at skolebørn lærer 10-20 pct. mere i klasselokaler med godt indeklima.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/06/dynamo_06.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 7,
     "year": 2006,
     "month": 11,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "theme": "Maritim ingeniørkunst / Emma Mærsk",
+    "description": "Dynamo nr. 7 (november 2006) har ingen eksplicit mærket 'TEMA'-sektion, men forsidehistorien 'Verdens største' (sektion 'SKIBSDESIGN: En klasse for sig', s.36) handler om containerskibet Emma Mærsk som et flagskib for dansk ingeniørkunst. Øvrige artikler dækker terrorsikring, nye kompositmaterialer, sunde fedtstoffer og fødevaresikkerhed.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/07/dynamo_07.ashx"
+    ],
+    "confidence": "medium"
   },
   {
     "issue_number": 8,
     "year": 2007,
     "month": 2,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "theme": "Forskeruddannelse (ph.d.) / Doctoral Research Training",
+    "description": "Dynamo nr. 8 (februar 2007) er eksplicit mærket 'TEMA: FORSKERUDDANNELSE' (s.10-30): robotforskning, indeklimaets effekt på produktivitet, ph.d.-projekter og bioteknologiens 'maskinrum'. Forsidehistorien 'Danske katalysatorer arbejder jorden rundt' (s.32) om Haldor Topsøes nanoteknologiske nikkelkatalysatorer ligger uden for det mærkede tema.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/08/dynamo_08.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 9,
     "year": 2007,
     "month": 5,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "theme": "Uddannelse (CDIO-pædagogik) / Education",
+    "description": "Dynamo nr. 9 (maj 2007) er eksplicit mærket 'TEMA: UDDANNELSE' (s.12-29) om DTU's nye CDIO-baserede uddannelsesfilosofi. Forsidehistorien 'Jagten på det første lys' (s.6, sektion 'NYE MATERIALER') om rumfart/satellitteknologi ligger uden for det mærkede tema. Nummeret indeholder desuden DTU's Årsberetning 2006 (s.36-46).",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/09/dynamo_09.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 10,
     "year": 2007,
-    "month": 8,
-    "theme": "",
-    "description": "Ikke fundet. Et Google-indekseret link til en fil ved navn 'dynamo10.ashx' i DTU's mediebibliotek (sti-mønster .../DTUdk/Nyheder/DYNAMO/10/dynamo10.ashx) blev fundet via søgning, hvilket bekræfter at nummeret findes i DTU's arkiv, men indholdet/temaet kunne ikke bestemmes (dtu.dk er blokeret for direkte hentning i dette miljø).",
+    "month": 9,
+    "theme": "Fremtidens byggeri / Future Construction",
+    "description": "Dynamo nr. 10 (september 2007) er eksplicit mærket 'Tema: Fremtidens byggeri' på forsiden, med sektionen som bladets største (s.4-26): et lavenergihus i Grønland som spydspids for bæredygtigt byggeri, DR Byen, glas som 'nyt' byggemateriale og fremtidens beton. En historisk artikel om Sir Ove Arup indgår også.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "low"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/10/dynamo10.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 11,
     "year": 2007,
-    "month": 11,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "month": 12,
+    "theme": "Klima / Climate Change",
+    "description": "Dynamo nr. 11 (december 2007) er eksplicit mærket 'Klima' på forsiden ('Verden står over for store udfordringer - DTU er dybt engageret i at finde løsninger'), med sektionen 'TEMA: KLIMA' som bladets største (s.6-36): oversvømmede kældre, byggeriets rolle, dansk bidrag til FN's klimapanel (IPCC) og CO2-fattig røg. Interview med daværende klima- og energiminister Connie Hedegaard (s.14).",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/11/dynamo_11_web.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 12,
     "year": 2008,
     "month": 2,
     "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "description": "Dynamo nr. 12 (februar 2008) har ingen eksplicit mærket 'TEMA'-sektion. Forsidehistorien 'Det store i det små' (s.14) handler om DTU's nye elektronmikroskoper, der kan forstørre op til 100 mio. gange. Øvrige artikler dækker nikkelallergi i euromønter, brændselsceller (Haldor Topsøe), globalisering og olie-/gasudvinding.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/12/dynamo_12_web.ashx"
+    ],
+    "confidence": "medium"
   },
   {
     "issue_number": 13,
     "year": 2008,
     "month": 5,
     "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "description": "Dynamo nr. 13 (maj 2008) har ingen eksplicit mærket 'TEMA'-sektion. Forsidehistorien 'Tryk på' (s.4) handler om unge DTU-iværksættere, der vil sælge nanochip-'stempler'. Nummeret indeholder en sektion 'DTU efter fusionen' (s.30) - en henvisning til DTU's fusion med sektorforskningsinstitutter i 2007 - samt Mærsk Contractors' offshore-borearbejde og DTU's Årsberetning 2007 (s.38-47).",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/13/dynamo_13_web.ashx"
+    ],
+    "confidence": "medium"
   },
   {
     "issue_number": 14,
     "year": 2008,
-    "month": 8,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "month": 9,
+    "theme": "Fremtidens Drikkevand / Future Drinking Water",
+    "description": "Confirmed via den faktiske PDF (dtu.dk mediebibliotek): DYNAMO nr. 14 udkom september 2008 med tema 'Fremtidens drikkevand', forsidehistorie 'En kilde til nytænkning'. Øvrige artikler i nummeret dækkede bl.a. DTU's salg af sin ejerandel i spin-out-virksomheden Crystal Fibre (udsprunget af DTU Fotonik) og et samarbejde med Arla Foods/DTU Fødevareinstituttet.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/14/dynamo_14_indhold_web1.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 15,
     "year": 2008,
     "month": 11,
-    "theme": "",
-    "description": "Ikke fundet specifikt tema. Filen 'dynamo_15_hele.ashx' (sti .../DTUdk/Nyheder/DYNAMO/15/dynamo_15_hele.ashx) blev fundet indekseret af en søgemaskine, hvilket bekræfter at nummeret eksisterer i DTU's digitale arkiv, men selve indholdet/temaet kunne ikke udtrækkes, da dtu.dk er blokeret for direkte hentning i dette miljø.",
+    "theme": "Life Sciences",
+    "description": "Confirmed via den fulde PDF af nummeret: DYNAMO nr. 15 udkom november 2008 med det eksplicitte forsidetema 'TEMA OM Life Sciences', forsidehistorie 'Ingeniørkunst: Fra petriskål til kræftmedicin' (om svampen Penicillium coprophilum og stoffet griseofulvin til kræftbehandling). Indholdsfortegnelsen dækker bl.a. kræftmedicin fra naturen, mobiltelefoner der forhindrer amputationer, stafylokok-resistens og medicinfremstilling.",
     "institutes": [],
     "source_urls": [
       "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/15/dynamo_15_hele.ashx"
     ],
-    "confidence": "low"
+    "confidence": "high"
   },
   {
     "issue_number": 16,
     "year": 2009,
     "month": 2,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
-    "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "theme": "Atlas over arvelige sygdomme / Atlas of Hereditary Diseases",
+    "description": "Confirmed via den fulde PDF: DYNAMO nr. 16 udkom februar 2009. Forsidehistorien handler om kortlægningen af sammenhængen mellem gener, proteinkomplekser og vævstyper for over 1.000 arvelige sygdomme og 50+ former for arvelig kræft, gjort offentligt tilgængelig. Forsideillustrationen krediteres eksplicit 'Shutterstock og DTU Systembiologi', og artiklen refererer til Center for Biologisk Sekvensanalyse på DTU Systembiologi.",
+    "institutes": [
+      "DTU Systembiologi"
+    ],
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/16/DYNAMO_indh_16-09_net.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 17,
     "year": 2009,
     "month": 5,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
-    "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "theme": "Klimarelaterede teknologier / Climate-related Technologies",
+    "description": "Confirmed via den fulde PDF: DYNAMO nr. 17 udkom maj 2009 med det eksplicitte forsidetema 'Tema om klimarelaterede teknologier', forsidehistorie 'Luftige ressourcer på fast grund' om vindressourcekortlægning (WAsP-værktøjet) og vindmølleparker. Forsideillustrationen krediteres 'Risø DTU og Google'. Nummeret dækker desuden brintdrevne trucks, energieffektivisering og brændselsceller udviklet i samarbejde med Risø DTU.",
+    "institutes": [
+      "Risø DTU"
+    ],
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/17/DYNAMO_17-09_web.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 18,
     "year": 2009,
-    "month": 8,
-    "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
-    "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "month": 9,
+    "theme": "Forskningens infrastruktur / Research Infrastructure",
+    "description": "Confirmed via den fulde PDF: DYNAMO nr. 18 udkom september 2009 med det eksplicitte forsidetema 'Tema om forskningens infrastruktur', forsidehistorie 'Styr på fremtidens værktøj'. Indholdsfortegnelsen dækker bl.a. DTU's renrumsfaciliteter (DTU Danchip, tidligere MIC) under overskriften 'Big is better', og DTU Aqua's havforskningsskib DANA under overskriften 'Skibet er ladet med havforskning'.",
+    "institutes": [
+      "DTU Danchip",
+      "DTU Aqua"
+    ],
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/18/DYNAMO_18_indhold.ashx"
+    ],
+    "confidence": "high"
   },
   {
     "issue_number": 19,
@@ -200,11 +239,13 @@
   {
     "issue_number": 20,
     "year": 2010,
-    "month": 2,
+    "month": 3,
     "theme": "",
-    "description": "Ikke fundet. Årstal interpoleret ud fra bekræftet kvartalsvis udgivelsestakt.",
+    "description": "Confirmed via den fulde PDF (rettelse: udkom marts 2010, ikke februar som tidligere interpoleret). Nummeret har ikke ét samlet 'TEMA:'-mærke på forsiden; forsidehistorien er 'Kæmpefly på slankekur' om vægtoptimering af flydele. Indholdsfortegnelsen spænder over skibssikkerhed/bemanding, mekanisk optimering, life science/bakterier, kabeltest af Femernbæltets kabler i sne og slud, indeklima-samarbejde og stress hos videnarbejdere.",
     "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Nyheder/DYNAMO/20/DYNAMO_20_web.ashx"
+    ],
+    "confidence": "medium"
   }
 ]

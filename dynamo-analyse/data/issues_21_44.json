@@ -2,29 +2,33 @@
   {
     "issue_number": 21,
     "year": 2010,
-    "month": 8,
+    "month": 5,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt (ca. 4 numre/år) mellem bekræftede numre 24 (april 2011) og 41 (maj 2015).",
-    "institutes": [],
-    "source_urls": [],
-    "confidence": "not_found"
+    "description": "Confirmed via den fulde PDF (rettelse: udkom maj 2010, ikke august som tidligere interpoleret). Forsidehistorien 'Skyhøj stabilitet' handler om, hvordan forskere og studerende fra DTU Byg i 2009 satte EU-Domstolens bygning i selvsving med 103 mennesker for at teste bygningens svingningsdæmpere ('En dæmper på EU-Domstolen'). Øvrige artikler dækker skimmelsvamp i bygninger, overfladebehandling/iværksætteri og en ventureFond.",
+    "institutes": [
+      "DTU Byg"
+    ],
+    "source_urls": [
+      "https://www.dtu.dk/-/media/DTUdk/Om_DTU/Nyheder-og-presse/DYNAMO/DYNAMO_21.ashx"
+    ],
+    "confidence": "medium"
   },
   {
     "issue_number": 22,
     "year": 2010,
-    "month": 11,
+    "month": 8,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 41 (maj 2015).",
+    "description": "Ikke fundet trods udvidet søgning: forsøgte dtu.dk-mediebibliotekets ashx-mønster med ~12 filnavnsvarianter i to forskellige mappestrukturer, Raffle-nyhedsarkiv-søgninger, WebSearch på ældre arkivsti, samt issuu.com-slugs (blokeret af bot-beskyttelse). Årstal/måned er et opdateret interpoleret gæt baseret på nye bekræftede ankre (nr. 21 = maj 2010, nr. 24 = april 2011).",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
   },
   {
     "issue_number": 23,
-    "year": 2011,
-    "month": 1,
+    "year": 2010,
+    "month": 12,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 41 (maj 2015).",
+    "description": "Ikke fundet trods udvidet søgning (samme metoder som nr. 22). Årstal/måned er et opdateret interpoleret gæt baseret på nye bekræftede ankre (nr. 21 = maj 2010, nr. 24 = april 2011).",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -47,7 +51,7 @@
     "year": 2011,
     "month": 6,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "description": "Ikke fundet trods udvidet søgning (samme metoder som nr. 22). Årstal interpoleret ud fra udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -57,7 +61,7 @@
     "year": 2011,
     "month": 9,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "description": "Ikke fundet trods udvidet søgning: den ældre arkivside 'dtu-medier/dynamo/2011/26' er Google-indekseret med titel men 404'er ved direkte hentning (siden er nedlagt). Årstal interpoleret ud fra udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -67,7 +71,7 @@
     "year": 2011,
     "month": 11,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "description": "Ikke fundet trods udvidet søgning (samme metoder som nr. 22). Årstal interpoleret ud fra udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -77,7 +81,7 @@
     "year": 2012,
     "month": 2,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "description": "Ikke fundet efter udvidet søgning (Raffle-nyhedsarkiv, issuu-URL-gæt, DTU's media/ashx-mønster, Yumpu, emagstudio, DTU-arkivsider). Yumpu.com og Wayback Machine er blokeret af netværksproxyen i dette miljø. Årstal/måned er fortsat et interpoleret gæt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -87,7 +91,7 @@
     "year": 2012,
     "month": 4,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "description": "Ikke fundet efter udvidet søgning (samme metoder som nr. 28). Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -97,7 +101,7 @@
     "year": 2012,
     "month": 7,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "description": "Ikke fundet med sikkerhed: en Yumpu-hostet PDF fra ca. september 2012 kan muligvis være dette nummer, men yumpu.com er blokeret af netværksproxyen, så indholdet kunne ikke bekræftes direkte, og et søgemaskine-resumé der navngav den 'nr. 30' kunne ikke uafhængigt verificeres. Derfor ikke brugt som kilde. Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -107,7 +111,7 @@
     "year": 2012,
     "month": 10,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "description": "Ikke fundet efter udvidet søgning (samme metoder som nr. 28). Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -117,7 +121,7 @@
     "year": 2012,
     "month": 12,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 24 (april 2011) og 33 (marts 2013).",
+    "description": "Ikke fundet efter udvidet søgning (samme metoder som nr. 28). Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -139,7 +143,7 @@
     "year": 2013,
     "month": 6,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "description": "Ikke fundet efter udvidet søgning (Raffle, issuu-gæt, media/ashx-mønster, Yumpu, emagstudio, DTU-arkivsider). Årstal/måned er fortsat et interpoleret gæt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -149,7 +153,7 @@
     "year": 2013,
     "month": 9,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "description": "Ikke fundet efter udvidet søgning (samme metoder som nr. 34). Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -159,7 +163,7 @@
     "year": 2014,
     "month": 1,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "description": "Ikke fundet efter udvidet søgning (samme metoder som nr. 34). Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -169,7 +173,7 @@
     "year": 2014,
     "month": 4,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "description": "Ikke fundet efter udvidet søgning (samme metoder som nr. 34). Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -179,7 +183,7 @@
     "year": 2014,
     "month": 7,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "description": "Ikke fundet efter udvidet søgning (samme metoder som nr. 34). Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -189,7 +193,7 @@
     "year": 2014,
     "month": 10,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "description": "Ikke fundet efter udvidet søgning (samme metoder som nr. 34). Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
@@ -199,7 +203,7 @@
     "year": 2015,
     "month": 1,
     "theme": "",
-    "description": "Ikke fundet. Årstal er et interpoleret gæt baseret på udgivelsestakt mellem bekræftede numre 33 (marts 2013) og 41 (maj 2015).",
+    "description": "Ikke fundet på trods af nærhed til issuu-dækningens grænse (nr. 41 findes på emagstudio.win.dtu.dk, nr. 42 på issuu). issuu.com/dtudk/docs/dynamo_40 og varianter gav alle 404. emagstudio.win.dtu.dk er ikke længere DNS-opløseligt fra dette miljø. Årstal/måned er fortsat et interpoleret gæt.",
     "institutes": [],
     "source_urls": [],
     "confidence": "not_found"
