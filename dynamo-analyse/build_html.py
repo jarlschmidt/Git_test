@@ -274,13 +274,14 @@ cover = f"""
   <div class="cover-top">
     <div class="eyebrow"><i></i>Medieanalyse · DTU</div>
     <h1>Dynamo gennem&nbsp;20&nbsp;år</h1>
-    <div class="sub">Hvad har DTU fortalt om sig selv de sidste 21 år? En komplet gennemgang af profilmagasinet Dynamos historier, temaer og institutter — fra lanceringen i 2005 til i dag.</div>
+    <div class="scope-line">Fuld historie-for-historie-analyse 2015–2025 · Historiske nedslag 2005–2014</div>
+    <div class="sub">Hvad har DTU fortalt om sig selv? En fuldstændig gennemgang af Dynamos seneste ti år, historie for historie — suppleret med udvalgte historiske nedslag tilbage til lanceringen i 2005. Se metodeafsnittet for datadækning år for år.</div>
   </div>
   <div class="cover-spacer"></div>
   <div class="cover-card">
     <div class="stats">
       {"".join(f'<div class="stat"><b>{esc(b)}</b><span class="lbl">{esc(l)}</span></div>' for b,l in [
-          (TOTAL, "Numre udgivet"), (STORY_COUNT_DA, "Historier i fuld tekst"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")
+          (TOTAL, "Numre udgivet 2005–2026"), (STORY_COUNT_DA, "Historier i fuld tekst 2015–2025"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")
       ])}
     </div>
     {year_track_html()}
