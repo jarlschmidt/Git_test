@@ -270,10 +270,14 @@ def year_track_html():
 today = date.today().strftime("%d. %B %Y")
 cover = f"""
 <div class="cover">
-  <div>
-    <div class="kicker">Medieanalyse · DTU</div>
+  <div class="cover-bignum">21</div>
+  <div class="cover-top">
+    <div class="eyebrow"><i></i>Medieanalyse · DTU</div>
     <h1>Dynamo gennem&nbsp;20&nbsp;år</h1>
-    <div class="sub">Historier, temaer og institutter i DTU's profilmagasin — nr. 1 (2005) til nr. 86 (2026). Baseret på {TOTAL} udgivne numre og {STORY_COUNT_DA} enkeltstående historier læst i fuld tekst fra {STORY_ISSUE_COUNT} numre (2015–2026).</div>
+    <div class="sub">Hvad har DTU fortalt om sig selv de sidste 21 år? En komplet gennemgang af profilmagasinet Dynamos historier, temaer og institutter — fra lanceringen i 2005 til i dag.</div>
+  </div>
+  <div class="cover-spacer"></div>
+  <div class="cover-card">
     <div class="stats">
       {"".join(f'<div class="stat"><b>{esc(b)}</b><span class="lbl">{esc(l)}</span></div>' for b,l in [
           (TOTAL, "Numre udgivet"), (STORY_COUNT_DA, "Historier i fuld tekst"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")

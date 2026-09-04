@@ -58,28 +58,36 @@
   tr{ break-inside:avoid-page; page-break-inside:avoid;}
   thead{ display:table-header-group;}
 
-  /* COVER */
+  /* COVER — dark editorial header, white "data card" footer panel */
   .cover{
-    background: linear-gradient(175deg, var(--dtu-navy) 0%, #020b3b 100%);
-    color:#fff; height:277mm; margin:-24mm -22mm 0 -22mm; padding:26mm 24mm;
-    display:flex; flex-direction:column; justify-content:center;
+    background: var(--dtu-navy);
+    color:#fff; height:277mm; margin:0; padding:26mm 20mm 12mm 20mm;
+    display:flex; flex-direction:column;
     page-break-after: always;
+    position:relative; overflow:hidden;
   }
-  .cover .kicker{color:var(--dtu-orange); font-size:8.6pt; letter-spacing:0.16em;}
-  .cover h1{color:#fff; font-size:44pt; line-height:1.08; max-width:150mm; margin-top:5mm;}
-  .cover .sub{font-size:13pt; line-height:1.6; color:rgba(255,255,255,0.72); max-width:118mm; margin-top:8mm;}
-  .cover .stats{display:flex; gap:13mm; margin-top:16mm;}
-  .cover .stat{border-top:2pt solid var(--dtu-orange); padding-top:3.5mm;}
-  .cover .stat b{display:block; font-size:29pt; color:#fff; line-height:1;}
-  .cover .stat span{font-size:8.3pt; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.07em; margin-top:1.5mm; display:block;}
-  .cover .footline{font-size:8.5pt; color:rgba(255,255,255,0.55); display:flex; justify-content:space-between; border-top:0.6pt solid rgba(255,255,255,0.2); padding-top:5mm; position:absolute; left:24mm; right:24mm; bottom:20mm;}
-  .cover .yeartrack{display:flex; align-items:flex-end; gap:2.2mm; height:30mm; margin-top:15mm;}
-  .cover .ytick{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
-  .cover .ytick i{display:block; width:100%; background:rgba(255,255,255,0.22); border-radius:1px;}
-  .cover .ytick.hi i{background:var(--dtu-orange);}
-  .cover .ytick span{font-size:6.6pt; color:rgba(255,255,255,0.55); margin-top:2.5mm; writing-mode:vertical-rl; transform:rotate(180deg);}
-  .cover .ytick.hi span{color:#fff; font-weight:700;}
-  .cover .caption{margin-top:5mm; color:rgba(255,255,255,0.55);}
+  .cover-bignum{position:absolute; top:38mm; right:-18mm; font-size:330pt; font-weight:800; color:rgba(255,255,255,0.055); line-height:1; letter-spacing:-0.04em; z-index:0; pointer-events:none;}
+  .cover-top, .cover-spacer, .cover-card, .cover > .footline{position:relative; z-index:1;}
+  .cover-top{flex:0 0 auto;}
+  .cover-spacer{flex:1 1 auto; min-height:8mm;}
+  .cover .eyebrow{display:flex; align-items:center; gap:3.5mm; text-transform:uppercase; letter-spacing:0.14em; font-size:8.6pt; font-weight:700; color:rgba(255,255,255,0.82);}
+  .cover .eyebrow i{display:block; width:8mm; height:1.8mm; background:var(--dtu-red); flex-shrink:0;}
+  .cover h1{color:#fff; font-size:42pt; line-height:1.08; max-width:150mm; margin:7mm 0 0 0;}
+  .cover .sub{font-size:12.6pt; line-height:1.62; color:rgba(255,255,255,0.76); max-width:120mm; margin-top:7mm;}
+  .cover-card{background:#fff; border-radius:2.5mm; padding:9mm 10mm 8mm 10mm; box-shadow:0 3mm 9mm rgba(0,0,0,0.3);}
+  .cover-card .stats{display:flex; gap:0; margin:0 0 6mm 0;}
+  .cover-card .stat{flex:1; border-top:none; border-left:1.6pt solid var(--dtu-red); padding:0 5mm 0 4mm;}
+  .cover-card .stat:first-child{padding-left:0;}
+  .cover-card .stat b{display:block; font-size:19pt; color:var(--dtu-navy); line-height:1;}
+  .cover-card .stat span{font-size:7.4pt; color:var(--ink-2); text-transform:uppercase; letter-spacing:0.05em; margin-top:1.8mm; display:block;}
+  .cover-card .yeartrack{display:flex; align-items:flex-end; gap:1.6mm; height:22mm; margin-top:1mm;}
+  .cover-card .ytick{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
+  .cover-card .ytick i{display:block; width:100%; background:var(--grid); border-radius:1px;}
+  .cover-card .ytick.hi i{background:var(--dtu-red);}
+  .cover-card .ytick span{font-size:6.2pt; color:var(--muted); margin-top:2mm; writing-mode:vertical-rl; transform:rotate(180deg);}
+  .cover-card .ytick.hi span{color:var(--dtu-navy); font-weight:700;}
+  .cover-card .caption{margin:3mm 0 0 0; color:var(--muted);}
+  .cover .footline{font-size:8.3pt; color:rgba(255,255,255,0.55); display:flex; justify-content:space-between; margin-top:8mm;}
 
   /* STAT TILES */
   .tiles{display:flex; gap:8mm; margin:7mm 0 10mm 0;}
@@ -167,10 +175,14 @@
 <!-- CONTENT INJECTED BY BUILD SCRIPT -->
 
 <div class="cover">
-  <div>
-    <div class="kicker">Medieanalyse · DTU</div>
+  <div class="cover-bignum">21</div>
+  <div class="cover-top">
+    <div class="eyebrow"><i></i>Medieanalyse · DTU</div>
     <h1>Dynamo gennem&nbsp;20&nbsp;år</h1>
-    <div class="sub">Historier, temaer og institutter i DTU's profilmagasin — nr. 1 (2005) til nr. 86 (2026). Baseret på 86 udgivne numre og 1.013 enkeltstående historier læst i fuld tekst fra 41 numre (2015–2026).</div>
+    <div class="sub">Hvad har DTU fortalt om sig selv de sidste 21 år? En komplet gennemgang af profilmagasinet Dynamos historier, temaer og institutter — fra lanceringen i 2005 til i dag.</div>
+  </div>
+  <div class="cover-spacer"></div>
+  <div class="cover-card">
     <div class="stats">
       <div class="stat"><b>86</b><span class="lbl">Numre udgivet</span></div><div class="stat"><b>1.013</b><span class="lbl">Historier i fuld tekst</span></div><div class="stat"><b>80%</b><span class="lbl">Numre tema-dokumenteret</span></div><div class="stat"><b>~4</b><span class="lbl">Numre pr. år</span></div>
     </div>
