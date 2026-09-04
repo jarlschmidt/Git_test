@@ -1,5 +1,22 @@
 # Projekt: Dynamo-analyse (DTU)
 
+**Status pr. 2026-09-04 (nyeste — forsideredesign):** Bruger rapporterede en
+konkret bug efter forrige forside-fix ("nederste 3.del er uden farve, teksten
+går til kant") og krævede derefter et fuldstændigt redesign, ikke endnu et
+patch ("jeg forventer at se en fuldstændig redesignet forside"). Root cause
+på buggen: `.cover` i `template.html` havde stadig et gammelt negativt-margin
+bleed-hack fra før `@page :first { margin: 0mm; }` blev indført — de to
+regler modarbejdede hinanden og skubbede boksen ud over sidekanten. Løsning:
+et reelt nyt visuelt layout, ikke bare fjernelse af den gamle regel — solid
+navy-flade med en rød accent-bjælke, en dæmpet, overdimensioneret "21"-vandmærke-
+tekst der udfylder det tomme rum midt på siden, og et tydeligt hvidt "datakort"
+nederst der samler statistik-tiles og år-for-år-søjlediagrammet (løser buggen
+ved design, ikke bare ved patch: det hvide kort har sin egen tydelige farve/
+skygge, så "ingen farve nederst" ikke kan gentage sig). Forside-underteksten er
+også omskrevet fra en metodetung sætning til et enkelt spørgsmål, som en
+udenforstående kan følge. Verificeret visuelt via cover-only render før hele
+to-pass-pipelinen blev kørt igen (62 sider, uændret). Committet og pushet.
+
 **Status pr. 2026-09-02 (nyeste — historie-niveau):** Bruger afviste
 issue-niveau-analysen som utilstrækkelig ("en analyse på baggrund af
 forsider er jo mildest talt fesent... er der huller er rapporten
