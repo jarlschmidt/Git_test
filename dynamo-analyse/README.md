@@ -21,6 +21,18 @@ institutter og oplagsudvikling over 21 år.
 - `data/toc_pages.json` — cachede, målte sidetal til indholdsfortegnelsen (se `measure_toc.py`).
 - `context_notes.md` — research-noter (historik, oplagstal, instituthistorik/omdøbninger).
 
+## Forsidens fulde bleed
+
+Forsiden (`.cover`) skal fylde hele siden kant-til-kant, uden hvid ramme — men
+Chromium's printmotor klipper baggrunde til @page-margin-boksen, uanset
+negative CSS-margener på indholdet (testet og bekræftet: en almindelig
+negativ-margen-bleed-teknik virker IKKE i Playwright/Chromium-print, selv med
+margin sat til 0mm i `page.pdf()`-kaldet — det er `@page`-reglens egen margin,
+der afgør klipningen). Løsningen er CSS Paged Media's `@page :first { margin:
+0mm; }` i `template.html`, som Chromium respekterer: forsiden (side 1) får
+ingen margin, mens `@page` (uden `:first`) styrer margin for alle øvrige
+sider. Rør ikke ved denne regel uden at gentjekke forsiden visuelt bagefter.
+
 ## Gendan/opdater rapporten
 
 Layoutet lader sektioner flyde frit hen over siderne (ingen tvunget sideskift pr.
