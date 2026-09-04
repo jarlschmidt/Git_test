@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <title>Dynamo gennem 20 år</title>
 <style>
-  @page { size: A4; margin: 20mm 18mm 16mm 18mm; }
+  @page { size: A4; margin: 24mm 22mm 20mm 22mm; }
   :root{
-    /* DTU official brand colours (designguide.dtu.dk) */
-    --dtu-red:#990000;        /* corporate red — RGB 153,0,0 / CMYK 0,91,72,23 */
-    --dtu-navy:#000a66;       /* navy blue — CMYK 100,90,0,60 (Pantone 655C/282U) */
-    --dtu-blue:#005cff;       /* blue — CMYK 100,64,0,0 (Pantone 2728C) */
-    --dtu-orange:#ff5924;     /* orange — CMYK 0,65,86,0 (Pantone 1505C/U) */
+    /* DTU official brand colours, exact values from designguide.dtu.dk/colours */
+    --dtu-red:#990000;        /* corporate red (primary) — RGB 153,0,0 / Pantone 187C */
+    --dtu-navy:#030f4f;       /* navy blue (secondary) — RGB 3,15,79 / Pantone 655C */
+    --dtu-blue:#2f3eea;       /* blue (secondary) — RGB 47,62,234 / Pantone 2728C */
+    --dtu-orange:#fc7634;     /* orange (secondary) — RGB 252,118,52 / Pantone 1505C */
     --dtu-red-tint:#e6cccc;   /* ~20% tint on white */
     --dtu-blue-tint:#cce0ff;
     --dtu-orange-tint:#ffe0d4;
@@ -38,15 +38,16 @@
   }
   h1,h2,h3,h4{font-weight:700; margin:0 0 4mm 0; letter-spacing:-0.01em; break-after:avoid-page; page-break-after:avoid;}
   h1{font-size:22pt; color:var(--dtu-red);}
-  h2{font-size:15pt; color:var(--dtu-red); border-bottom:1.4pt solid var(--dtu-red); padding-bottom:2mm; margin-bottom:5mm;}
-  h3{font-size:11.5pt; color:var(--navy-2);}
-  p{margin:0 0 3mm 0;}
+  h2{font-size:16.5pt; color:var(--dtu-red); border-bottom:1.4pt solid var(--dtu-red); padding-bottom:3mm; margin-bottom:7mm;}
+  h3{font-size:12pt; color:var(--navy-2); margin-top:2mm; margin-bottom:3.5mm;}
+  p{margin:0 0 3.6mm 0;}
   .kicker{
     text-transform:uppercase; letter-spacing:0.12em; font-size:8pt; font-weight:700;
     color:var(--orange); margin-bottom:2mm; break-after:avoid-page; page-break-after:avoid;
   }
-  .section{ padding-top:0; position:relative; margin-top:9mm;}
+  .section{ padding-top:0; position:relative; margin-top:15mm;}
   .section:first-of-type{margin-top:0;}
+  .section--newpage{ break-before:page; page-break-before:always;}
 
   /* keep small, self-contained blocks from splitting across a page break —
      .cols is deliberately NOT here: it can hold a tall chart, and forcing a
@@ -58,50 +59,51 @@
 
   /* COVER */
   .cover{
-    background: linear-gradient(175deg, var(--dtu-navy) 0%, #001040 100%);
-    color:#fff; height:281mm; margin:-20mm -18mm 0 -18mm; padding:20mm 18mm;
-    display:flex; flex-direction:column; justify-content:center; gap:14mm;
+    background: linear-gradient(175deg, var(--dtu-navy) 0%, #020b3b 100%);
+    color:#fff; height:277mm; margin:-24mm -22mm 0 -22mm; padding:26mm 24mm;
+    display:flex; flex-direction:column; justify-content:center;
     page-break-after: always;
   }
-  .cover .kicker{color:var(--dtu-orange);}
-  .cover h1{color:#fff; font-size:36pt; line-height:1.1; max-width:140mm;}
-  .cover .sub{font-size:12.5pt; color:rgba(255,255,255,0.75); max-width:120mm; margin-top:4mm;}
-  .cover .stats{display:flex; gap:10mm; margin-top:2mm;}
-  .cover .stat{border-top:2pt solid var(--dtu-orange); padding-top:2.5mm;}
-  .cover .stat b{display:block; font-size:24pt; color:#fff;}
-  .cover .stat span{font-size:8.5pt; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em;}
-  .cover .footline{font-size:8.5pt; color:rgba(255,255,255,0.55); display:flex; justify-content:space-between; border-top:0.6pt solid rgba(255,255,255,0.2); padding-top:4mm; position:absolute; left:18mm; right:18mm; bottom:16mm;}
-  .cover .yeartrack{display:flex; align-items:flex-end; gap:2mm; height:26mm; margin-top:2mm;}
+  .cover .kicker{color:var(--dtu-orange); font-size:8.6pt; letter-spacing:0.16em;}
+  .cover h1{color:#fff; font-size:44pt; line-height:1.08; max-width:150mm; margin-top:5mm;}
+  .cover .sub{font-size:13pt; line-height:1.6; color:rgba(255,255,255,0.72); max-width:118mm; margin-top:8mm;}
+  .cover .stats{display:flex; gap:13mm; margin-top:16mm;}
+  .cover .stat{border-top:2pt solid var(--dtu-orange); padding-top:3.5mm;}
+  .cover .stat b{display:block; font-size:29pt; color:#fff; line-height:1;}
+  .cover .stat span{font-size:8.3pt; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.07em; margin-top:1.5mm; display:block;}
+  .cover .footline{font-size:8.5pt; color:rgba(255,255,255,0.55); display:flex; justify-content:space-between; border-top:0.6pt solid rgba(255,255,255,0.2); padding-top:5mm; position:absolute; left:24mm; right:24mm; bottom:20mm;}
+  .cover .yeartrack{display:flex; align-items:flex-end; gap:2.2mm; height:30mm; margin-top:15mm;}
   .cover .ytick{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
   .cover .ytick i{display:block; width:100%; background:rgba(255,255,255,0.22); border-radius:1px;}
   .cover .ytick.hi i{background:var(--dtu-orange);}
-  .cover .ytick span{font-size:6.6pt; color:rgba(255,255,255,0.55); margin-top:2mm; writing-mode:vertical-rl; transform:rotate(180deg);}
+  .cover .ytick span{font-size:6.6pt; color:rgba(255,255,255,0.55); margin-top:2.5mm; writing-mode:vertical-rl; transform:rotate(180deg);}
   .cover .ytick.hi span{color:#fff; font-weight:700;}
+  .cover .caption{margin-top:5mm; color:rgba(255,255,255,0.55);}
 
   /* STAT TILES */
-  .tiles{display:flex; gap:5mm; margin:5mm 0 7mm 0;}
-  .tile{flex:1; border-top:2.2pt solid var(--dtu-red); padding-top:2.5mm;}
-  .tile b{display:block; font-size:19pt; color:var(--dtu-navy); line-height:1;}
-  .tile .lbl{font-size:8pt; color:var(--ink-2); margin-top:1.5mm; display:block;}
+  .tiles{display:flex; gap:8mm; margin:7mm 0 10mm 0;}
+  .tile{flex:1; border-top:2.2pt solid var(--dtu-red); padding-top:4mm;}
+  .tile b{display:block; font-size:23pt; color:var(--dtu-navy); line-height:1;}
+  .tile .lbl{font-size:8.2pt; color:var(--ink-2); margin-top:2mm; display:block;}
 
   /* TWO COL */
-  .cols{display:flex; gap:8mm;}
+  .cols{display:flex; gap:12mm;}
   .col{flex:1;}
 
   /* BAR CHART (css) */
-  .barchart{margin:4mm 0;}
-  .barrow{display:flex; align-items:center; gap:3mm; margin-bottom:2.4mm;}
-  .barrow .lbl{width:34mm; font-size:8.3pt; color:var(--ink-2); text-align:right; flex-shrink:0;}
-  .barrow .track{flex:1; background:var(--grid); height:5.4mm; position:relative; border-radius:1.5px;}
+  .barchart{margin:5mm 0;}
+  .barrow{display:flex; align-items:center; gap:3.5mm; margin-bottom:3.4mm;}
+  .barrow .lbl{width:34mm; font-size:8.5pt; color:var(--ink-2); text-align:right; flex-shrink:0;}
+  .barrow .track{flex:1; background:var(--grid); height:6.6mm; position:relative; border-radius:1.5px;}
   .barrow .fill{position:absolute; left:0; top:0; bottom:0; border-radius:1.5px; background:var(--blue);}
-  .barrow .val{min-width:13mm; width:auto; text-align:right; font-size:8.3pt; color:var(--ink); font-weight:700; flex-shrink:0; white-space:nowrap;}
+  .barrow .val{min-width:13mm; width:auto; text-align:right; font-size:8.5pt; color:var(--ink); font-weight:700; flex-shrink:0; white-space:nowrap;}
 
   /* LEGEND */
   .legend{display:flex; flex-wrap:wrap; gap:4mm; margin:2mm 0 4mm 0; font-size:8pt; color:var(--ink-2);}
   .legend .sw, .sw{display:inline-block; width:2.6mm; height:2.6mm; border-radius:1px; margin-right:1.4mm; vertical-align:middle; flex-shrink:0;}
 
   /* DONUT CHART */
-  .donut-wrap{display:flex; align-items:center; gap:6mm; margin:3mm 0;}
+  .donut-wrap{display:flex; align-items:center; gap:8mm; margin:4mm 0;}
   .donut{flex-shrink:0;}
   .donut-num{font-size:7.4px; font-weight:700; fill:var(--dtu-navy);}
   .donut-sub{font-size:2.6px; fill:var(--muted); text-transform:uppercase; letter-spacing:0.04em;}
@@ -112,43 +114,43 @@
   .donut-legend-row b{color:var(--ink);}
 
   /* STACKED YEAR-BY-YEAR CHART */
-  .ybar-chart{display:flex; align-items:flex-end; gap:1px; height:42mm; border-bottom:1pt solid var(--rule); margin:4mm 0 1.5mm 0; break-inside:avoid-page; page-break-inside:avoid;}
+  .ybar-chart{display:flex; align-items:flex-end; gap:1px; height:58mm; border-bottom:1pt solid var(--rule); margin:6mm 0 2mm 0; break-inside:avoid-page; page-break-inside:avoid;}
   .ybar-col{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
   .ybar-stack{width:78%; display:flex; flex-direction:column-reverse; height:100%;}
   .ybar-seg{width:100%; flex-shrink:0;}
   .ybar-col span{font-size:6.4pt; color:var(--muted); margin-top:1.5mm; writing-mode:vertical-rl; transform:rotate(180deg);}
 
   /* LINE CHART */
-  .line-chart{display:block; margin:3mm 0;}
+  .line-chart{display:block; margin:4mm 0;}
 
   /* VERTICAL TIMELINE (world-events correlation) */
-  .timeline-v{margin:4mm 0;}
-  .tl-row-v{display:flex; gap:5mm; break-inside:avoid-page; page-break-inside:avoid;}
-  .tl-year-col{position:relative; flex:0 0 15mm; border-left:1.4pt solid var(--rule); padding:0 0 6mm 4mm; margin-top:0.5mm;}
+  .timeline-v{margin:5mm 0;}
+  .tl-row-v{display:flex; gap:6mm; break-inside:avoid-page; page-break-inside:avoid;}
+  .tl-year-col{position:relative; flex:0 0 16mm; border-left:1.4pt solid var(--rule); padding:0 0 8mm 5mm; margin-top:0.5mm;}
   .tl-row-v:last-child .tl-year-col{padding-bottom:0.5mm;}
-  .tl-year-col b{font-size:11.5pt; color:var(--dtu-navy); display:block;}
+  .tl-year-col b{font-size:12pt; color:var(--dtu-navy); display:block;}
   .tl-dot{position:absolute; left:-2.3mm; top:0.5mm; width:3.6mm; height:3.6mm; border-radius:50%; border:1.5pt solid var(--page);}
-  .tl-body{flex:1; padding-bottom:5mm;}
-  .tl-body p{margin:0 0 1.2mm 0;}
+  .tl-body{flex:1; padding-bottom:7mm;}
+  .tl-body p{margin:0 0 1.6mm 0;}
 
   /* TABLE */
-  table{width:100%; border-collapse:collapse; font-size:8.3pt;}
-  th{text-align:left; font-size:7.4pt; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); border-bottom:1pt solid var(--rule); padding:1.6mm 2mm;}
-  td{padding:1.6mm 2mm; border-bottom:0.5pt solid var(--grid); vertical-align:top;}
+  table{width:100%; border-collapse:collapse; font-size:8.5pt;}
+  th{text-align:left; font-size:7.5pt; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); border-bottom:1pt solid var(--rule); padding:2.4mm 2.6mm;}
+  td{padding:2.4mm 2.6mm; border-bottom:0.5pt solid var(--grid); vertical-align:top;}
   tr:nth-child(even) td{background:#f9f9f7;}
   .tag{display:inline-block; font-size:6.8pt; background:#eef3fa; color:var(--blue-dark); border-radius:2px; padding:0.4mm 1.6mm; margin:0.4mm 0.6mm 0 0;}
   .src{color:var(--dtu-blue); text-decoration:none; white-space:nowrap;}
   .src:hover{text-decoration:underline;}
 
-  .quote{border-left:2.2pt solid var(--orange); padding-left:4mm; font-size:10.5pt; color:var(--navy-2); font-style:italic; margin:4mm 0;}
-  .insight{background:#f4f7fb; border-left:2.2pt solid var(--blue); padding:3mm 4mm; margin:3mm 0; font-size:9pt;}
+  .quote{border-left:2.2pt solid var(--orange); padding-left:5mm; font-size:10.8pt; color:var(--navy-2); font-style:italic; margin:5mm 0;}
+  .insight{background:#f4f7fb; border-left:2.2pt solid var(--blue); padding:4.5mm 5.5mm; margin:4.5mm 0; font-size:9.2pt;}
   .insight b{color:var(--navy);}
   .small{font-size:7.8pt; color:var(--muted);}
   .toc a{color:var(--ink); text-decoration:none;}
-  .toc-row{display:flex; justify-content:space-between; border-bottom:0.5pt dotted var(--rule); padding:2mm 0; font-size:9.5pt;}
+  .toc-row{display:flex; justify-content:space-between; border-bottom:0.5pt dotted var(--rule); padding:3.2mm 0; font-size:9.8pt;}
 
   /* STRATEGY ALIGNMENT */
-  .strategy-row{border-top:0.6pt solid var(--rule); padding:3.5mm 0; break-inside:avoid-page; page-break-inside:avoid;}
+  .strategy-row{border-top:0.6pt solid var(--rule); padding:5mm 0; break-inside:avoid-page; page-break-inside:avoid;}
   .strategy-row:first-of-type{border-top:none;}
   .strategy-head{display:flex; justify-content:space-between; align-items:baseline; gap:6mm;}
   .strategy-head h3{margin-bottom:0;}

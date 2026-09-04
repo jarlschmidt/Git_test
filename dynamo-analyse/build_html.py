@@ -42,7 +42,13 @@ def esc(s):
     return html.escape(str(s), quote=False)
 
 TOTAL = len(issues)
-DOCUMENTED = sum(1 for i in issues if i.get("confidence") in ("high","medium","low") and i.get("theme"))
+# "Documented" = we found and described the issue (confidence high/medium/low),
+# which is NOT the same as "has a single labeled theme" — a handful of issues
+# are genuine general-interest numbers with no one cover theme (theme == ""),
+# but they were still researched from a primary source, so they count here.
+# This must stay in sync with conf_counts (high+medium+low), or the "andel
+# dokumenteret" stat and its own donut chart would show two different numbers.
+DOCUMENTED = sum(1 for i in issues if i.get("confidence") in ("high","medium","low"))
 PCT_DOC = round(100*DOCUMENTED/TOTAL)
 
 STORY_COUNT = len(STORIES)
@@ -92,7 +98,7 @@ def source_links(urls):
 # Every chart in the report that breaks down by theme-category uses this SAME
 # category -> color mapping, assigned once in fixed rank order (never re-cycled
 # per-chart), with anything past the top 6 folded into one grey "Øvrige temaer".
-CAT_PALETTE = ["#ff5924", "#005cff", "#c23b3b", "#0d8a72", "#c99a2e", "#4a5fc1"]
+CAT_PALETTE = ["#fc7634", "#2f3eea", "#e83f48", "#1fd082", "#79238e", "#008835"]
 OTHER_COLOR = "#9a9a91"
 OTHER_LABEL = "Øvrige temaer"
 _cats_by_count = sorted(cat_totals.items(), key=lambda x: -x[1])
@@ -103,7 +109,7 @@ def cat_color(cat):
     return CAT_COLOR.get(cat, OTHER_COLOR)
 
 # ---------- donut chart (inline SVG, stroke-dasharray technique) ----------
-def donut_svg(pairs, size_mm=32, hole_num=None, hole_sub=None):
+def donut_svg(pairs, size_mm=40, hole_num=None, hole_sub=None):
     """pairs: list of (label, color, value)."""
     total = sum(v for _, _, v in pairs) or 1
     r = 15.9155
@@ -144,7 +150,7 @@ def donut_legend(pairs):
         )
     return "<div class='donut-legend'>" + "".join(rows) + "</div>"
 
-def donut_with_legend(pairs, hole_num=None, hole_sub=None, size_mm=32):
+def donut_with_legend(pairs, hole_num=None, hole_sub=None, size_mm=40):
     """pairs: list of (label, color, value)."""
     return (
         "<div class='donut-wrap'>"
@@ -208,7 +214,7 @@ def line_chart_svg(points, y_suffix="", w=170, h=42, pad=22, pad_top=8):
         for i in range(n)
     )
     return (
-        f'<svg viewBox="0 0 {w} {h+12}" class="line-chart" preserveAspectRatio="none" style="width:100%; height:32mm;">'
+        f'<svg viewBox="0 0 {w} {h+12}" class="line-chart" preserveAspectRatio="none" style="width:100%; height:42mm;">'
         f'<path d="{area}" fill="var(--dtu-blue)" opacity="0.12" stroke="none"/>'
         f'<path d="{path}" fill="none" stroke="var(--dtu-blue)" stroke-width="1.1"/>'
         f'{dots}{vlabels}{xlabels}</svg>'
@@ -267,14 +273,14 @@ cover = f"""
   <div>
     <div class="kicker">Medieanalyse · DTU</div>
     <h1>Dynamo gennem&nbsp;20&nbsp;år</h1>
-    <div class="sub">Historier, temaer og institutter i DTU's profilmagasin — nr. 1 (2005) til nr. 86 (2026). Baseret på {TOTAL} udgivne numre og {STORY_COUNT} enkeltstående historier læst i fuld tekst fra {STORY_ISSUE_COUNT} numre (2015–2026).</div>
+    <div class="sub">Historier, temaer og institutter i DTU's profilmagasin — nr. 1 (2005) til nr. 86 (2026). Baseret på {TOTAL} udgivne numre og {STORY_COUNT_DA} enkeltstående historier læst i fuld tekst fra {STORY_ISSUE_COUNT} numre (2015–2026).</div>
     <div class="stats">
       {"".join(f'<div class="stat"><b>{esc(b)}</b><span class="lbl">{esc(l)}</span></div>' for b,l in [
           (TOTAL, "Numre udgivet"), (STORY_COUNT_DA, "Historier i fuld tekst"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")
       ])}
     </div>
     {year_track_html()}
-    <p class="small" style="color:rgba(255,255,255,0.55);">Numre pr. udgivelsesår, 2005–2026 (interpoleret hvor eksakt måned er ukendt)</p>
+    <p class="small caption">Numre pr. udgivelsesår, 2005–2026 (interpoleret hvor eksakt måned er ukendt)</p>
   </div>
   <div class="footline"><span>Kilder: issuu.com/dtudk · DTU nyhedsarkiv (dtu.dk)</span><span>{esc(today)}</span></div>
 </div>
@@ -311,7 +317,7 @@ top_cat_name, top_cat_n = top3[0]
 second_name, second_n = top3[1]
 
 exec_summary = f"""
-<div class="section" id="sec-exec">
+<div class="section section--newpage" id="sec-exec">
 <div class="kicker">Executive summary</div>
 <h2>21 år, 86 numre, {STORY_COUNT_DA} historier — fra klimadebat til kunstig intelligens</h2>
 <div class="tiles">
@@ -358,9 +364,9 @@ method = f"""
   <div class="col">
     <h3>Andel dokumenteret</h3>
     {donut_with_legend([
-        ("Høj", "#005cff", conf_counts.get("high",0)),
-        ("Middel", "#4a5fc1", conf_counts.get("medium",0)),
-        ("Lav", "#c99a2e", conf_counts.get("low",0)),
+        ("Høj", "#2f3eea", conf_counts.get("high",0)),
+        ("Middel", "#6e78f0", conf_counts.get("medium",0)),
+        ("Lav", "#acb2f7", conf_counts.get("low",0)),
         ("Ikke fundet", OTHER_COLOR, conf_counts.get("not_found",0)),
     ], hole_num=f"{PCT_DOC}%", hole_sub="dokumenteret")}
   </div>
@@ -383,7 +389,7 @@ history = f"""
 <tr><td>2005</td><td>Nr. 1 udkommer som nyt "profil- og alumnemagasin" for DTU, målrettet erhvervsliv, myndigheder og borgere.</td></tr>
 <tr><td>2009</td><td>Klimatema forud for COP15 — nummeret indeholder en DVD med højdepunkter fra DTU's Climate Change Conference og anbefalinger til danske politikere.</td></tr>
 <tr><td>2011</td><td>Magasinet beskrives i rektors årsfest-tale som DTU's vigtigste eksterne kommunikationskanal, med et oplag på over 60.000 eksemplarer.</td></tr>
-<tr><td>2020'erne</td><td>Skarpere, mere teknologispecifikke temaer pr. nummer (kvante, AI, droneforsvar) — og et markant lavere, mere målrettet oplag på ca. 16-19.000 modtagere.</td></tr>
+<tr><td>2020'erne</td><td>Skarpere, mere teknologispecifikke temaer pr. nummer (kvante, AI, droneforsvar) — og et markant lavere, mere målrettet oplag på ca. 16.000 modtagere.</td></tr>
 </table>
 </div>"""
 
@@ -522,13 +528,14 @@ circ_page = f"""
 <div class="tiles">
   {stat_tile("2005", "Lancering, profilmagasin")}
   {stat_tile("60.000+", "Oplag, 2011 (kvartalsmagasin)")}
-  {stat_tile("16-19.000", "Oplag, 2025/26")}
-  {stat_tile("-72%", "Fald i oplag, 2011→2026")}
+  {stat_tile("16.000", "Modtagere, 2025/26")}
+  {stat_tile("-73%", "Fald i oplag, 2011→2026")}
 </div>
-{line_chart_svg([("2011", 60000), ("2025/26", 17000)], y_suffix=" eks.")}
+{line_chart_svg([("2011", 60000), ("2025/26", 16000)], y_suffix=" eks.")}
 <p class="small">Kun to kendte datapunkter (2011 og 2025/26) — linjen mellem dem er en lige linje, ikke en målt udvikling år for år.</p>
-{bar_rows([("2011", 60000), ("2025/26", 17000)], color="var(--dtu-blue)", val_suffix=" eks.")}
+{bar_rows([("2011", 60000), ("2025/26", 16000)], color="var(--dtu-blue)", val_suffix=" eks.")}
 <p>Oplaget er faldet markant siden 2011 — men målgruppen er samtidig blevet skarpere defineret. I dag distribueres Dynamo annoncefrit og gratis til en navngivet kreds af beslutningstagere: bestyrelses- og direktionsmedlemmer i Danmarks største virksomheder, folketings- og EU-parlamentsmedlemmer, samt fonds- og rådsbestyrelser — suppleret af udlæg i landets læge- og tandlægevente­værelser. Faldet afspejler en generel branchetrend for trykte profilmagasiner: fra bredt oplag til stærkt målrettet distribution, understøttet af en digital udgave (issuu/iPad) siden omkring 2011.</p>
+<p class="small">Kilde: <a class="src" href="https://www.inside.dtu.dk/kommunikation/nyheder-og-presse/dynamo">DTU Inside — Dynamo</a>: "Magasinet distribueres til 16.000 modtagere, heriblandt beslutningstagere i industrien, erhvervslivet og i den offentlige administration."</p>
 <div class="insight"><b>Konsekvens for denne analyse:</b> Den skarpere målretning falder tidsmæssigt sammen med den periode (2020-2026), hvor Dynamos temaer bliver mest teknologispecifikke (kvante, AI, forsvar) — konsistent med en strategi om at tale direkte til beslutningstagere om aktuelle teknologipolitiske dagsordener frem for et bredt oplysningsformål.</div>
 </div>"""
 
@@ -538,12 +545,19 @@ def conf_label(c):
 
 rows_html = []
 for it in issues:
-    theme = it.get("theme") or "<span class='small'>Ikke dokumenteret</span>"
+    if it.get("theme"):
+        theme = esc(it["theme"])
+    elif it.get("confidence") == "not_found":
+        theme = "<span class='small'>Ikke dokumenteret</span>"
+    else:
+        # researched from a primary source, but genuinely no single cover theme
+        # (a general-interest issue) — not the same thing as "not found"
+        theme = "<span class='small'>Blandet nummer — ingen samlet forsidetema</span>"
     cats = it.get("categories") or []
     tags = "".join(f"<span class='tag'>{esc(c)}</span>" for c in cats if c != "Andet/uklassificeret")
     rows_html.append(
         f"<tr><td>{it['issue_number']}</td><td>{it['year']}</td>"
-        f"<td>{theme if it.get('theme') else theme}{('<br>'+tags) if tags else ''}</td>"
+        f"<td>{theme}{('<br>'+tags) if tags else ''}</td>"
         f"<td>{conf_label(it.get('confidence','not_found'))}</td>"
         f"<td>{source_links(it.get('source_urls'))}</td></tr>"
     )

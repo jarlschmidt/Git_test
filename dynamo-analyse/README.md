@@ -45,6 +45,11 @@ tema-kategorier får hver sin farve i fast rækkefølge, resten samles under gr�
 "Øvrige temaer". Paletten er valideret med `dataviz`-skillets
 `scripts/validate_palette.js` (fast farverækkefølge, ingen regnbue, adskillelse
 under farveblindhed) — ændres kategori-farverne, bør paletten valideres igen.
+Alle farver (både brand-farverne i `template.html` og kategori-paletten i
+`build_html.py`) er DTU's officielle sekundærfarver med eksakte hex-værdier
+fra designguide.dtu.dk/colours (rød #990000, navy #030f4f, blå #2f3eea,
+orange #fc7634, samt rød #e83f48, grøn #1fd082/#008835 og lilla #79238e i
+diagrammerne).
 
 ## Kendte begrænsninger
 
