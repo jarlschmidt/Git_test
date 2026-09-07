@@ -175,15 +175,18 @@ def stacked_year_chart(years):
         segs.append((OTHER_LABEL, other))
         col_segs[y] = segs
         max_total = max(max_total, sum(v for _, v in segs))
-    highlight = {2005, 2011, 2026}
+    milestones = {2005, 2010, 2015, 2020, 2025, 2026}
     cols = []
     for y in years:
+        total = sum(v for _, v in col_segs[y])
         parts = "".join(
             f'<div class="ybar-seg" style="height:{100*v/max_total:.2f}%; background:{cat_color(c)};"></div>'
             for c, v in col_segs[y] if v > 0
         )
-        label = f"<span>{y}</span>" if y in highlight else "<span>&nbsp;</span>"
-        cols.append(f'<div class="ybar-col"><div class="ybar-stack">{parts}</div>{label}</div>')
+        cls = "ybar-col" if total > 0 else "ybar-col ybar-col--empty"
+        lbl_cls = "hi" if y in milestones else ""
+        label = f"<span class='{lbl_cls}'>&rsquo;{str(y)[2:]}</span>"
+        cols.append(f'<div class="{cls}"><div class="ybar-stack">{parts}</div>{label}</div>')
     legend_pairs = [(c, cat_color(c), sum(counts.get(c, 0) for counts in (year_cat_lookup(y) for y in years))) for c in stack_order]
     legend = "".join(
         f"<div class='donut-legend-row'><span class='sw' style='background:{color};'></span>"
@@ -425,8 +428,9 @@ year_by_year_page = f"""
 <div class="section" id="sec-temaeraar">
 <div class="kicker">Tema-analyse</div>
 <h2>Temaer år for år</h2>
-<p>Samme 10 kategorier som ovenfor, men brudt ud år for år i stedet for summeret over hele perioden — søjlerne viser, hvilke temaer der prægede Dynamo hvert enkelt år (kun de {DOCUMENTED} dokumenterede numre er talt med; se dækningsgraden i metodeafsnittet for hvorfor 2005–2014 er tyndere).</p>
+<p>Samme 10 kategorier som ovenfor, men brudt ud år for år i stedet for summeret over hele perioden — hver søjle er ét udgivelsesår (x-aksen løber fra 2005 til 2026), og søjlens højde og farvefordeling viser, hvor mange numre det år havde hvilket tema. Kun de {DOCUMENTED} dokumenterede numre er talt med; en stiplet, tom søjle betyder, at intet Dynamo-nummer fra det år kunne tema-bestemmes (se dækningsgraden i metodeafsnittet for hvorfor 2005–2014 er tyndere).</p>
 {stacked_year_chart(_all_years)}
+<p class="small" style="margin-top:2mm;">Årstal er forkortet til de sidste to cifre (fx '09 = 2009); hvert femte år samt 2026 er fremhævet for at gøre det nemmere at orientere sig.</p>
 <div class="insight"><b>Bølgerne er tydelige, når man ser år for år:</b> klima &amp; energi optræder praktisk talt hvert år fra 2015 og frem, mens digitalt/AI/data og materialer/nano/kvante først for alvor tager fart efter 2020 — konsistent med tre-æra-opdelingen nedenfor, men med langt mere detalje om <i>hvornår</i> skiftet sker.</div>
 </div>"""
 
