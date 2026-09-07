@@ -58,7 +58,8 @@
   tr{ break-inside:avoid-page; page-break-inside:avoid;}
   thead{ display:table-header-group;}
 
-  /* COVER — dark editorial header, white "data card" footer panel */
+  /* COVER — energy-beam composition: colour rays sweeping in from the top-right,
+     dissolving into the navy base; a white data card grounds the bottom. */
   .cover{
     background: var(--dtu-navy);
     color:#fff; height:277mm; margin:0; padding:26mm 20mm 12mm 20mm;
@@ -66,16 +67,30 @@
     page-break-after: always;
     position:relative; overflow:hidden;
   }
-  .cover-bignum{position:absolute; top:38mm; right:-18mm; font-size:330pt; font-weight:800; color:rgba(255,255,255,0.055); line-height:1; letter-spacing:-0.04em; z-index:0; pointer-events:none;}
-  .cover-top, .cover-spacer, .cover-card, .cover > .footline{position:relative; z-index:1;}
+  .cover-beams{position:absolute; inset:0; overflow:hidden; z-index:0;
+    -webkit-mask-image: linear-gradient(112deg, transparent 0%, transparent 42%, black 74%, black 100%);
+            mask-image: linear-gradient(112deg, transparent 0%, transparent 42%, black 74%, black 100%);
+  }
+  .cover-beams i{position:absolute; left:-70mm; width:340mm; height:34mm; transform:rotate(-24deg); border-radius:1mm;}
+  .cover-beams .b1{top:-42mm; background:var(--dtu-orange); opacity:0.95;}
+  .cover-beams .b2{top:-2mm;  background:#e83f48; opacity:0.92;}
+  .cover-beams .b3{top:38mm;  background:var(--dtu-blue); opacity:0.55;}
+  .cover-beams .b4{top:66mm; height:9mm; background:rgba(255,255,255,0.55); opacity:0.5;}
+  .cover-beams .b5{top:80mm;  background:#1fd082; opacity:0.28;}
+  .cover-fade{position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg, transparent 0%, transparent 46%, var(--dtu-navy) 80%);
+  }
+  .cover-top, .cover-spacer, .cover-card, .cover > .footline{position:relative; z-index:2;}
   .cover-top{flex:0 0 auto;}
   .cover-spacer{flex:1 1 auto; min-height:8mm;}
   .cover .eyebrow{display:flex; align-items:center; gap:3.5mm; text-transform:uppercase; letter-spacing:0.14em; font-size:8.6pt; font-weight:700; color:rgba(255,255,255,0.82);}
   .cover .eyebrow i{display:block; width:8mm; height:1.8mm; background:var(--dtu-red); flex-shrink:0;}
-  .cover h1{color:#fff; font-size:42pt; line-height:1.08; max-width:150mm; margin:7mm 0 0 0;}
+  .cover h1{color:#fff; font-size:44pt; line-height:1.06; max-width:145mm; margin:7mm 0 0 0; text-shadow:0 2mm 6mm rgba(0,0,0,0.25);}
   .cover .scope-line{font-size:8.6pt; font-weight:700; letter-spacing:0.03em; color:var(--dtu-orange); margin-top:6mm; max-width:120mm;}
-  .cover .sub{font-size:12pt; line-height:1.6; color:rgba(255,255,255,0.76); max-width:120mm; margin-top:4mm;}
-  .cover-card{background:#fff; border-radius:2.5mm; padding:9mm 10mm 8mm 10mm; box-shadow:0 3mm 9mm rgba(0,0,0,0.3);}
+  .cover .sub{font-size:12pt; line-height:1.6; color:rgba(255,255,255,0.82); max-width:118mm; margin-top:4mm;}
+  .cover-card{background:#fff; border-radius:2.5mm; overflow:hidden; box-shadow:0 3mm 9mm rgba(0,0,0,0.3);}
+  .cover-card-bar{height:2.2mm; background:linear-gradient(90deg, var(--dtu-orange), #e83f48 45%, var(--dtu-blue) 100%);}
+  .cover-card-body{padding:8mm 10mm 8mm 10mm;}
   .cover-card .stats{display:flex; gap:0; margin:0 0 6mm 0;}
   .cover-card .stat{flex:1; border-top:none; border-left:1.6pt solid var(--dtu-red); padding:0 5mm 0 4mm;}
   .cover-card .stat:first-child{padding-left:0;}

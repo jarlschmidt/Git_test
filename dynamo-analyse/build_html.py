@@ -273,7 +273,8 @@ def year_track_html():
 today = date.today().strftime("%d. %B %Y")
 cover = f"""
 <div class="cover">
-  <div class="cover-bignum">21</div>
+  <div class="cover-beams"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div>
+  <div class="cover-fade"></div>
   <div class="cover-top">
     <div class="eyebrow"><i></i>Medieanalyse · DTU</div>
     <h1>Dynamo gennem&nbsp;20&nbsp;år</h1>
@@ -282,13 +283,16 @@ cover = f"""
   </div>
   <div class="cover-spacer"></div>
   <div class="cover-card">
-    <div class="stats">
-      {"".join(f'<div class="stat"><b>{esc(b)}</b><span class="lbl">{esc(l)}</span></div>' for b,l in [
-          (TOTAL, "Numre udgivet 2005–2026"), (STORY_COUNT_DA, "Historier i fuld tekst 2015–2026"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")
-      ])}
+    <div class="cover-card-bar"></div>
+    <div class="cover-card-body">
+      <div class="stats">
+        {"".join(f'<div class="stat"><b>{esc(b)}</b><span class="lbl">{esc(l)}</span></div>' for b,l in [
+            (TOTAL, "Numre udgivet 2005–2026"), (STORY_COUNT_DA, "Historier i fuld tekst 2015–2026"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")
+        ])}
+      </div>
+      {year_track_html()}
+      <p class="small caption">Numre pr. udgivelsesår, 2005–2026 (interpoleret hvor eksakt måned er ukendt)</p>
     </div>
-    {year_track_html()}
-    <p class="small caption">Numre pr. udgivelsesår, 2005–2026 (interpoleret hvor eksakt måned er ukendt)</p>
   </div>
   <div class="footline"><span>Kilder: issuu.com/dtudk · DTU nyhedsarkiv (dtu.dk)</span><span>{esc(today)}</span></div>
 </div>
