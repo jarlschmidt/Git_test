@@ -557,16 +557,26 @@
       "issue_number": 41,
       "year": 2015,
       "month": 5,
-      "theme": "Belysnings- og materialeinnovation (Cool LED / Green Laser) - ikke bekræftet som samlet forsidetema",
-      "description": "Udkom maj 2015. Kendte artikler i nummeret omfatter \"Cool LED\" (nyt lys i PH-lampen) og \"Green Laser\" (om betonsten/laserbehandlet beton). Det overordnede forsidetema for nummeret er ikke bekræftet.",
-      "institutes": [],
+      "theme": "Lysledere / Betonsten med indbygget lys",
+      "description": "Forsidetema om lysledere støbt direkte ind i betonsten, der gør det muligt at afspille film og reklamer på husfacader. Nummeret dækker desuden bl.a. entreprenørskab (spinout-virksomheden Norlase), EnergyLab Nordhavn, LED-belysning til designklassikere, DTU Miljøs 150-års jubilæum, det danske laksegenopretningsprojekt, biocover-teknologi mod metanudledning fra lossepladser, livscyklusvurderinger af vindmøller, intelligente høreapparater og en NOx-sensor til skibsfarten. Bekræftet ved læsning af nummerets fulde tekst (bruger-uploadet PDF, 2026-09-07).",
+      "institutes": [
+        "DTU Fotonik",
+        "DTU Miljø",
+        "DTU Aqua",
+        "DTU Management",
+        "DTU Elektro",
+        "DTU Nanotech",
+        "DTU Kemiteknik",
+        "DTU Compute"
+      ],
       "source_urls": [
         "http://emagstudio.win.dtu.dk/E-books/DYNAMO/DYNAMO_41/"
       ],
-      "confidence": "medium",
+      "confidence": "high",
       "categories": [
-        "Materialer, Nano & Kvante",
-        "Samfund & Iværksætteri"
+        "Klima & Energi",
+        "Vand, Miljø & Ressourcer",
+        "Transport, Byggeri & Byer"
       ]
     },
     {
@@ -1356,12 +1366,11 @@
       "Rum & Klode": 3
     },
     "2013–2019": {
-      "Vand, Miljø & Ressourcer": 5,
-      "Materialer, Nano & Kvante": 4,
-      "Samfund & Iværksætteri": 1,
-      "Klima & Energi": 6,
-      "Transport, Byggeri & Byer": 3,
+      "Vand, Miljø & Ressourcer": 6,
+      "Klima & Energi": 7,
+      "Transport, Byggeri & Byer": 4,
       "Sundhed & Bioteknologi": 3,
+      "Materialer, Nano & Kvante": 3,
       "Digitalt, AI & Data": 1,
       "Forsvar & Sikkerhed": 1,
       "Fødevarer & Landbrug": 1
@@ -1391,16 +1400,16 @@
   },
   "cat_totals": {
     "Andet/uklassificeret": 1,
-    "Klima & Energi": 27,
+    "Klima & Energi": 28,
     "Sundhed & Bioteknologi": 15,
-    "Transport, Byggeri & Byer": 12,
-    "Vand, Miljø & Ressourcer": 17,
+    "Transport, Byggeri & Byer": 13,
+    "Vand, Miljø & Ressourcer": 18,
     "Forsvar & Sikkerhed": 7,
     "Fødevarer & Landbrug": 9,
-    "Materialer, Nano & Kvante": 12,
+    "Materialer, Nano & Kvante": 11,
     "Rum & Klode": 7,
-    "Samfund & Iværksætteri": 4,
-    "Digitalt, AI & Data": 9
+    "Digitalt, AI & Data": 9,
+    "Samfund & Iværksætteri": 3
   },
   "year_counts": {
     "2005": 3,
@@ -1470,11 +1479,9 @@
       "Vand, Miljø & Ressourcer": 1
     },
     "2015": {
-      "Materialer, Nano & Kvante": 1,
-      "Samfund & Iværksætteri": 1,
-      "Vand, Miljø & Ressourcer": 1,
-      "Klima & Energi": 1,
-      "Transport, Byggeri & Byer": 1
+      "Klima & Energi": 2,
+      "Vand, Miljø & Ressourcer": 2,
+      "Transport, Byggeri & Byer": 2
     },
     "2016": {
       "Vand, Miljø & Ressourcer": 1,
@@ -1559,13 +1566,18 @@
     "DTU Systembiologi": 1,
     "Risø DTU": 1,
     "DTU Danchip": 1,
-    "DTU Aqua": 5,
+    "DTU Aqua": 6,
     "DTU Byg": 1,
+    "DTU Fotonik": 1,
+    "DTU Miljø": 1,
+    "DTU Management": 4,
+    "DTU Elektro": 1,
+    "DTU Nanotech": 1,
+    "DTU Kemiteknik": 5,
+    "DTU Compute": 3,
     "DTU Sundhedsteknologi": 2,
     "Quantum DTU": 2,
     "DTU Space": 4,
-    "DTU Management": 3,
-    "DTU Kemiteknik": 4,
     "DTU Nanolab": 1,
     "DTU Fysik": 1,
     "DTU Electro": 3,
@@ -1575,7 +1587,6 @@
     "DTU Kemi": 2,
     "DTU Fødevareinstituttet": 2,
     "DTU Skylab": 1,
-    "DTU Compute": 2,
     "DTU Engineering Technology": 1,
     "DTU Construct": 2,
     "DTU Sustain": 2,
@@ -1583,8 +1594,8 @@
     "DTU Wind": 1
   },
   "conf_counts": {
-    "medium": 15,
-    "high": 52,
+    "medium": 14,
+    "high": 53,
     "not_found": 17,
     "low": 2
   },

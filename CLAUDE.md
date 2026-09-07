@@ -1,6 +1,25 @@
 # Projekt: Dynamo-analyse (DTU)
 
-**Status pr. 2026-09-07 (nyeste — nr. 85 modtaget, kun nr. 41 mangler nu):**
+**Status pr. 2026-09-07 (nyeste — nr. 41 modtaget, historie-niveau er nu 100% komplet for 2015–2026):**
+Bruger fandt og uploadede også det sidste manglende nummer, nr. 41 (maj 2015,
+fil "144549_Dynamo_41_15_web.pdf", verificeret fra kolofonen: "MAJ 2015 > nr.
+41"). Læst med `pdftotext -layout` og struktureret til 12 historier (bl.a.
+lysledere i beton, Norlase-spinout, EnergyLab Nordhavn, det danske
+lakseredningsprojekt, biocover mod metan, en NOx-sensor til skibsfarten) —
+tilføjet til `data/stories.json` (nu **1.112 historier i alt**). `STORY_UNCOVERED`
+er nu tom liste `[]` — alle 46 numre fra nr. 41 til nr. 86 (2015–2026) har fuld
+historie-niveau-dokumentation. issue-niveau-posten for nr. 41 i
+`data/issues_21_44.json` er opgraderet til `confidence: "high"` med et bekræftet
+forsidetema og reelle institutter (var tidligere kun "medium", da det oprindelige
+forsidetema ikke var bekræftet). Metode-/appendiksteksten er omskrevet fra at
+remse "manglende numre" op til at fejre milepælen ("historie-niveau er komplet
+for 2015–2026") og i stedet pege på den eneste resterende, reelle begrænsning:
+16 af 39 numre fra 2005–2014 er stadig udokumenterede efter udvidet søgning.
+Rapporten er nu **67 sider**. Med dette er hele den moderne æra (2015–2026)
+færdigbehandlet på historie-niveau — der er ikke flere "manglende numre" at
+jagte i den periode.
+
+**Status pr. 2026-09-07 (tidligere — nr. 85 modtaget, kun nr. 41 mangler nu):**
 Bruger fandt og uploadede det rigtige nr. 85 (bæredygtig skibsfart, maj 2026,
 fil "F_rdig_magasin_Dynamo_2026_02_Issue_1_1.pdf" — igen et misvisende filnavn,
 verificeret som nr. 85 fra selve PDF'ens kolofon: "NR. 85 05 2026"). Læst med

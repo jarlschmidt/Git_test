@@ -212,13 +212,22 @@
     "issue_number": 41,
     "year": 2015,
     "month": 5,
-    "theme": "Belysnings- og materialeinnovation (Cool LED / Green Laser) - ikke bekræftet som samlet forsidetema",
-    "description": "Udkom maj 2015. Kendte artikler i nummeret omfatter \"Cool LED\" (nyt lys i PH-lampen) og \"Green Laser\" (om betonsten/laserbehandlet beton). Det overordnede forsidetema for nummeret er ikke bekræftet.",
-    "institutes": [],
+    "theme": "Lysledere / Betonsten med indbygget lys",
+    "description": "Forsidetema om lysledere støbt direkte ind i betonsten, der gør det muligt at afspille film og reklamer på husfacader. Nummeret dækker desuden bl.a. entreprenørskab (spinout-virksomheden Norlase), EnergyLab Nordhavn, LED-belysning til designklassikere, DTU Miljøs 150-års jubilæum, det danske laksegenopretningsprojekt, biocover-teknologi mod metanudledning fra lossepladser, livscyklusvurderinger af vindmøller, intelligente høreapparater og en NOx-sensor til skibsfarten. Bekræftet ved læsning af nummerets fulde tekst (bruger-uploadet PDF, 2026-09-07).",
+    "institutes": [
+      "DTU Fotonik",
+      "DTU Miljø",
+      "DTU Aqua",
+      "DTU Management",
+      "DTU Elektro",
+      "DTU Nanotech",
+      "DTU Kemiteknik",
+      "DTU Compute"
+    ],
     "source_urls": [
       "http://emagstudio.win.dtu.dk/E-books/DYNAMO/DYNAMO_41/"
     ],
-    "confidence": "medium"
+    "confidence": "high"
   },
   {
     "issue_number": 42,
