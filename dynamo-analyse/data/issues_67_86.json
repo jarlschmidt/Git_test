@@ -257,17 +257,22 @@
     "year": 2026,
     "month": 4,
     "theme": "Bæredygtig skibsfart / Sustainable shipping",
-    "description": "Theme on decarbonizing global shipping (which carries roughly 80% of world cargo trade) — including the search for green fuel alternatives to bunker oil, green shipping corridors, and DTU's Maritime DTU research center's work toward IMO's 2050 climate-neutral shipping target. Direct issuu access to the issue text was unavailable; theme corroborated via DTU news coverage tagged \"Bæredygtig skibsfart\" from the same period.",
+    "description": "Temanummer om bæredygtig skibsfart: grønne maritime korridorer og brændstoffer (metanol, ammoniak, brint), DTU's nye havforskningsskib Dana V, skibsfartens skjulte miljøeffekter på havmiljøet, samt hvorfor klimaneutral skibsfart i 2050 er urealistisk uden et reelt alternativ til fossil bunkerolie. Desuden antibiotika-drug delivery, vindmøllevinge-inspektion og førerløse biler i Danmark. Bekræftet ved læsning af nummerets fulde tekst (bruger-uploadet PDF, 2026-09-07).",
     "institutes": [
-      "DTU Construct",
+      "DTU Kemiteknik",
+      "DTU Fødevareinstituttet",
+      "DTU Electro",
       "Maritime DTU",
-      "DTU Management (Institut for Teknologi, Ledelse og Økonomi)"
+      "DTU Aqua",
+      "DTU Construct",
+      "DTU Wind",
+      "DTU Management"
     ],
     "source_urls": [
       "https://www.dtu.dk/nyheder/alle-nyheder/klimaneutral-skibsfart-i-2050-vi-har-megatravlt",
       "https://www.dtu.dk/nyheder/alle-nyheder/groenne-korridorer-aabner-ruter-til-fossilfri-skibsfart"
     ],
-    "confidence": "medium"
+    "confidence": "high"
   },
   {
     "issue_number": 86,

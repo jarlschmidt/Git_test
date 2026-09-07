@@ -5,7 +5,7 @@ institutter og oplagsudvikling over 21 år.
 
 ## Filer
 
-- **`Dynamo_gennem_20_aar.pdf`** — den færdige, søgbare rapport (65 sider, McKinsey-inspireret layout, DTU's officielle farver). To dokumentationsniveauer: issue-niveau (forsidetema) for alle 86 numre, og historie-niveau (hver enkelt artikel, med institut og emne) for 1.080 historier i de 44 numre 2015–2026, hvor magasinets fulde tekst kunne udtrækkes eller blev uploadet direkte.
+- **`Dynamo_gennem_20_aar.pdf`** — den færdige, søgbare rapport (66 sider, McKinsey-inspireret layout, DTU's officielle farver). To dokumentationsniveauer: issue-niveau (forsidetema) for alle 86 numre, og historie-niveau (hver enkelt artikel, med institut og emne) for 1.100 historier i 45 af 46 numre 2015–2026, hvor magasinets fulde tekst kunne udtrækkes eller blev uploadet direkte — kun nr. 41 mangler.
 - `report.html` — den fuldt genererede HTML, som PDF'en er printet fra (kan åbnes direkte i en browser).
 - `template.html` — layout/CSS-skabelonen (uden indhold).
 - `build_report.py` — samler de fire rå issue-datakataloger i `data/`, interpolerer manglende år, tema-kategoriserer og skriver `data/dataset.json`.
@@ -14,7 +14,7 @@ institutter og oplagsudvikling over 21 år.
 - `print_pdf.js` — bruger Playwright/Chromium til at printe `report.html` til søgbar PDF med korrekt sidetal-fod.
 - `measure_toc.py` — læser en trykt PDF og finder den fysiske side, hvert kapitel rent faktisk starter på (sektionerne har ikke længere tvungne sideskift, så siderne kendes først efter layout); skriver `data/toc_pages.json`, som `build_html.py` bruger til at vise korrekte sidetal i indholdsfortegnelsen.
 - `data/issues_01_20.json`, `issues_21_44.json`, `issues_45_66.json`, `issues_67_86.json` — issue-niveau katalog over hvert Dynamo-nummer (år, tema, beskrivelse, institutter, kilder, sikkerhedsniveau), indsamlet fra issuu.com/dtudk og DTU's mediebibliotek (originale PDF'er).
-- `data/stories.json` — historie-niveau katalog: 1.080 enkeltstående historier (nummer, år, titel, institut, emne) fra numrene 2015–2026, primært udtrukket via `extract_issuu_text.py`; nr. 83, 84 og 86 er struktureret direkte fra brugerens uploadede PDF'er (pdftotext), da issuu's API afviste netop disse tre.
+- `data/stories.json` — historie-niveau katalog: 1.100 enkeltstående historier (nummer, år, titel, institut, emne) fra numrene 2015–2026, primært udtrukket via `extract_issuu_text.py`; nr. 83, 84, 85 og 86 er struktureret direkte fra brugerens uploadede PDF'er (pdftotext), da issuu's API afviste netop disse fire.
 - `data/dtu_institutes.json` — DTU's nuværende institutter/centre (reference for institut-mapping).
 - `data/dtu_strategy.json` — DTU's fem strategiske indsatsområder (Strategi 2026–2031, se kildelink i filen) og hvilke af rapportens 10 tema-kategorier der understøtter hvert område.
 - `data/world_events.json` — ti velkendte verdensbegivenheder 2005–2026 (med kildelink pr. begivenhed), hver koblet til én af rapportens tema-kategorier, brugt i "Falder Dynamo sammen med verden?"-tidslinjen.
@@ -65,12 +65,11 @@ diagrammerne).
 
 ## Kendte begrænsninger
 
-- 2 numre (41, 85) kunne ikke historie-udtrækkes — nr. 41 lå på en visningsplatform, der ikke
-  længere findes (emagstudio.win.dtu.dk), og nr. 85 er endnu ikke modtaget i fuld tekst — de har
-  derfor kun issue-niveau-dokumentation (forsidetema), ikke historie-niveau. Nr. 83, 84 og 86
-  gav oprindeligt 403 fra issuu's tekstlag-API, men blev opgraderet til fuld historie-niveau
-  efter at brugeren uploadede de originale PDF'er direkte (2026-09-07) — se
-  `data/stories.json` (issue_number 83/84/86).
+- Kun 1 nummer (41) kunne ikke historie-udtrækkes — det lå på en visningsplatform, der ikke
+  længere findes (emagstudio.win.dtu.dk) — og har derfor kun issue-niveau-dokumentation
+  (forsidetema), ikke historie-niveau. Nr. 83, 84, 85 og 86 gav oprindeligt 403 fra issuu's
+  tekstlag-API, men blev opgraderet til fuld historie-niveau efter at brugeren uploadede de
+  originale PDF'er direkte (2026-09-07) — se `data/stories.json` (issue_number 83/84/85/86).
 - For 2005–2014 er 16 af 39 numre fortsat udokumenterede efter udvidet søgning i DTU's
   mediebibliotek (www.dtu.dk var oprindeligt netværksblokeret; adgangen er siden åbnet og
   36 numre er genresearchet med primærkilde-PDF'er). To lovende kilder for de resterende

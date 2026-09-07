@@ -1,6 +1,20 @@
 # Projekt: Dynamo-analyse (DTU)
 
-**Status pr. 2026-09-07 (nyeste — bruger uploadede 3 af de 5 manglende numre):**
+**Status pr. 2026-09-07 (nyeste — nr. 85 modtaget, kun nr. 41 mangler nu):**
+Bruger fandt og uploadede det rigtige nr. 85 (bæredygtig skibsfart, maj 2026,
+fil "F_rdig_magasin_Dynamo_2026_02_Issue_1_1.pdf" — igen et misvisende filnavn,
+verificeret som nr. 85 fra selve PDF'ens kolofon: "NR. 85 05 2026"). Læst med
+`pdftotext -layout` og struktureret til 20 historier, tilføjet til
+`data/stories.json` (nu 1.100 historier i alt). `STORY_UNCOVERED` er reduceret
+til blot `[41]`. Issue-niveau-posten for nr. 85 i `data/issues_67_86.json` er
+opgraderet til `confidence: "high"` med reelle institutter. Rapporten er nu
+**66 sider**, og metode-/appendiksteksten er omskrevet, så den korrekt siger
+"kun 1 nummer mangler" i stedet for at remse flere numre op. Med dette er
+sessionens story-level-indsamling for 2015–2026 stort set komplet — kun nr. 41
+(defunkt visningsplatform, emagstudio.win.dtu.dk) er reelt uopnåeligt uden en
+ny kilde til netop det nummer.
+
+**Status pr. 2026-09-07 (tidligere — bruger uploadede 3 af de 5 manglende numre):**
 Bruger spurgte, om hun kunne sende de manglende numre (41, 83-86) direkte, og
 uploadede derefter tre PDF'er: nr. 83 (2025), nr. 84 (marts 2026) og — vigtigt —
 en fil navngivet "Dynamo_2026_03_Issuecompressed.pdf", som ved læsning viste sig
