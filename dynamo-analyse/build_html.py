@@ -57,7 +57,7 @@ STORY_ISSUE_COUNT = len(STORY_ISSUE_NUMS)
 STORY_INST_COUNTER = Counter(s["institute"] for s in STORIES if s.get("institute"))
 STORY_WITH_INST = sum(1 for s in STORIES if s.get("institute"))
 STORY_INST_PCT = round(100*STORY_WITH_INST/STORY_COUNT) if STORY_COUNT else 0
-STORY_UNCOVERED = [41, 83, 84, 85, 86]
+STORY_UNCOVERED = [41, 85]
 STORY_COUNT_DA = f"{STORY_COUNT:,}".replace(",", ".")
 
 # ---------- helpers to render CSS bar rows ----------
@@ -274,14 +274,14 @@ cover = f"""
   <div class="cover-top">
     <div class="eyebrow"><i></i>Medieanalyse · DTU</div>
     <h1>Dynamo gennem&nbsp;20&nbsp;år</h1>
-    <div class="scope-line">Fuld historie-for-historie-analyse 2015–2025 · Historiske nedslag 2005–2014</div>
-    <div class="sub">Hvad har DTU fortalt om sig selv? En fuldstændig gennemgang af Dynamos seneste ti år, historie for historie — suppleret med udvalgte historiske nedslag tilbage til lanceringen i 2005. Se metodeafsnittet for datadækning år for år.</div>
+    <div class="scope-line">Fuld historie-for-historie-analyse 2015–2026 · Historiske nedslag 2005–2014</div>
+    <div class="sub">Hvad har DTU fortalt om sig selv? En fuldstændig gennemgang af Dynamos historier fra 2015 til i dag, historie for historie — suppleret med udvalgte historiske nedslag tilbage til lanceringen i 2005. Se metodeafsnittet for datadækning år for år.</div>
   </div>
   <div class="cover-spacer"></div>
   <div class="cover-card">
     <div class="stats">
       {"".join(f'<div class="stat"><b>{esc(b)}</b><span class="lbl">{esc(l)}</span></div>' for b,l in [
-          (TOTAL, "Numre udgivet 2005–2026"), (STORY_COUNT_DA, "Historier i fuld tekst 2015–2025"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")
+          (TOTAL, "Numre udgivet 2005–2026"), (STORY_COUNT_DA, "Historier i fuld tekst 2015–2026"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")
       ])}
     </div>
     {year_track_html()}
@@ -360,7 +360,7 @@ method = f"""
 <p>Analysen bygger på to niveauer. For samtlige {TOTAL} numre af Dynamo (nr. 1, april 2005 – nr. 86, august 2026) er udgivelsesår og forsidetema forsøgt fastslået ("issue-niveau"). For {STORY_ISSUE_COUNT} af numrene (nr. {min(STORY_ISSUE_NUMS)}–{max(STORY_ISSUE_NUMS)}, 2015–2026) er der derudover gået et niveau dybere: hver enkelt historie i magasinet er læst og katalogiseret individuelt ("historie-niveau") — {STORY_COUNT_DA} historier med titel, DTU-institut (hvor nævnt), emne og en kort beskrivelse hver.</p>
 <p><b>Historie-niveau (2015–2026):</b> issuu.com's visningsplatform gemmer internt et fuldt tekstlag pr. side til sin søgefunktion. Et lille udtræksscript (<code>extract_issuu_text.py</code>) henter dette tekstlag direkte fra issuu's egen API for hvert nummer — det er magasinets rigtige, fulde brødtekst, ikke kun forsidebeskrivelsen. Den udtrukne tekst er derefter læst nummer for nummer og struktureret til enkeltstående historier.</p>
 <p><b>Issue-niveau (alle 86 numre):</b> forsidetema, udgivelsesår og evt. institutnavn er fastslået via issuu.com/dtudk (numre fra ca. 2015) samt DTU's eget mediebibliotek på dtu.dk, hvor de originale PDF'er af ældre numre (2005–2014) er hostet direkte — cover og indholdsfortegnelse er læst for hvert nummer, hvor PDF'en kunne lokaliseres.</p>
-<div class="insight"><b>Begrænsning:</b> {len(STORY_UNCOVERED)} numre (nr. {', '.join(str(n) for n in STORY_UNCOVERED)}) har ikke kunnet historie-udtrækkes — enten fordi de ligger på en anden visningsplatform end issuu, eller fordi issuu's tekstlag-API afviste netop de numre — og har derfor kun issue-niveau-dokumentation. For 2005–2014 er {sum(1 for i in issues if i["year"]<=2014 and i.get("confidence")=="not_found")} af {sum(1 for i in issues if i["year"]<=2014)} numre fortsat udokumenterede efter udvidet søgning i DTU's mediebibliotek — et par lovende kilder (yumpu.com, Wayback Machine) var blokeret af netværksproxyen i analysemiljøet. Se dækningsgraden nedenfor.</div>
+<div class="insight"><b>Begrænsning:</b> {len(STORY_UNCOVERED)} numre (nr. {', '.join(str(n) for n in STORY_UNCOVERED)}) har ikke kunnet historie-udtrækkes — nr. 41 lå på en visningsplatform, der ikke længere findes (emagstudio.win.dtu.dk), og nr. 85 er endnu ikke modtaget i fuld tekst — og har derfor kun issue-niveau-dokumentation. Nr. 83, 84 og 86 er siden blevet opgraderet til fuld historie-niveau-dokumentation ved direkte læsning af de originale PDF'er. For 2005–2014 er {sum(1 for i in issues if i["year"]<=2014 and i.get("confidence")=="not_found")} af {sum(1 for i in issues if i["year"]<=2014)} numre fortsat udokumenterede efter udvidet søgning i DTU's mediebibliotek — et par lovende kilder (yumpu.com, Wayback Machine) var blokeret af netværksproxyen i analysemiljøet. Se dækningsgraden nedenfor.</div>
 <div class="cols">
   <div class="col" style="flex:1.4;">
     <h3>Datadækning pr. sikkerhedsniveau</h3>

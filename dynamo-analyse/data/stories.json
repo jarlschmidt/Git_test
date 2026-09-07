@@ -9115,5 +9115,608 @@
     "institute": "DTU Engineering Technology / DTU Construct",
     "topic": "Projektstyring / Jernbane",
     "description": "Erhvervs-ph.d. Daniel Woodier undersøger, hvordan jernbaneinfrastrukturprojekter kan organiseres mere effektivt for at spare ressourcer og reducere forstyrrelser for passagerer."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Opfindelsen, der køber dyrebar tid",
+    "institute": "",
+    "topic": "Sundhedsteknologi / Kunstigt blod",
+    "description": "Professor Leticia Hosta Rigau udvikler et kunstigt hæmoglobin-baseret stof, der kan holde ofre for akut blodtab i live i timer eller dage, indtil de kan få en rigtig blodtransfusion."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Lægen, der nu er doktor hele tre gange",
+    "institute": "",
+    "topic": "Personalia / Medicinsk teknologi",
+    "description": "Overlæge og professor Hans Christian Wulf fra Bispebjerg Hospital har som formentlig første dansker opnået tre forskellige doktorgrader, senest en teknisk doktorgrad for opfindelser inden for skånsom uv-strålebehandling af hudlidelser."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Hæder for excellent undervisning",
+    "institute": "",
+    "topic": "Personalia / Undervisning",
+    "description": "Professor Ulrich Krühne modtog Uddannelses- og Forskningsministeriets Undervisningspris 2025, mens lektor Timothy P. Jenkins fik DTU's egen undervisningspris for et nyt kursus, der kobler proteinteknik og kunstig intelligens."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "DTU-fingeraftryk på klimarapport",
+    "institute": "DTU Management",
+    "topic": "Klimaforskning / IPCC",
+    "description": "Professor Marie Münster og postdoc Shreya Some er udpeget som hovedforfattere til FN's klimapanel IPCC's næste hovedrapport om hhv. reduktion af drivhusgasser og klimatilpasning."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Går Danmarks klimahåb op i røg?",
+    "institute": "DTU Kemiteknik",
+    "topic": "CO2-fangst og -lagring",
+    "description": "Professor Philip Fosbøl forklarer i et spørgsmål-svar-format, hvorfor CO2-fangst og -lagring først nu for alvor tages i brug i Danmark, da Ørsted åbner landets første storskala-anlæg."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Her skal danske kvantechips fabrikeres",
+    "institute": "DTU Nanolab",
+    "topic": "Kvanteteknologi / Byggeri",
+    "description": "DTU bygger Nanolab Phase 4, en ny facilitet med 700 m² renrum, der fra 2027 skal gøre det muligt at fabrikere kvantechips i Danmark i industriel skala."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Hvad er en kvantechip?",
+    "institute": "Quantum DTU",
+    "topic": "Kvanteteknologi",
+    "description": "Centerleder Maria Cerdà Sevilla fra Quantum DTU forklarer, hvad en kvantechip er, og hvorfor over en tredjedel af DTU's institutter er involveret i kvanteforskning."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Fra et stort bord til en lille chip",
+    "institute": "DTU Fysik",
+    "topic": "Kvanteteknologi / Optik",
+    "description": "Professor Ulrik Lund Andersen og forskningscentret bigQ arbejder på at skrumpe en bordfyldende optisk forsøgsopstilling ned til en enkelt kvantechip til en specialiseret kvantecomputer."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Hun dyrker krystaller, der kan give kvantechips et forspring",
+    "institute": "DTU Electro",
+    "topic": "Kvanteteknologi / Nanofotonik",
+    "description": "Seniorforsker Elizaveta Semenova er en af få forskere i verden, der kan dyrke nanokrystaller, som udsender fotoner på standardfrekvensen for telekommunikation, og dermed minimerer informationstab i kvantenetværk."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "I et kapløb om at nå kvantecomputerens gennembrud",
+    "institute": "DTU Nanolab",
+    "topic": "Kvanteteknologi / Erhvervssamarbejde",
+    "description": "Microsoft og startuppen Sparrow Quantum bruger begge DTU Nanolabs renrumsfaciliteter til at udvikle deres kvantechips, henholdsvis Majorana 1 og Sparrow Core."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Jagten på en bedre kvantebit",
+    "institute": "DTU Energi",
+    "topic": "Kvanteteknologi / Materialer",
+    "description": "Professor Thomas Sand Jespersen undersøger, om elektroner i krystallet strontiumtitanat kan bruges som en ny, hurtigere type kvantebit."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Jeg tryller med kvantekemi for at gøre kemikalier grønnere",
+    "institute": "DTU Energi / DTU Fysik",
+    "topic": "Ph.d.-portræt / Beregningskemi",
+    "description": "Ph.d.-studerende Michala Damsgaard Jensen bruger kvantekemi-simuleringer til at finde katalysatorer, der kan omdanne grøn strøm til bæredygtige kemikalier som dimethylcarbonat."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Havets blågule torpedo",
+    "institute": "DTU Aqua",
+    "topic": "Marinbiologi / Tunfisk",
+    "description": "DTU Aqua har siden 2017 mærket blåfinnede tun i danske farvande for at forstå, hvorfor arten er vendt tilbage efter årtiers fravær, og hvordan den kan beskyttes."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "AI spotter farerne, så arbejdsulykker undgås",
+    "institute": "",
+    "topic": "Digitalisering / Arbejdssikkerhed",
+    "description": "Professor Jochen Teizer udvikler AI- og IoT-baserede teknologier som intelligente sikkerhedshjelme og VR-træning, der skal forudsige og forhindre ulykker på byggepladser."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Ny modgift mod slangebid dækker 17 afrikanske slangearter",
+    "institute": "DTU Bioengineering",
+    "topic": "Biosolutions / Global sundhed",
+    "description": "Professor Andreas Hougaard Laustsen-Kiel har udviklet en bredspektret modgift baseret på nanobodies fra kameldyr, der i forsøg neutraliserer gift fra 17 afrikanske slangearter."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Forskermiljø skal sikre grøn omstilling – cellefabrik for cellefabrik",
+    "institute": "DTU Biosustain",
+    "topic": "Bioteknologi / Grøn omstilling",
+    "description": "Det nye forskningsinitiativ BRIGHT, støttet med ca. 1 mia. kr. fra Novo Nordisk Fonden, viderefører Biosustains arbejde med cellefabrikker og skal bringe bioteknologien tættere på industriel anvendelse."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Vi må ikke miste fokus på den grønne omstilling",
+    "institute": "DTU Management",
+    "topic": "Interview / Energisystemer",
+    "description": "Professor Marie Münster fortæller, hvordan hun beregner fremtidens klimavenlige energisystemer, og hvorfor hun mener, at grøn omstilling også kan styrke landes sikkerhed og fred."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Når natur bliver kunst",
+    "institute": "DTU Bioengineering",
+    "topic": "Formidling / Kunst og videnskab",
+    "description": "Professorerne Lone Gram og Lars Jelsbak har bidraget med fagviden om jordens mikroliv til kunstværket 'Levende jord' på Viborg Gymnasium."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "1 mia. kr. til at nedbringe byggebranchens ressourceforbrug",
+    "institute": "",
+    "topic": "Bevilling / Bæredygtigt byggeri",
+    "description": "DTU og tre andre universiteter modtager 1 mia. kr. fra Villum Fonden over ti år til at finde metoder til at nedbringe byggebranchens ressourceforbrug og klimaaftryk."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Tre i streg som nummer 1",
+    "institute": "",
+    "topic": "Ranking / EngiRank",
+    "description": "DTU topper for tredje år i træk ranglisten EngiRank over Europas bedste tekniske universiteter, som nu omfatter 239 universiteter."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Vi er tættere end nogensinde før på at bevise, at der har været liv på Mars",
+    "institute": "DTU Space",
+    "topic": "Rumforskning / Mars",
+    "description": "Professor John Leif Jørgensen kommenterer nye Nature-analyser af Mars-sten indsamlet af NASA's robot Perseverance, der bærer DTU-udviklet udstyr, og som indeholder stoffer, vi normalt forbinder med mikrobiologisk aktivitet."
+  },
+  {
+    "issue_number": 83,
+    "month": 12,
+    "year": 2025,
+    "title": "Plastikspild og tunge løft får modspil i malerbranchen",
+    "institute": "",
+    "topic": "Iværksætteri / Bæredygtig emballage",
+    "description": "DTU-startuppen Paint'R har udviklet en patenteret emballageløsning til maling, der sparer op til 86 pct. plastik og 69 pct. CO2 sammenlignet med den traditionelle malerspand."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Virus udnyttes til at levere medicin til hjernen",
+    "institute": "DTU Kemi",
+    "topic": "Lægemiddeludvikling / Drug delivery",
+    "description": "Professor Katrine Qvortrup og kolleger fra DTU Kemi har i samarbejde med KU identificeret en molekylenøgle fra fåresygevirussen, der kan levere medicin direkte i hjernen via blod-cerebrospinalvæske-barrieren."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Teknologi skal bringe diagnostik tættere på patienten",
+    "institute": "DTU Sundhedsteknologi",
+    "topic": "Sundhedsteknologi / Søvnsygdomme",
+    "description": "Søvnforsker og professor Poul Jennum vil i et nyt fælles TUH-professorat mellem DTU og Rigshospitalet bruge smartwatches, sensorer og AI til at diagnosticere hjernesygdomme hjemme hos patienten."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Folkeoplysning om antibiotikaresistens",
+    "institute": "DTU Fødevareinstituttet",
+    "topic": "Folkesundhed / Antibiotikaresistens",
+    "description": "DTU Fødevareinstituttet står bag det nye website stopAMR.dk, der formidler forskningsbaseret viden om antibiotikaresistens til borgere og patienter."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Klogere på kvindesygdomme",
+    "institute": "",
+    "topic": "AI / Kvindesundhed",
+    "description": "Supercomputeren Gefion bruges i regi af TUH til at analysere årtiers data om kvinders menstruationscyklus, tarmbakterier og graviditetskomplikationer for hurtigere at kunne diagnosticere sygdomme som adenomyose."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "DTU Skylab vinder Diversitetsprisen 2025",
+    "institute": "DTU Skylab",
+    "topic": "Personalia / Diversitet og inklusion",
+    "description": "DTU Skylab modtog Diversitetsprisen 2025 for initiativet Technology Leaving No One Behind, der gør universelt design og inklusion til en del af ingeniørens rolle."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "AI sætter et aftryk i vores miljø, klima og landskaber",
+    "institute": "DTU Compute / DTU Electro",
+    "topic": "AI / Klima og miljø",
+    "description": "Professor Søren Hauberg og professor Leif Katsuo Oxenløwe diskuterer AI og internetteknologiens stigende strøm- og vandforbrug, mens ph.d.-studerende Gudrun Gudmundsdottir arbejder på bedre livscyklusanalyser af ICT's klimaaftryk."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Droneinspektion af solceller skal sikre grøn strøm til flere huse",
+    "institute": "DTU Electro",
+    "topic": "Vedvarende energi / Droner og AI",
+    "description": "Seniorforsker Gisele Benatto og lektor Mahmoud Dhimish har udviklet en drone- og AI-løsning, der kan opdage og diagnosticere fejl på solcelleanlæg og dermed øge udbyttet af grøn strøm."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "De bygger fremtidens CO2-fangst molekyle for molekyle",
+    "institute": "DTU Kemiteknik",
+    "topic": "CO2-fangst / Kunstig intelligens",
+    "description": "Professor Philip Fosbøl og forsker Randi Neerup bruger en AI, der screener over en milliard mulige solventer, for at finde mere effektive og billigere kemikalier til CO2-fangst."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "AI skal forudsige vandstande og beskytte naturen",
+    "institute": "DTU Engineering Technology",
+    "topic": "Klimatilpasning / AI",
+    "description": "Ingeniørdocent Birger Andersen har udviklet en machine learning-model, der kan forudsige vandstande i danske vandløb op til to uger frem og dermed hjælpe kommuner med klimatilpasning."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Sådan gør AI industrien mere bæredygtig",
+    "institute": "",
+    "topic": "AI / Grøn industri",
+    "description": "I projektet SUS-Optimal bruger DTU og industriparken GreenLab kunstig intelligens til at optimere energistrømme mellem el, varme, vand og CO2 i grønne industriklynger."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Fremtidens laboratorium laver eksperimenterne selv",
+    "institute": "DTU Energi",
+    "topic": "Materialeforskning / Selvkørende laboratorier",
+    "description": "Adjunkt Andy Sode Anker og professor Tejs Vegge fra pionercentret CAPeX udvikler selvkørende laboratorier, hvor AI og robotter kan udvikle nye materialer til den grønne omstilling op til ti gange hurtigere."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Insekter undersøges i jagten på grønnere tilsætningsstoffer",
+    "institute": "DTU Fødevareinstituttet",
+    "topic": "Fødevareteknologi / Bæredygtige ingredienser",
+    "description": "Seniorforsker Betül Yesiltas Svensson bruger AI til at finde peptider fra melbille- og soldaterfluelarver, der kan erstatte klimabelastende emulgatorer og antioxidanter i fødevarer som mayonnaise."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Lavere temperaturer er nøglen til grønnere fjernvarme",
+    "institute": "DTU Construct",
+    "topic": "Fjernvarme / AI",
+    "description": "Lektor Christian A. Hviid står bag forsknings- og udviklingsprojektet HeatCheck, der bruger AI til at optimere varmeforbrug i etageejendomme og gøre det muligt at sænke fjernvarmens temperatur."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Prisvindende tech-duo vil revolutionere den industrielle produktion",
+    "institute": "DTU Kemiteknik",
+    "topic": "Kvantecomputing / Bioproduktion",
+    "description": "Lektor Seyed Soheil Mansouri og iværksætter Christopher Savoie har udviklet en agentbaseret AI- og kvantecomputing-løsning, der kan optimere bioreaktorer og potentielt femdoble udbyttet i bioproduktion."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Selvstyrende satellitter",
+    "institute": "DTU Space",
+    "topic": "Rumteknologi / Autonom navigation",
+    "description": "Professor John Leif Jørgensens stjernekamera-teknologi har på ESA's Proba-3-mission bevist, at satellitter kan navigere og flyve i præcis formation helt uden hjælp fra Jorden."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Rekordmange kvinder vil læse en ph.d.",
+    "institute": "DTU Compute",
+    "topic": "Personalia / Diversitet i forskning",
+    "description": "43 pct. af DTU's nye ph.d.-studerende i 2025 var kvinder, en rekord som bl.a. afspejler en målrettet indsats på institutter som DTU Compute, hvor kvindeandelen er steget fra 18 til 30 pct. siden 2021."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Havet som kilde til D-vitamin",
+    "institute": "DTU Fødevareinstituttet",
+    "topic": "Fødevareteknologi / Mikroalger",
+    "description": "Postdoc Emil Gundersen undersøger, hvordan mikroalgen Nannochloropsis oceanica kan dyrkes på land som en vegansk kilde til D3-vitamin, protein og omega-3-fedtsyrer."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Fra irriterende bifangst til smagsforstærker og dyrefoder",
+    "institute": "DTU Aqua / DTU Fødevareinstituttet",
+    "topic": "Fiskeri / Bæredygtig fødevareproduktion",
+    "description": "Ph.d.-studerende Lorenzo Chinellato undersøger i projekt KRABFISK, om en ny fermenteringsmetode kan gøre det økonomisk attraktivt for fiskere at afsætte de invasive strandkrabber, der skader dansk biodiversitet."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Fra søstjerner til omega-3-tilskud",
+    "institute": "",
+    "topic": "Fødevareteknologi / Omega-3",
+    "description": "Seniorforsker Ann-Dorit Moltke Sørensen undersøger, om en skånsom CO2-ekstraktionsmetode kan udvinde værdifuld omega-3-fiskeolie fra søstjerner og den invasive sortmundede kutling."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Tarmbakterier kan blive nøglen til forebyggelse af astma og allergi",
+    "institute": "DTU Bioengineering",
+    "topic": "Sundhed / Mikrobiom",
+    "description": "Professor Susanne Brix Pedersen har med et internationalt forskerhold identificeret en bakteriel metabolit hos spædbørn, der kan dæmpe immunforsvarets overreaktion og mindske risikoen for astma og allergi, og DTU har patenteret opdagelsen."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Der er guld i affald – så hvorfor genbruger vi kun 4,2 pct.?",
+    "institute": "",
+    "topic": "Cirkulær økonomi / Genfremstilling",
+    "description": "Professor Tim C. McAloone leder det nye center reManuFactory, der skal hjælpe danske virksomheder med at genfremstille slidte produkter til gavn for både klima og bundlinje."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Tavse testpersoner",
+    "institute": "",
+    "topic": "Indeklimaforskning / Termiske mannequiner",
+    "description": "Professor Jørn Toftum og DTU's indeklimalaboratorier har i næsten 60 år brugt termiske mannequiner til at måle, hvordan mennesker og indeklima påvirker hinanden."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Han vil fjerne evigheden fra evighedskemikalier",
+    "institute": "DTU Sustain",
+    "topic": "Miljøforskning / PFAS",
+    "description": "Professor Anders Baun, leder af det nye PFAS-center og forperson for regeringens PFAS-videnstaskforce, forsker i, hvordan Danmark kan afværge og håndtere forureningen fra de svært nedbrydelige PFAS-'evighedskemikalier'."
+  },
+  {
+    "issue_number": 84,
+    "month": 3,
+    "year": 2026,
+    "title": "Luft får maskiner til at glide som smurt i olie",
+    "institute": "DTU Construct",
+    "topic": "Ph.d.-portræt / Maskinteknik",
+    "description": "Ph.d.-studerende Janus Jedig-Walentin Jensen udvikler luftlejer, der kan erstatte oliesmurte lejer i maskiner, reducere friktion og gøre produktion inden for f.eks. medicin og fødevarer enklere."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Længden på dit lår kan være med til at afsløre diabetes",
+    "institute": "DTU Sustain",
+    "topic": "Sundhedsteknologi / AI",
+    "description": "Postdoc Daniel Yoo og professor Olivier Jolliet står bag MEDWACS, en AI-baseret hjemmetest der ud fra bl.a. lårlængde og BMI kan vurdere risikoen for type 2-diabetes eller prædiabetes."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Helende skum forbinder forskning og innovation",
+    "institute": "DTU Kemiteknik",
+    "topic": "Innovation / Sårpleje",
+    "description": "Professor og institutdirektør Anne Ladegaard Skov modtog DTU's Innovationspris 2026 for opfindelser som startuppen AleSac's ekspanderende silikoneskum, der kan forsegle dybe sprængsår og forhindre amputationer."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "AI skal hjælpe med at forebygge pandemier",
+    "institute": "",
+    "topic": "Bioinformatik / Pandemiforebyggelse",
+    "description": "Professor Frank Møller Aarestrup har været med til at udvikle AI-værktøjet PathogenFinder2, der ud fra bakteriers genetik kan vurdere, om en hidtil ukendt bakterieart er sygdomsfremkaldende, før den forårsager udbrud."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Ny viden skal beskytte stenbiderne",
+    "institute": "DTU Aqua",
+    "topic": "Marinbiologi / Fiskeforvaltning",
+    "description": "DTU Aqua har for første gang fået vilde stenbidere til at gyde i fangenskab som led i NOW-LUMP-projektet, der skal skabe biologisk viden til at understøtte forvaltningen af den pressede stenbiderbestand."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Kan spildevandet genanvendes i lægemiddelproduktionen?",
+    "institute": "DTU Sustain",
+    "topic": "Vandgenanvendelse / Medicinalindustri",
+    "description": "Seniorforsker Ravi Kumar Chhetri analyserer og risikovurderer renset spildevand fra Novo Nordisk i Hillerød og vurderer, at genanvendelse kan reducere virksomhedens vandforbrug med op til 50 pct."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Med lys kan de blå jeans få en grønnere fremtid",
+    "institute": "DTU Kemi",
+    "topic": "Tekstilkemi / Grøn omstilling",
+    "description": "Professor Katrine Qvortrup har med projektet Green Indigo udviklet en metode, der bruger elektrisk lys til at danne indigofarve direkte på denim uden de vandtunge kemikalieprocesser, traditionel jeansfarvning kræver."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Eksperterne nuancerer valgkampens våde tema",
+    "institute": "DTU Sustain",
+    "topic": "Grundvand / Drikkevandspolitik",
+    "description": "Professorerne Hans-Jørgen Albrechtsen og Poul Løgstrup Bjerg nuancerer valgkampens debat om et nationalt sprøjteforbud og peger på, at effekten på grundvandet først vil vise sig om 30 år eller mere."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Vil spænde ben for PFAS, før det når hanen",
+    "institute": "DTU Sustain",
+    "topic": "Miljøteknologi / PFAS",
+    "description": "Ph.d.-studerende Laura Morsing tester i en kunstig sandtank, om injektion af kolloidt aktivt kul i undergrunden kan bremse og forsinke PFAS-forureningens vej mod drikkevandsboringer."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Digital tvilling hjælper med at bruge spildevandet smartere",
+    "institute": "",
+    "topic": "Digitalisering / Spildevandsrensning",
+    "description": "Professor Krist V. Gernaey har sammen med Novonesis udviklet en digital tvilling af det industrielle renseanlæg i Kalundborg, der kan simulere og optimere rensningen af spildevand fra bioteknologisk produktion."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Før dråberne slipper op",
+    "institute": "DTU Sustain",
+    "topic": "Vandforsyning / Klimatilpasning",
+    "description": "I forskningsprojektet Water2050 skal professor Hans-Jørgen Albrechtsen og andre vandeksperter finde løsninger på den truende vandmangel, som ifølge HOFOR kan ramme hovedstadsområdet allerede i 2040."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Hvad sker der med tilliden, når AI rykker ind i velfærdsstaten?",
+    "institute": "DTU Management",
+    "topic": "AI / Velfærdsteknologi",
+    "description": "Professor Helene Friis Ratner advarer om, at tillid er afgørende, når det offentlige bruger AI og prædiktive modeller i sagsbehandling, især på borgernære områder hvor fejl kan ramme skævt."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Øjne i arktis",
+    "institute": "DTU Space",
+    "topic": "Rumovervågning / Forsvar",
+    "description": "DTU Space tester i projektet DENASSI et spejlteleskop på Grønland, der skal identificere og følge satellitter og rumskrot over Jordens poler og styrke europæisk rumsikkerhed."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Øget diversitet. Uændret kropsideal",
+    "institute": "DTU Compute",
+    "topic": "AI / Modeindustri",
+    "description": "Postdoc Louis Boucherie har analyseret næsten 800.000 modebilleder fra 2000-2024 og finder, at modeindustriens kropsideal grundlæggende er uændret, selvom flere plus-size og ikkehvide modeller optræder."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Forbedret tsunamivarsling",
+    "institute": "DTU Space",
+    "topic": "Rumteknologi / Katastrofevarsling",
+    "description": "Et nyt studie med bidrag fra DTU Space viser, at data fra klimasatellitter, der tilfældigt passerer over en aktiv tsunami, kan bruges til at forbedre modeller for tsunamivarsling."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Gratis værktøj afslører skjulte skibe",
+    "institute": "DTU Space",
+    "topic": "Maritim overvågning / AI",
+    "description": "Postdoc Peder Heiselberg har udviklet onlineværktøjet OpenOceanWatch, der ved hjælp af satellitdata og AI kan overvåge skibstrafik i danske farvande og afsløre 'spøgelsesskibe', der forsøger at skjule deres position."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Flere isbjerge ændrer livet i Arktis",
+    "institute": "DTU Space",
+    "topic": "Klimaforskning / Arktis",
+    "description": "Professor Shfaqat Abbas Khan er medforfatter til et studie, der viser, at antallet af isbjerge i Arktis er firedoblet siden år 2000 og påvirker dybhavsøkosystemer langt fra de gletsjere, isen kommer fra."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Professoren, der aflurer mønstrene i musikken og matematikken",
+    "institute": "",
+    "topic": "Personalia / Matematik",
+    "description": "Maria Montanucci, tidligere konservatorieuddannet fløjtenist og nu professor i algebraisk geometri på DTU, har som den eneste modtaget DTU's studenterprisen Årets Underviser to gange."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Kystbeboere betaler dyrt for stormfloder",
+    "institute": "DTU Management",
+    "topic": "Klimatilpasning / Stormfloder",
+    "description": "Ph.d.-studerende Emma Houmøller Veng står bag en spørgeskemaundersøgelse, der viser, at næsten 40 pct. af de ramte boligejere har oplevet fysiske eller psykiske følgevirkninger af stormfloder, ud over store økonomiske udgifter."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Oversvømmelser kan koste erhvervslivet 50 mia. kr.",
+    "institute": "DTU Management",
+    "topic": "Klimaøkonomi / Oversvømmelser",
+    "description": "Professor Kirsten Halsnæs står bag nye beregninger, der for første gang medregner produktionstab i private virksomheder og viser, at oversvømmelser kan koste det danske erhvervsliv omkring 50 mia. kr. i nutidsværdi over 100 år."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Startup vil give havet et vagtværn",
+    "institute": "",
+    "topic": "Iværksætteri / Maritim overvågning",
+    "description": "DTU-studerende Carl Borg, Markus Rytter og Frederik Himmer har med startuppen Triton Depth udviklet en AI-baseret undervandsmikrofon, der kan spore aktivitet ved havnes og kablers infrastruktur til gavn for Danmarks sikkerhed."
+  },
+  {
+    "issue_number": 86,
+    "month": 8,
+    "year": 2026,
+    "title": "Osten går en grønnere fremtid i møde",
+    "institute": "",
+    "topic": "Ph.d.-portræt / Fødevareinnovation",
+    "description": "Ph.d.-studerende Blandine Genet udvikler en hybridost af mælkeprotein, rapsolie og ærteprotein, der skal matche smagen af konventionel ost med et markant lavere klimaaftryk."
   }
 ]

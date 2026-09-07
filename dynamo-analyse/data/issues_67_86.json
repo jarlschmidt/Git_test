@@ -205,8 +205,20 @@
     "year": 2025,
     "month": 12,
     "theme": "Kvantechips / Quantum chip development",
-    "description": "Focuses on quantum technology advancement at DTU, including the expansion of DTU's cleanroom facilities (expected operational 2027) to support Denmark's global competitiveness in quantum technology, miniaturizing experimental setups onto single chips, and research into using electrons in crystals as qubits.",
-    "institutes": [],
+    "description": "Temanummer om kvanteteknologi: DTU udvider renrumsfaciliteterne (Nanolab Phase 4, klar 2027) for at kunne fabrikere kvantechips i industriel skala, og forskere arbejder på alt fra optisk kvantecomputing til nye kvantebit-materialer. Desuden kunstigt blod, modgift mod slangebid og CO2-fangst. Bekræftet ved læsning af nummerets fulde tekst (bruger-uploadet PDF, 2026-09-07).",
+    "institutes": [
+      "DTU Management",
+      "DTU Kemiteknik",
+      "DTU Nanolab",
+      "Quantum DTU",
+      "DTU Fysik",
+      "DTU Electro",
+      "DTU Energi",
+      "DTU Aqua",
+      "DTU Bioengineering",
+      "DTU Biosustain",
+      "DTU Space"
+    ],
     "source_urls": [
       "https://issuu.com/dtudk/docs/dynamo_nr._83_2025",
       "https://dk.linkedin.com/posts/dtu-energy_dynamo-nr-83-2025-activity-7406243031068229632-tzlO"
@@ -218,8 +230,23 @@
     "year": 2026,
     "month": 3,
     "theme": "Kunstig intelligens og bæredygtighed / Artificial Intelligence and Sustainability",
-    "description": "Examines both the challenges and opportunities of AI: its environmental/climate costs (energy and water use), its use in spreading misinformation, and how DTU researchers are leveraging AI to advance sustainable solutions.",
-    "institutes": [],
+    "description": "Temanummer om kunstig intelligens: AI's klima- og miljøaftryk (datacentres strøm- og vandforbrug) sat op mod AI som værktøj i den grønne omstilling (CO2-fangst, selvkørende laboratorier, fjernvarme, solcelleinspektion m.m.). Desuden fåresygevirus som medicinbærer til hjernen og PFAS-forskning. Bekræftet ved læsning af nummerets fulde tekst (bruger-uploadet PDF, 2026-09-07).",
+    "institutes": [
+      "DTU Kemi",
+      "DTU Sundhedsteknologi",
+      "DTU Fødevareinstituttet",
+      "DTU Skylab",
+      "DTU Compute",
+      "DTU Electro",
+      "DTU Kemiteknik",
+      "DTU Engineering Technology",
+      "DTU Energi",
+      "DTU Construct",
+      "DTU Space",
+      "DTU Aqua",
+      "DTU Bioengineering",
+      "DTU Sustain"
+    ],
     "source_urls": [
       "https://issuu.com/dtudk/docs/dynamo_84_2026"
     ],
@@ -247,14 +274,20 @@
     "year": 2026,
     "month": 8,
     "theme": "Vand / Water scarcity",
-    "description": "Theme on water as a scarce resource — Denmark is among the European countries with the greatest water scarcity, raising the stakes for protecting and managing drinking-water resources; DTU Sustain researchers' work on drinking-water protection (PFAS, groundwater contamination) is closely tied to this period's coverage. Inferred from the rector's editorial published just ahead of the issue's release; direct issuu access to the issue text was unavailable, so the exact cover-story theme is not independently confirmed from the magazine itself.",
+    "description": "Temanummer om ferskvand som knap ressource: vandgenanvendelse i lægemiddelproduktion, grønnere jeansfarvning, PFAS-forurening af grundvand, digitale tvillinger til spildevandsrensning og Storkøbenhavns truende vandmangel i 2040. Desuden AI og tillid i velfærdsstaten samt stormfloders menneskelige og økonomiske pris. Bekræftet ved læsning af nummerets fulde tekst (bruger-uploadet PDF, 2026-09-07).",
     "institutes": [
-      "DTU Sustain (Institut for Miljø- og Ressourceteknologi)"
+      "DTU Sustain",
+      "DTU Kemiteknik",
+      "DTU Aqua",
+      "DTU Kemi",
+      "DTU Management",
+      "DTU Space",
+      "DTU Compute"
     ],
     "source_urls": [
       "https://www.dtu.dk/nyheder/alle-nyheder/selv-i-danmark-er-vand-en-knap-ressource",
       "https://www.dtu.dk/nyheder/alle-nyheder/dtus-foerende-vandeksperter-nuancerer-valgkampens-vaade-tema"
     ],
-    "confidence": "medium"
+    "confidence": "high"
   }
 ]

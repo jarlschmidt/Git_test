@@ -1230,14 +1230,28 @@
       "year": 2025,
       "month": 12,
       "theme": "Kvantechips / Quantum chip development",
-      "description": "Focuses on quantum technology advancement at DTU, including the expansion of DTU's cleanroom facilities (expected operational 2027) to support Denmark's global competitiveness in quantum technology, miniaturizing experimental setups onto single chips, and research into using electrons in crystals as qubits.",
-      "institutes": [],
+      "description": "Temanummer om kvanteteknologi: DTU udvider renrumsfaciliteterne (Nanolab Phase 4, klar 2027) for at kunne fabrikere kvantechips i industriel skala, og forskere arbejder på alt fra optisk kvantecomputing til nye kvantebit-materialer. Desuden kunstigt blod, modgift mod slangebid og CO2-fangst. Bekræftet ved læsning af nummerets fulde tekst (bruger-uploadet PDF, 2026-09-07).",
+      "institutes": [
+        "DTU Management",
+        "DTU Kemiteknik",
+        "DTU Nanolab",
+        "Quantum DTU",
+        "DTU Fysik",
+        "DTU Electro",
+        "DTU Energi",
+        "DTU Aqua",
+        "DTU Bioengineering",
+        "DTU Biosustain",
+        "DTU Space"
+      ],
       "source_urls": [
         "https://issuu.com/dtudk/docs/dynamo_nr._83_2025",
         "https://dk.linkedin.com/posts/dtu-energy_dynamo-nr-83-2025-activity-7406243031068229632-tzlO"
       ],
       "confidence": "high",
       "categories": [
+        "Klima & Energi",
+        "Rum & Klode",
         "Materialer, Nano & Kvante"
       ]
     },
@@ -1246,8 +1260,23 @@
       "year": 2026,
       "month": 3,
       "theme": "Kunstig intelligens og bæredygtighed / Artificial Intelligence and Sustainability",
-      "description": "Examines both the challenges and opportunities of AI: its environmental/climate costs (energy and water use), its use in spreading misinformation, and how DTU researchers are leveraging AI to advance sustainable solutions.",
-      "institutes": [],
+      "description": "Temanummer om kunstig intelligens: AI's klima- og miljøaftryk (datacentres strøm- og vandforbrug) sat op mod AI som værktøj i den grønne omstilling (CO2-fangst, selvkørende laboratorier, fjernvarme, solcelleinspektion m.m.). Desuden fåresygevirus som medicinbærer til hjernen og PFAS-forskning. Bekræftet ved læsning af nummerets fulde tekst (bruger-uploadet PDF, 2026-09-07).",
+      "institutes": [
+        "DTU Kemi",
+        "DTU Sundhedsteknologi",
+        "DTU Fødevareinstituttet",
+        "DTU Skylab",
+        "DTU Compute",
+        "DTU Electro",
+        "DTU Kemiteknik",
+        "DTU Engineering Technology",
+        "DTU Energi",
+        "DTU Construct",
+        "DTU Space",
+        "DTU Aqua",
+        "DTU Bioengineering",
+        "DTU Sustain"
+      ],
       "source_urls": [
         "https://issuu.com/dtudk/docs/dynamo_84_2026"
       ],
@@ -1255,6 +1284,7 @@
       "categories": [
         "Klima & Energi",
         "Vand, Miljø & Ressourcer",
+        "Sundhed & Bioteknologi",
         "Digitalt, AI & Data"
       ]
     },
@@ -1284,17 +1314,25 @@
       "year": 2026,
       "month": 8,
       "theme": "Vand / Water scarcity",
-      "description": "Theme on water as a scarce resource — Denmark is among the European countries with the greatest water scarcity, raising the stakes for protecting and managing drinking-water resources; DTU Sustain researchers' work on drinking-water protection (PFAS, groundwater contamination) is closely tied to this period's coverage. Inferred from the rector's editorial published just ahead of the issue's release; direct issuu access to the issue text was unavailable, so the exact cover-story theme is not independently confirmed from the magazine itself.",
+      "description": "Temanummer om ferskvand som knap ressource: vandgenanvendelse i lægemiddelproduktion, grønnere jeansfarvning, PFAS-forurening af grundvand, digitale tvillinger til spildevandsrensning og Storkøbenhavns truende vandmangel i 2040. Desuden AI og tillid i velfærdsstaten samt stormfloders menneskelige og økonomiske pris. Bekræftet ved læsning af nummerets fulde tekst (bruger-uploadet PDF, 2026-09-07).",
       "institutes": [
-        "DTU Sustain (Institut for Miljø- og Ressourceteknologi)"
+        "DTU Sustain",
+        "DTU Kemiteknik",
+        "DTU Aqua",
+        "DTU Kemi",
+        "DTU Management",
+        "DTU Space",
+        "DTU Compute"
       ],
       "source_urls": [
         "https://www.dtu.dk/nyheder/alle-nyheder/selv-i-danmark-er-vand-en-knap-ressource",
         "https://www.dtu.dk/nyheder/alle-nyheder/dtus-foerende-vandeksperter-nuancerer-valgkampens-vaade-tema"
       ],
-      "confidence": "medium",
+      "confidence": "high",
       "categories": [
-        "Vand, Miljø & Ressourcer"
+        "Vand, Miljø & Ressourcer",
+        "Digitalt, AI & Data",
+        "Samfund & Iværksætteri"
       ]
     }
   ],
@@ -1322,15 +1360,15 @@
       "Fødevarer & Landbrug": 1
     },
     "2020–2026": {
-      "Klima & Energi": 12,
-      "Sundhed & Bioteknologi": 5,
+      "Klima & Energi": 13,
+      "Sundhed & Bioteknologi": 6,
       "Fødevarer & Landbrug": 5,
-      "Digitalt, AI & Data": 7,
+      "Digitalt, AI & Data": 8,
       "Forsvar & Sikkerhed": 3,
-      "Rum & Klode": 3,
+      "Rum & Klode": 4,
       "Materialer, Nano & Kvante": 4,
       "Vand, Miljø & Ressourcer": 8,
-      "Samfund & Iværksætteri": 2,
+      "Samfund & Iværksætteri": 3,
       "Transport, Byggeri & Byer": 3
     }
   },
@@ -1346,16 +1384,16 @@
   },
   "cat_totals": {
     "Andet/uklassificeret": 1,
-    "Klima & Energi": 26,
-    "Sundhed & Bioteknologi": 13,
+    "Klima & Energi": 27,
+    "Sundhed & Bioteknologi": 14,
     "Transport, Byggeri & Byer": 12,
     "Vand, Miljø & Ressourcer": 16,
     "Forsvar & Sikkerhed": 7,
     "Fødevarer & Landbrug": 9,
     "Materialer, Nano & Kvante": 12,
-    "Rum & Klode": 6,
-    "Samfund & Iværksætteri": 3,
-    "Digitalt, AI & Data": 8
+    "Rum & Klode": 7,
+    "Samfund & Iværksætteri": 4,
+    "Digitalt, AI & Data": 9
   },
   "year_counts": {
     "2005": 3,
@@ -1493,38 +1531,53 @@
       "Rum & Klode": 1
     },
     "2025": {
-      "Klima & Energi": 1,
+      "Klima & Energi": 2,
       "Vand, Miljø & Ressourcer": 2,
       "Materialer, Nano & Kvante": 2,
       "Transport, Byggeri & Byer": 1,
       "Digitalt, AI & Data": 1,
-      "Rum & Klode": 1,
+      "Rum & Klode": 2,
       "Forsvar & Sikkerhed": 1
     },
     "2026": {
       "Klima & Energi": 2,
       "Vand, Miljø & Ressourcer": 2,
-      "Digitalt, AI & Data": 1,
-      "Transport, Byggeri & Byer": 1
+      "Sundhed & Bioteknologi": 1,
+      "Digitalt, AI & Data": 2,
+      "Transport, Byggeri & Byer": 1,
+      "Samfund & Iværksætteri": 1
     }
   },
   "inst_counter": {
     "DTU Systembiologi": 1,
     "Risø DTU": 1,
     "DTU Danchip": 1,
-    "DTU Aqua": 1,
+    "DTU Aqua": 4,
     "DTU Byg": 1,
-    "DTU Sundhedsteknologi": 1,
-    "Quantum DTU": 1,
-    "DTU Space": 1,
-    "DTU Construct": 1,
+    "DTU Sundhedsteknologi": 2,
+    "Quantum DTU": 2,
+    "DTU Space": 4,
+    "DTU Management": 2,
+    "DTU Kemiteknik": 3,
+    "DTU Nanolab": 1,
+    "DTU Fysik": 1,
+    "DTU Electro": 2,
+    "DTU Energi": 2,
+    "DTU Bioengineering": 2,
+    "DTU Biosustain": 1,
+    "DTU Kemi": 2,
+    "DTU Fødevareinstituttet": 1,
+    "DTU Skylab": 1,
+    "DTU Compute": 2,
+    "DTU Engineering Technology": 1,
+    "DTU Construct": 2,
+    "DTU Sustain": 2,
     "Maritime DTU": 1,
-    "DTU Management (Institut for Teknologi, Ledelse og Økonomi)": 1,
-    "DTU Sustain (Institut for Miljø- og Ressourceteknologi)": 1
+    "DTU Management (Institut for Teknologi, Ledelse og Økonomi)": 1
   },
   "conf_counts": {
-    "medium": 17,
-    "high": 50,
+    "medium": 16,
+    "high": 51,
     "not_found": 17,
     "low": 2
   },

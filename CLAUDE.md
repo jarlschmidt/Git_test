@@ -1,6 +1,26 @@
 # Projekt: Dynamo-analyse (DTU)
 
-**Status pr. 2026-09-04 (nyeste — forsideredesign):** Bruger rapporterede en
+**Status pr. 2026-09-07 (nyeste — bruger uploadede 3 af de 5 manglende numre):**
+Bruger spurgte, om hun kunne sende de manglende numre (41, 83-86) direkte, og
+uploadede derefter tre PDF'er: nr. 83 (2025), nr. 84 (marts 2026) og — vigtigt —
+en fil navngivet "Dynamo_2026_03_Issuecompressed.pdf", som ved læsning viste sig
+rent faktisk at være **nr. 86** (august 2026), ikke nr. 85 som filnavnet antydede.
+Alle tre blev læst med `pdftotext -layout` (ikke `extract_issuu_text.py`, da issuu's
+API netop afviste disse numre) og struktureret manuelt til historie-niveau: 22
+historier for nr. 83 (kvantechips-tema), 24 for nr. 84 (AI-tema) og 21 for nr. 86
+(vand-tema) — tilføjet til `data/stories.json` (nu 1.080 historier i alt, op fra
+1.013). `STORY_UNCOVERED` i `build_html.py` er reduceret fra `[41, 83, 84, 85, 86]`
+til `[41, 85]`. De tre numres issue-niveau-poster i `data/issues_67_86.json` er
+opgraderet til `confidence: "high"` med reelle institutlister udledt af de nye
+historier. Forsidens scope-linje/statistik er opdateret til "2015–2026" (var
+"2015–2025"), da nr. 86's historier rykker den øvre grænse. Rapporten er vokset
+fra 62 til 65 sider — udelukkende nyt, ægte indhold (Appendiks B + institutliste),
+ikke whitespace. **Stadig manglende:** nr. 41 (defunkt platform) og det ægte nr. 85
+(bruger har endnu ikke sendt det — pas på ikke at forveksle med filnavne, der
+påstår "85" eller en bestemt måned; verificér altid nummeret fra selve PDF'ens
+forside/kolofon, ikke filnavnet).
+
+**Status pr. 2026-09-04 (tidligere — forsideredesign):** Bruger rapporterede en
 konkret bug efter forrige forside-fix ("nederste 3.del er uden farve, teksten
 går til kant") og krævede derefter et fuldstændigt redesign, ikke endnu et
 patch ("jeg forventer at se en fuldstændig redesignet forside"). Root cause
