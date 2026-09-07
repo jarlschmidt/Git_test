@@ -80,9 +80,12 @@
   .cover-fade{position:absolute; inset:0; z-index:1; pointer-events:none;
     background:linear-gradient(180deg, transparent 0%, transparent 46%, var(--dtu-navy) 80%);
   }
-  .cover-top, .cover-spacer, .cover-card, .cover > .footline{position:relative; z-index:2;}
+  .cover-top, .cover-gauge, .cover-card, .cover > .footline{position:relative; z-index:2;}
   .cover-top{flex:0 0 auto;}
-  .cover-spacer{flex:1 1 auto; min-height:8mm;}
+  .cover-gauge{flex:1 1 auto; min-height:8mm; display:flex; align-items:center; justify-content:flex-end; gap:6mm; padding-right:2mm;}
+  .cover-gauge .gauge-svg{width:72mm; height:72mm; flex-shrink:0;}
+  .cover-gauge .gauge-lbl{font-size:7.6px; fill:rgba(255,255,255,0.68); font-family:Arial, sans-serif; font-weight:700;}
+  .cover-gauge .gauge-caption{font-size:8pt; line-height:1.5; color:rgba(255,255,255,0.55); text-align:right; max-width:28mm;}
   .cover .eyebrow{display:flex; align-items:center; gap:3.5mm; text-transform:uppercase; letter-spacing:0.14em; font-size:8.6pt; font-weight:700; color:rgba(255,255,255,0.82);}
   .cover .eyebrow i{display:block; width:8mm; height:1.8mm; background:var(--dtu-red); flex-shrink:0;}
   .cover h1{color:#fff; font-size:44pt; line-height:1.06; max-width:145mm; margin:7mm 0 0 0; text-shadow:0 2mm 6mm rgba(0,0,0,0.25);}
@@ -96,13 +99,6 @@
   .cover-card .stat:first-child{padding-left:0;}
   .cover-card .stat b{display:block; font-size:19pt; color:var(--dtu-navy); line-height:1;}
   .cover-card .stat span{font-size:7.4pt; color:var(--ink-2); text-transform:uppercase; letter-spacing:0.05em; margin-top:1.8mm; display:block;}
-  .cover-card .yeartrack{display:flex; align-items:flex-end; gap:1.6mm; height:22mm; margin-top:1mm;}
-  .cover-card .ytick{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
-  .cover-card .ytick i{display:block; width:100%; background:var(--grid); border-radius:1px;}
-  .cover-card .ytick.hi i{background:var(--dtu-red);}
-  .cover-card .ytick span{font-size:6.2pt; color:var(--muted); margin-top:2mm; writing-mode:vertical-rl; transform:rotate(180deg);}
-  .cover-card .ytick.hi span{color:var(--dtu-navy); font-weight:700;}
-  .cover-card .caption{margin:3mm 0 0 0; color:var(--muted);}
   .cover .footline{font-size:8.3pt; color:rgba(255,255,255,0.55); display:flex; justify-content:space-between; margin-top:8mm;}
 
   /* STAT TILES */

@@ -80,9 +80,12 @@
   .cover-fade{position:absolute; inset:0; z-index:1; pointer-events:none;
     background:linear-gradient(180deg, transparent 0%, transparent 46%, var(--dtu-navy) 80%);
   }
-  .cover-top, .cover-spacer, .cover-card, .cover > .footline{position:relative; z-index:2;}
+  .cover-top, .cover-gauge, .cover-card, .cover > .footline{position:relative; z-index:2;}
   .cover-top{flex:0 0 auto;}
-  .cover-spacer{flex:1 1 auto; min-height:8mm;}
+  .cover-gauge{flex:1 1 auto; min-height:8mm; display:flex; align-items:center; justify-content:flex-end; gap:6mm; padding-right:2mm;}
+  .cover-gauge .gauge-svg{width:72mm; height:72mm; flex-shrink:0;}
+  .cover-gauge .gauge-lbl{font-size:7.6px; fill:rgba(255,255,255,0.68); font-family:Arial, sans-serif; font-weight:700;}
+  .cover-gauge .gauge-caption{font-size:8pt; line-height:1.5; color:rgba(255,255,255,0.55); text-align:right; max-width:28mm;}
   .cover .eyebrow{display:flex; align-items:center; gap:3.5mm; text-transform:uppercase; letter-spacing:0.14em; font-size:8.6pt; font-weight:700; color:rgba(255,255,255,0.82);}
   .cover .eyebrow i{display:block; width:8mm; height:1.8mm; background:var(--dtu-red); flex-shrink:0;}
   .cover h1{color:#fff; font-size:44pt; line-height:1.06; max-width:145mm; margin:7mm 0 0 0; text-shadow:0 2mm 6mm rgba(0,0,0,0.25);}
@@ -96,13 +99,6 @@
   .cover-card .stat:first-child{padding-left:0;}
   .cover-card .stat b{display:block; font-size:19pt; color:var(--dtu-navy); line-height:1;}
   .cover-card .stat span{font-size:7.4pt; color:var(--ink-2); text-transform:uppercase; letter-spacing:0.05em; margin-top:1.8mm; display:block;}
-  .cover-card .yeartrack{display:flex; align-items:flex-end; gap:1.6mm; height:22mm; margin-top:1mm;}
-  .cover-card .ytick{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%;}
-  .cover-card .ytick i{display:block; width:100%; background:var(--grid); border-radius:1px;}
-  .cover-card .ytick.hi i{background:var(--dtu-red);}
-  .cover-card .ytick span{font-size:6.2pt; color:var(--muted); margin-top:2mm; writing-mode:vertical-rl; transform:rotate(180deg);}
-  .cover-card .ytick.hi span{color:var(--dtu-navy); font-weight:700;}
-  .cover-card .caption{margin:3mm 0 0 0; color:var(--muted);}
   .cover .footline{font-size:8.3pt; color:rgba(255,255,255,0.55); display:flex; justify-content:space-between; margin-top:8mm;}
 
   /* STAT TILES */
@@ -201,15 +197,16 @@
     <div class="scope-line">Fuld historie-for-historie-analyse 2015–2026 · Historiske nedslag 2005–2014</div>
     <div class="sub">Hvad har DTU fortalt om sig selv? En fuldstændig gennemgang af Dynamos historier fra 2015 til i dag, historie for historie — suppleret med udvalgte historiske nedslag tilbage til lanceringen i 2005. Se metodeafsnittet for datadækning år for år.</div>
   </div>
-  <div class="cover-spacer"></div>
+  <div class="cover-gauge">
+    <svg viewBox="-15 -15 230 230" class="gauge-svg"><circle cx="100" cy="100" r="20" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.1"/><line x1="82.7" y1="113.5" x2="47.7" y2="140.9" stroke="#fc7634" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="80.2" y1="109.6" x2="28.7" y2="134.5" stroke="#f96e37" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="78.6" y1="105.2" x2="23.0" y2="118.6" stroke="#f6663a" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="78.0" y1="100.5" x2="20.8" y2="102.0" stroke="#f35e3d" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="78.4" y1="95.9" x2="22.2" y2="85.2" stroke="#f1573f" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="79.7" y1="91.4" x2="27.1" y2="69.1" stroke="#ee4f42" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="82.0" y1="87.3" x2="35.2" y2="54.4" stroke="#eb4745" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="85.1" y1="83.8" x2="37.6" y2="32.4" stroke="#e83f48" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="88.8" y1="81.0" x2="66.3" y2="42.8" stroke="#ce3f5f" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="93.1" y1="79.1" x2="75.2" y2="24.8" stroke="#b33f76" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="97.7" y1="78.1" x2="91.6" y2="21.2" stroke="#993f8d" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="102.3" y1="78.1" x2="108.4" y2="21.2" stroke="#7e3ea5" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="106.9" y1="79.1" x2="124.8" y2="24.8" stroke="#643ebc" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="111.2" y1="81.0" x2="140.2" y2="31.7" stroke="#493ed3" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="114.9" y1="83.8" x2="153.7" y2="41.8" stroke="#2f3eea" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="118.0" y1="87.3" x2="164.8" y2="54.4" stroke="#2d53db" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="120.3" y1="91.4" x2="172.9" y2="69.1" stroke="#2a68cc" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="121.6" y1="95.9" x2="177.8" y2="85.2" stroke="#287dbd" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="122.0" y1="100.5" x2="179.2" y2="102.0" stroke="#2691af" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="121.4" y1="105.2" x2="177.0" y2="118.6" stroke="#24a6a0" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="119.8" y1="109.6" x2="171.3" y2="134.5" stroke="#21bb91" stroke-width="5" stroke-linecap="round" opacity="1"/><line x1="117.3" y1="113.5" x2="152.3" y2="140.9" stroke="#1fd082" stroke-width="5" stroke-linecap="round" opacity="1"/><text x="22.0" y="161.0" text-anchor="middle" class="gauge-lbl">2005</text><text x="100.0" y="-1.0" text-anchor="middle" class="gauge-lbl">2015</text><text x="178.0" y="161.0" text-anchor="middle" class="gauge-lbl">2026</text></svg>
+    <p class="gauge-caption">Numre pr. udgivelsesår<br>2005–2026</p>
+  </div>
   <div class="cover-card">
     <div class="cover-card-bar"></div>
     <div class="cover-card-body">
       <div class="stats">
         <div class="stat"><b>86</b><span class="lbl">Numre udgivet 2005–2026</span></div><div class="stat"><b>1.112</b><span class="lbl">Historier i fuld tekst 2015–2026</span></div><div class="stat"><b>80%</b><span class="lbl">Numre tema-dokumenteret</span></div><div class="stat"><b>~4</b><span class="lbl">Numre pr. år</span></div>
       </div>
-      <div class='yeartrack'><div class='ytick hi'><i style='height:60%;'></i><span>2005</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick hi'><i style='height:80%;'></i><span>2011</span></div><div class='ytick'><i style='height:100%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:60%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick'><i style='height:80%;'></i><span>&nbsp;</span></div><div class='ytick hi'><i style='height:60%;'></i><span>2026</span></div></div>
-      <p class="small caption">Numre pr. udgivelsesår, 2005–2026 (interpoleret hvor eksakt måned er ukendt)</p>
     </div>
   </div>
   <div class="footline"><span>Kilder: issuu.com/dtudk · DTU nyhedsarkiv (dtu.dk)</span><span>07. September 2026</span></div>

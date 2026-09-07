@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import json, html, os
+import json, html, os, math
 from datetime import date
 from urllib.parse import urlparse
 from collections import Counter
@@ -255,19 +255,60 @@ def world_events_timeline():
         </div>""")
     return "<div class='timeline-v'>" + "".join(rows) + "</div>"
 
-def year_track_html():
+def _hex_to_rgb(h):
+    h = h.lstrip("#")
+    return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+
+def _interp_color(stops, t):
+    """t in [0,1] -> hex colour, smoothly interpolated across a list of hex stops."""
+    n = len(stops) - 1
+    t = max(0.0, min(1.0, t))
+    seg = min(int(t * n), n - 1)
+    local_t = t * n - seg
+    c0, c1 = _hex_to_rgb(stops[seg]), _hex_to_rgb(stops[seg + 1])
+    rgb = tuple(round(c0[i] + (c1[i] - c0[i]) * local_t) for i in range(3))
+    return "#%02x%02x%02x" % rgb
+
+def dynamo_gauge_svg():
+    """A radial 'power gauge' of issues per year (2005-2026), standing in for a
+    literal bar chart with something that actually reads as Dynamo/generator
+    imagery: an armature of colour spokes sweeping across a 256-degree dial."""
     year_counts = D["year_counts"]
     years = list(range(2005, 2027))
-    mx = max(year_counts.get(str(y), year_counts.get(y, 0)) for y in years) or 1
-    highlight = {2005, 2011, 2026}
-    ticks = []
-    for y in years:
-        n = year_counts.get(str(y), year_counts.get(y, 0))
-        h = max(14, round(100 * n / mx)) if n else 8
-        cls = "ytick hi" if y in highlight else "ytick"
-        label = f"<span>{y}</span>" if y in highlight else "<span>&nbsp;</span>"
-        ticks.append(f"<div class='{cls}'><i style='height:{h}%;'></i>{label}</div>")
-    return "<div class='yeartrack'>" + "".join(ticks) + "</div>"
+    counts = [year_counts.get(str(y), year_counts.get(y, 0)) for y in years]
+    mx = max(counts) or 1
+    n = len(years)
+    cx = cy = 100
+    hub_r, max_len = 20, 64
+    start_deg, end_deg = -128, 128
+    stops = ["#fc7634", "#e83f48", "#2f3eea", "#1fd082"]
+
+    def point(deg, r):
+        th = math.radians(deg)
+        return cx + r * math.sin(th), cy - r * math.cos(th)
+
+    spokes = []
+    for i, cnt in enumerate(counts):
+        deg = start_deg + i * (end_deg - start_deg) / (n - 1)
+        length = max_len * (cnt / mx) if cnt else 0
+        x1, y1 = point(deg, hub_r + 2)
+        x2, y2 = point(deg, hub_r + 8 + length if cnt else hub_r + 8)
+        color = _interp_color(stops, i / (n - 1))
+        opacity = 1 if cnt else 0.22
+        spokes.append(
+            f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+            f'stroke="{color}" stroke-width="5" stroke-linecap="round" opacity="{opacity}"/>'
+        )
+    lx, ly = point(start_deg, hub_r + max_len + 15)
+    mxp, myp = point(0, hub_r + max_len + 17)
+    ex, ey = point(end_deg, hub_r + max_len + 15)
+    hub = f'<circle cx="{cx}" cy="{cy}" r="{hub_r}" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.1"/>'
+    labels = (
+        f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="middle" class="gauge-lbl">2005</text>'
+        f'<text x="{mxp:.1f}" y="{myp:.1f}" text-anchor="middle" class="gauge-lbl">2015</text>'
+        f'<text x="{ex:.1f}" y="{ey:.1f}" text-anchor="middle" class="gauge-lbl">2026</text>'
+    )
+    return f'<svg viewBox="-15 -15 230 230" class="gauge-svg">{hub}{"".join(spokes)}{labels}</svg>'
 
 # ================= COVER =================
 today = date.today().strftime("%d. %B %Y")
@@ -281,7 +322,10 @@ cover = f"""
     <div class="scope-line">Fuld historie-for-historie-analyse 2015–2026 · Historiske nedslag 2005–2014</div>
     <div class="sub">Hvad har DTU fortalt om sig selv? En fuldstændig gennemgang af Dynamos historier fra 2015 til i dag, historie for historie — suppleret med udvalgte historiske nedslag tilbage til lanceringen i 2005. Se metodeafsnittet for datadækning år for år.</div>
   </div>
-  <div class="cover-spacer"></div>
+  <div class="cover-gauge">
+    {dynamo_gauge_svg()}
+    <p class="gauge-caption">Numre pr. udgivelsesår<br>2005–2026</p>
+  </div>
   <div class="cover-card">
     <div class="cover-card-bar"></div>
     <div class="cover-card-body">
@@ -290,8 +334,6 @@ cover = f"""
             (TOTAL, "Numre udgivet 2005–2026"), (STORY_COUNT_DA, "Historier i fuld tekst 2015–2026"), (f"{PCT_DOC}%", "Numre tema-dokumenteret"), ("~4", "Numre pr. år")
         ])}
       </div>
-      {year_track_html()}
-      <p class="small caption">Numre pr. udgivelsesår, 2005–2026 (interpoleret hvor eksakt måned er ukendt)</p>
     </div>
   </div>
   <div class="footline"><span>Kilder: issuu.com/dtudk · DTU nyhedsarkiv (dtu.dk)</span><span>{esc(today)}</span></div>
